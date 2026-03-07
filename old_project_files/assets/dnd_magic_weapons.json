@@ -1,0 +1,255 @@
+[
+    {
+        "name": "Weapon, +1",
+        "type": "Any",
+        "rarity": "Uncommon",
+        "stat_impact": "+1 bonus to attack and damage rolls.",
+        "source": "DMG"
+    },
+    {
+        "name": "Javelin of Lightning",
+        "type": "Javelin",
+        "rarity": "Uncommon",
+        "stat_impact": "Becomes a bolt of lightning; 4d6 lightning damage on a failed DC 13 Dex save.",
+        "source": "DMG",
+        "base_item": "Javelin"
+    },
+    {
+        "name": "Trident of Fish Command",
+        "type": "Trident",
+        "rarity": "Uncommon",
+        "stat_impact": "Cast Dominate Beast (DC 15) on beasts with swim speeds.",
+        "source": "DMG"
+    },
+    {
+        "name": "Warning Weapon",
+        "type": "Any",
+        "rarity": "Uncommon",
+        "stat_impact": "Advantage on Initiative; you and allies within 30ft cannot be surprised.",
+        "source": "DMG"
+    },
+    {
+        "name": "Moontouched Sword",
+        "type": "Any sword",
+        "rarity": "Common",
+        "stat_impact": "Sheds bright light in a 15-foot radius; counts as magical for resistance.",
+        "source": "XGE",
+        "base_item": "Longsword"
+    },
+    {
+        "name": "Weapon, +2",
+        "type": "Any",
+        "rarity": "Rare",
+        "stat_impact": "+2 bonus to attack and damage rolls.",
+        "source": "DMG"
+    },
+    {
+        "name": "Berserker Axe",
+        "type": "Axe",
+        "rarity": "Rare",
+        "stat_impact": "+1 bonus to attack/damage; +1 HP per level; cursed: go berserk when taking damage.",
+        "source": "DMG"
+    },
+    {
+        "name": "Dagger of Venom",
+        "type": "Dagger",
+        "rarity": "Rare",
+        "stat_impact": "+1 bonus to attack/damage; Action: deal 2d10 poison damage and Poisoned condition (DC 15).",
+        "source": "DMG",
+        "base_item": "Dagger"
+    },
+    {
+        "name": "Dragon Slayer",
+        "type": "Any sword",
+        "rarity": "Rare",
+        "stat_impact": "+3d6 damage vs Dragons.",
+        "source": "DMG",
+        "base_item": "Longsword"
+    },
+    {
+        "name": "Flame Tongue",
+        "type": "Any sword",
+        "rarity": "Rare",
+        "stat_impact": "Bonus Action: Ignite for +2d6 fire damage on hits.",
+        "source": "DMG",
+        "base_item": "Longsword"
+    },
+    {
+        "name": "Giant Slayer",
+        "type": "Any axe or sword",
+        "rarity": "Rare",
+        "stat_impact": "+1 bonus to attack/damage; +2d6 damage vs Giants; Giant must succeed DC 15 Str save or fall prone.",
+        "source": "DMG",
+        "base_item": "Longsword"
+    },
+    {
+        "name": "Mace of Disruption",
+        "type": "Mace",
+        "rarity": "Rare",
+        "stat_impact": "+2d6 radiant damage vs Fiends/Undead; can frighten or destroy weak undead.",
+        "source": "DMG",
+        "base_item": "Mace"
+    },
+    {
+        "name": "Mace of Smiting",
+        "type": "Mace",
+        "rarity": "Rare",
+        "stat_impact": "+1 bonus to attack/damage; +3 bonus and +2d6 damage vs Constructs.",
+        "source": "DMG",
+        "base_item": "Mace"
+    },
+    {
+        "name": "Sun Blade",
+        "type": "Longsword",
+        "rarity": "Rare",
+        "stat_impact": "+2 bonus to attack/damage; deals radiant damage; +1d8 vs Undead.",
+        "source": "DMG",
+        "base_item": "Longsword"
+    },
+    {
+        "name": "Vicious Weapon",
+        "type": "Any",
+        "rarity": "Rare",
+        "stat_impact": "On a Nat 20, deal an extra 7 damage of the weapon type.",
+        "source": "DMG"
+    },
+    {
+        "name": "Weapon, +3",
+        "type": "Any",
+        "rarity": "Very Rare",
+        "stat_impact": "+3 bonus to attack and damage rolls.",
+        "source": "DMG"
+    },
+    {
+        "name": "Dancing Sword",
+        "type": "Any sword",
+        "rarity": "Very Rare",
+        "stat_impact": "Bonus Action: Sword hovers and attacks independently for 4 turns.",
+        "source": "DMG",
+        "base_item": "Longsword"
+    },
+    {
+        "name": "Dwarven Thrower",
+        "type": "Warhammer",
+        "rarity": "Very Rare",
+        "stat_impact": "+3 bonus to attack/damage; thrown range 20/60; +1d8 damage (or +2d8 vs Giants).",
+        "source": "DMG",
+        "base_item": "Warhammer"
+    },
+    {
+        "name": "Frost Brand",
+        "type": "Any sword",
+        "rarity": "Very Rare",
+        "stat_impact": "+1d6 cold damage; Resistance to Fire.",
+        "source": "DMG",
+        "base_item": "Longsword"
+    },
+    {
+        "name": "Nine Lives Stealer",
+        "type": "Any sword",
+        "rarity": "Very Rare",
+        "stat_impact": "+2 bonus to attack/damage; can instant-kill a target with <100 HP on a Nat 20.",
+        "source": "DMG",
+        "base_item": "Longsword"
+    },
+    {
+        "name": "Oathbow",
+        "type": "Longbow",
+        "rarity": "Very Rare",
+        "stat_impact": "Advantage on Sworn Enemy; target gains no cover benefit; deal extra 3d6 piercing.",
+        "source": "DMG",
+        "base_item": "Longbow"
+    },
+    {
+        "name": "Scimitar of Speed",
+        "type": "Scimitar",
+        "rarity": "Very Rare",
+        "stat_impact": "+2 bonus to attack/damage; Bonus Action attack each turn.",
+        "source": "DMG",
+        "base_item": "Scimitar"
+    },
+    {
+        "name": "Staff of Power",
+        "type": "Staff",
+        "rarity": "Very Rare",
+        "stat_impact": "+2 bonus to attack/damage, AC, and Saving Throws.",
+        "source": "DMG"
+    },
+    {
+        "name": "Defender",
+        "type": "Any sword",
+        "rarity": "Legendary",
+        "stat_impact": "+3 bonus; can transfer bonus to AC instead of attack/damage.",
+        "source": "DMG",
+        "base_item": "Longsword"
+    },
+    {
+        "name": "Hammer of Thunderbolts",
+        "type": "Maul",
+        "rarity": "Legendary",
+        "stat_impact": "+4 Str (max 30); +1 bonus to attack/damage; instant kill giants on Nat 20 (DC 17 save).",
+        "source": "DMG",
+        "base_item": "Maul"
+    },
+    {
+        "name": "Holy Avenger",
+        "type": "Any sword",
+        "rarity": "Legendary",
+        "stat_impact": "+3 bonus to attack/damage; +2d10 radiant vs Fiends/Undead; Aura of Adv on saves vs spells.",
+        "source": "DMG",
+        "base_item": "Longsword"
+    },
+    {
+        "name": "Luck Blade",
+        "type": "Any sword",
+        "rarity": "Legendary",
+        "stat_impact": "+1 bonus to attack/damage and all saves; can cast Wish (1d3 charges).",
+        "source": "DMG",
+        "base_item": "Longsword"
+    },
+    {
+        "name": "Vorpal Sword",
+        "type": "Any sword",
+        "rarity": "Legendary",
+        "stat_impact": "+3 bonus to attack/damage; ignore resistance to slashing; decapitate on Nat 20.",
+        "source": "DMG",
+        "base_item": "Longsword"
+    },
+    {
+        "name": "Wave",
+        "type": "Trident",
+        "rarity": "Legendary",
+        "stat_impact": "On Nat 20, deal necrotic damage equal to half the target's max HP.",
+        "source": "DMG"
+    },
+    {
+        "name": "Blackrazor",
+        "type": "Greatsword",
+        "rarity": "Legendary",
+        "stat_impact": "+3 bonus to attack/damage; consume souls for temp HP and Advantage.",
+        "source": "DMG",
+        "base_item": "Greatsword"
+    },
+    {
+        "name": "Gloomwrought Glaive",
+        "type": "Glaive",
+        "rarity": "Rare",
+        "stat_impact": "+1 bonus to attack/damage; deal extra 1d4 psychic damage.",
+        "source": "EGTW"
+    },
+    {
+        "name": "Spear of Backbiting",
+        "type": "Spear",
+        "rarity": "Very Rare",
+        "stat_impact": "+2 bonus to attack/damage; range 20/60; cursed: can hit the thrower on a Nat 1.",
+        "source": "TYP",
+        "base_item": "Spear"
+    },
+    {
+        "name": "Belashyrra’s Beholder Crown",
+        "type": "Wondrous Item (Weapon-like)",
+        "rarity": "Legendary",
+        "stat_impact": "Cast eye ray effects as an action.",
+        "source": "ERFTLW"
+    }
+]

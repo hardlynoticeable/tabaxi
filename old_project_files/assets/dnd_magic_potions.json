@@ -1,0 +1,212 @@
+[
+    {
+        "name": "Potion of Healing",
+        "rarity": "Common",
+        "stat_impact": "Consumable: Restore 2d4 + 2 hit points.",
+        "source": "DMG"
+    },
+    {
+        "name": "Potion of Climbing",
+        "rarity": "Common",
+        "stat_impact": "Consumable: Grants climb speed equal to walk speed and advantage on Strength (Athletics) checks for 1 hour.",
+        "source": "DMG"
+    },
+    {
+        "name": "Potion of Animal Friendship",
+        "rarity": "Uncommon",
+        "stat_impact": "Consumable: Can cast Animal Friendship (DC 13) for 1 hour.",
+        "source": "DMG"
+    },
+    {
+        "name": "Potion of Greater Healing",
+        "rarity": "Uncommon",
+        "stat_impact": "Consumable: Restore 4d4 + 4 hit points.",
+        "source": "DMG"
+    },
+    {
+        "name": "Potion of Fire Breath",
+        "rarity": "Uncommon",
+        "stat_impact": "Consumable: Can exhale fire (4d6 damage, DC 13 Dex save) three times within 1 hour.",
+        "source": "DMG"
+    },
+    {
+        "name": "Potion of Giant Strength (Hill)",
+        "rarity": "Uncommon",
+        "stat_impact": "Consumable: Permanent: Strength becomes 21 for 1 hour.",
+        "source": "DMG"
+    },
+    {
+        "name": "Potion of Growth",
+        "rarity": "Uncommon",
+        "stat_impact": "Consumable: Become 'Enlarged' for 1d4 hours (+1d4 damage with weapons).",
+        "source": "DMG"
+    },
+    {
+        "name": "Potion of Poison",
+        "rarity": "Uncommon",
+        "stat_impact": "Consumable: Cursed: Take 3d6 poison damage and become Poisoned.",
+        "source": "DMG"
+    },
+    {
+        "name": "Potion of Resistance",
+        "rarity": "Uncommon",
+        "stat_impact": "Consumable: Permanent: Resistance to one damage type for 1 hour.",
+        "source": "DMG"
+    },
+    {
+        "name": "Potion of Water Breathing",
+        "rarity": "Uncommon",
+        "stat_impact": "Consumable: Breath underwater for 1 hour.",
+        "source": "DMG"
+    },
+    {
+        "name": "Philter of Love",
+        "rarity": "Uncommon",
+        "stat_impact": "Consumable: Become charmed by the next creature seen for 1 hour.",
+        "source": "DMG"
+    },
+    {
+        "name": "Potion of Clairvoyance",
+        "rarity": "Rare",
+        "stat_impact": "Consumable: Grants the effect of the Clairvoyance spell.",
+        "source": "DMG"
+    },
+    {
+        "name": "Potion of Diminution",
+        "rarity": "Rare",
+        "stat_impact": "Consumable: Become 'Reduced' for 1d4 hours.",
+        "source": "DMG"
+    },
+    {
+        "name": "Potion of Gaseous Form",
+        "rarity": "Rare",
+        "stat_impact": "Consumable: Grants the effect of the Gaseous Form spell for 1 hour.",
+        "source": "DMG"
+    },
+    {
+        "name": "Potion of Giant Strength (Frost/Stone)",
+        "rarity": "Rare",
+        "stat_impact": "Consumable: Permanent: Strength becomes 23 for 1 hour.",
+        "source": "DMG"
+    },
+    {
+        "name": "Potion of Giant Strength (Fire)",
+        "rarity": "Rare",
+        "stat_impact": "Consumable: Permanent: Strength becomes 25 for 1 hour.",
+        "source": "DMG"
+    },
+    {
+        "name": "Potion of Heroism",
+        "rarity": "Rare",
+        "stat_impact": "Consumable: Gain 10 temp HP and the 'Bless' spell effect for 1 hour.",
+        "source": "DMG"
+    },
+    {
+        "name": "Potion of Invulnerability",
+        "rarity": "Rare",
+        "stat_impact": "Consumable: Resistance to all damage for 1 minute.",
+        "source": "DMG"
+    },
+    {
+        "name": "Potion of Mind Reading",
+        "rarity": "Rare",
+        "stat_impact": "Consumable: Grants the effect of the Detect Thoughts spell for 1 hour.",
+        "source": "DMG"
+    },
+    {
+        "name": "Potion of Superior Healing",
+        "rarity": "Rare",
+        "stat_impact": "Consumable: Restore 8d4 + 8 hit points.",
+        "source": "DMG"
+    },
+    {
+        "name": "Potion of Flying",
+        "rarity": "Very Rare",
+        "stat_impact": "Consumable: Grants a flying speed equal to walking speed for 1 hour.",
+        "source": "DMG"
+    },
+    {
+        "name": "Potion of Giant Strength (Cloud)",
+        "rarity": "Very Rare",
+        "stat_impact": "Consumable: Permanent: Strength becomes 27 for 1 hour.",
+        "source": "DMG"
+    },
+    {
+        "name": "Potion of Invisibility",
+        "rarity": "Very Rare",
+        "stat_impact": "Consumable: Become invisible for 1 hour or until attacking/casting.",
+        "source": "DMG"
+    },
+    {
+        "name": "Potion of Longevity",
+        "rarity": "Very Rare",
+        "stat_impact": "Consumable: Reduces age by 1d6 + 6 years.",
+        "source": "DMG"
+    },
+    {
+        "name": "Potion of Speed",
+        "rarity": "Very Rare",
+        "stat_impact": "Consumable: Grants the effect of the Haste spell for 1 minute.",
+        "source": "DMG"
+    },
+    {
+        "name": "Potion of Supreme Healing",
+        "rarity": "Very Rare",
+        "stat_impact": "Consumable: Restore 10d4 + 20 hit points.",
+        "source": "DMG"
+    },
+    {
+        "name": "Potion of Vitality",
+        "rarity": "Very Rare",
+        "stat_impact": "Consumable: Removes exhaustion and cures diseases/poisons.",
+        "source": "DMG"
+    },
+    {
+        "name": "Potion of Giant Strength (Storm)",
+        "rarity": "Legendary",
+        "stat_impact": "Consumable: Permanent: Strength becomes 29 for 1 hour.",
+        "source": "DMG"
+    },
+    {
+        "name": "Oil of Etherealness",
+        "rarity": "Rare",
+        "stat_impact": "Consumable: Grants the effect of the Etherealness spell for 1 hour.",
+        "source": "DMG"
+    },
+    {
+        "name": "Oil of Sharpness",
+        "rarity": "Very Rare",
+        "stat_impact": "Consumable: Permanent: +3 bonus to attack and damage rolls for 1 hour.",
+        "source": "DMG"
+    },
+    {
+        "name": "Oil of Slipperiness",
+        "rarity": "Uncommon",
+        "stat_impact": "Consumable: Grants the effect of the Freedom of Movement spell for 8 hours.",
+        "source": "DMG"
+    },
+    {
+        "name": "Potion of Maximum Power",
+        "rarity": "Rare",
+        "stat_impact": "Consumable: Next spell of 4th level or lower deals maximum damage.",
+        "source": "EGtW"
+    },
+    {
+        "name": "Potion of Possibility",
+        "rarity": "Very Rare",
+        "stat_impact": "Consumable: Gain two Luck points (fragment of possibility) for 8 hours.",
+        "source": "EGtW"
+    },
+    {
+        "name": "Potion of Aqueous Form",
+        "rarity": "Rare",
+        "stat_impact": "Consumable: Transform into liquid form for 1 hour; underwater breathing and swim speed.",
+        "source": "TCoE"
+    },
+    {
+        "name": "Potion of Dragon's Majesty",
+        "rarity": "Legendary",
+        "stat_impact": "Consumable: Transform into an adult dragon of your choice for 1 hour.",
+        "source": "FTD"
+    }
+]

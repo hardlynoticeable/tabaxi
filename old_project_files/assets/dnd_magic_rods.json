@@ -1,0 +1,100 @@
+[
+    {
+        "name": "Rod of Absorption",
+        "rarity": "Very Rare",
+        "attunement": true,
+        "stat_impact": "No permanent stat changes. Can absorb spells and convert them into energy for casting your own spells.",
+        "source": "DMG"
+    },
+    {
+        "name": "Rod of Alertness",
+        "rarity": "Very Rare",
+        "attunement": true,
+        "stat_impact": "Permanent: Grants Advantage on Wisdom (Perception) checks and Initiative rolls while held.",
+        "source": "DMG"
+    },
+    {
+        "name": "Rod of Lordly Might",
+        "rarity": "Legendary",
+        "attunement": true,
+        "stat_impact": "Permanent: While held, functions as a +3 magical weapon (form varies). Provides other situational utility.",
+        "source": "DMG"
+    },
+    {
+        "name": "Rod of Resurrection",
+        "rarity": "Legendary",
+        "attunement": true,
+        "stat_impact": "No permanent stat changes. Allows casting of Resurrection, Heal, and Restoration spells.",
+        "source": "DMG"
+    },
+    {
+        "name": "Rod of Rulership",
+        "rarity": "Rare",
+        "attunement": true,
+        "stat_impact": "No permanent stat changes. Allows charming creatures within 120 feet as an action.",
+        "source": "DMG"
+    },
+    {
+        "name": "Rod of Security",
+        "rarity": "Very Rare",
+        "attunement": false,
+        "stat_impact": "No permanent stat changes. Transports user and up to 190 others to a paradise demiplane.",
+        "source": "DMG"
+    },
+    {
+        "name": "Rod of the Pact Keeper, +1",
+        "rarity": "Uncommon",
+        "attunement": true,
+        "stat_impact": "Permanent: +1 bonus to Warlock spell attack rolls and spell save DC while held.",
+        "source": "DMG"
+    },
+    {
+        "name": "Rod of the Pact Keeper, +2",
+        "rarity": "Rare",
+        "attunement": true,
+        "stat_impact": "Permanent: +2 bonus to Warlock spell attack rolls and spell save DC while held.",
+        "source": "DMG"
+    },
+    {
+        "name": "Rod of the Pact Keeper, +3",
+        "rarity": "Very Rare",
+        "attunement": true,
+        "stat_impact": "Permanent: +3 bonus to Warlock spell attack rolls and spell save DC while held.",
+        "source": "DMG"
+    },
+    {
+        "name": "Rod of Vonindod",
+        "rarity": "Rare",
+        "attunement": true,
+        "stat_impact": "No permanent stat changes. Used specifically for tracking fragments of Vonindod (Giant-related).",
+        "source": "Storm King's Thunder"
+    },
+    {
+        "name": "Rod of Retribution",
+        "rarity": "Uncommon",
+        "attunement": true,
+        "stat_impact": "No permanent stat changes. Reaction: Deal 2d6 lightning damage to an attacker within 60 feet.",
+        "source": "Explorer's Guide to Wildemount"
+    },
+    {
+        "name": "Tentacle Rod",
+        "rarity": "Rare",
+        "attunement": true,
+        "stat_impact": "No permanent stat changes. Used as a weapon to make three tentacle attacks; can reduce speed and impose disadvantage.",
+        "source": "DMG"
+    },
+    {
+        "name": "Immovable Rod",
+        "rarity": "Uncommon",
+        "attunement": false,
+        "stat_impact": "No permanent stat changes. Defies gravity when button is pressed; can hold up to 8,000 lbs.",
+        "source": "DMG"
+    },
+    {
+        "name": "Rod of Hellish Rebuke",
+        "rarity": "Rare",
+        "attunement": true,
+        "stat_impact": "No permanent stat changes. Reaction: Cast Hellish Rebuke at 4th level.",
+        "source": "Guildmaster's Guide to Ravnica"
+    }
+]

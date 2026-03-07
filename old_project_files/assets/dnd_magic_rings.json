@@ -1,0 +1,171 @@
+[
+    {
+        "name": "Ring of Animal Influence",
+        "rarity": "Rare",
+        "attunement": false,
+        "stat_impact": "No permanent stat changes. Allows casting Animal Friendship, Fear, or Speak with Animals.",
+        "source": "DMG"
+    },
+    {
+        "name": "Ring of Djinni Summoning",
+        "rarity": "Legendary",
+        "attunement": true,
+        "stat_impact": "No permanent stat changes. Summon a djinni for up to 1 hour.",
+        "source": "DMG"
+    },
+    {
+        "name": "Ring of Elemental Command",
+        "rarity": "Legendary",
+        "attunement": true,
+        "stat_impact": "Permanent: Advantage on attack rolls against elementals of the linked plane. Linked plane-specific resistances or movements become permanent after certain conditions.",
+        "source": "DMG"
+    },
+    {
+        "name": "Ring of Evasion",
+        "rarity": "Rare",
+        "attunement": true,
+        "stat_impact": "No permanent stat changes. Expend charges to succeed on failed Dexterity saving throws.",
+        "source": "DMG"
+    },
+    {
+        "name": "Ring of Feather Falling",
+        "rarity": "Rare",
+        "attunement": true,
+        "stat_impact": "Permanent: Automatically grants the effect of Feather Fall when falling.",
+        "source": "DMG"
+    },
+    {
+        "name": "Ring of Free Action",
+        "rarity": "Rare",
+        "attunement": true,
+        "stat_impact": "Permanent: Difficult terrain doesn't cost extra movement. Magic cannot reduce speed or cause paralysis/restraint.",
+        "source": "DMG"
+    },
+    {
+        "name": "Ring of Invisibility",
+        "rarity": "Legendary",
+        "attunement": true,
+        "stat_impact": "No permanent stat changes. Use an action to become invisible at will.",
+        "source": "DMG"
+    },
+    {
+        "name": "Ring of Jumping",
+        "rarity": "Uncommon",
+        "attunement": true,
+        "stat_impact": "No permanent stat changes. Cast the Jump spell as a bonus action at will.",
+        "source": "DMG"
+    },
+    {
+        "name": "Ring of Mind Shielding",
+        "rarity": "Uncommon",
+        "attunement": true,
+        "stat_impact": "Permanent: Immune to magic that allows others to read your thoughts, alignment, or creature type.",
+        "source": "DMG",
+        "base_item": "Shield"
+    },
+    {
+        "name": "Ring of Protection",
+        "rarity": "Rare",
+        "attunement": true,
+        "stat_impact": "Permanent: +1 bonus to AC and Saving Throws.",
+        "source": "DMG"
+    },
+    {
+        "name": "Ring of Regeneration",
+        "rarity": "Very Rare",
+        "attunement": true,
+        "stat_impact": "Permanent: Regain 1d6 hit points every 10 minutes.",
+        "source": "DMG"
+    },
+    {
+        "name": "Ring of Resistance",
+        "rarity": "Rare",
+        "attunement": true,
+        "stat_impact": "Permanent: Resistance to one specific damage type (Acid, Cold, Fire, Force, Lightning, Necrotic, Poison, Psychic, Radiant, or Thunder).",
+        "source": "DMG"
+    },
+    {
+        "name": "Ring of Shooting Stars",
+        "rarity": "Very Rare",
+        "attunement": true,
+        "stat_impact": "No permanent stat changes. Cast Dancing Lights, Light, Faerie Fire, or other unique effects.",
+        "source": "DMG"
+    },
+    {
+        "name": "Ring of Spell Storing",
+        "rarity": "Rare",
+        "attunement": true,
+        "stat_impact": "No permanent stat changes. Stores up to 5 levels worth of spells cast into it by anyone.",
+        "source": "DMG"
+    },
+    {
+        "name": "Ring of Spell Turning",
+        "rarity": "Legendary",
+        "attunement": true,
+        "stat_impact": "Permanent: Advantage on saving throws against any spell that targets only you. Can potentially reflect spells on a Nat 20.",
+        "source": "DMG"
+    },
+    {
+        "name": "Ring of Swimming",
+        "rarity": "Uncommon",
+        "attunement": false,
+        "stat_impact": "Permanent: Grants a swimming speed of 40 feet.",
+        "source": "DMG"
+    },
+    {
+        "name": "Ring of Telekinesis",
+        "rarity": "Very Rare",
+        "attunement": true,
+        "stat_impact": "No permanent stat changes. Cast Telekinesis at will.",
+        "source": "DMG"
+    },
+    {
+        "name": "Ring of Three Wishes",
+        "rarity": "Legendary",
+        "attunement": false,
+        "stat_impact": "No permanent stat changes. Use charges to cast the Wish spell.",
+        "source": "DMG"
+    },
+    {
+        "name": "Ring of Warmth",
+        "rarity": "Uncommon",
+        "attunement": true,
+        "stat_impact": "Permanent: Resistance to Cold damage. Tolerates temperatures as low as -50 degrees Fahrenheit.",
+        "source": "DMG"
+    },
+    {
+        "name": "Ring of Water Walking",
+        "rarity": "Uncommon",
+        "attunement": false,
+        "stat_impact": "Permanent: Can stand on and move across any liquid surface as if it were solid ground.",
+        "source": "DMG"
+    },
+    {
+        "name": "Ring of X-ray Vision",
+        "rarity": "Rare",
+        "attunement": true,
+        "stat_impact": "No permanent stat changes. See through solid matter out to 30 feet.",
+        "source": "DMG"
+    },
+    {
+        "name": "Ring of the Ram",
+        "rarity": "Rare",
+        "attunement": true,
+        "stat_impact": "No permanent stat changes. Use charges to make a spectral ram attack or break objects.",
+        "source": "DMG"
+    },
+    {
+        "name": "Ring of Temporal Salvation",
+        "rarity": "Rare",
+        "attunement": true,
+        "stat_impact": "Permanent: If you die, the ring teleports you to where you were 1 round ago and restores you to 3d6 + Constitution modifier hit points (single use).",
+        "source": "Explorer's Guide to Wildemount"
+    },
+    {
+        "name": "Ring of Shared Suffering",
+        "rarity": "Rare",
+        "attunement": true,
+        "stat_impact": "Permanent: Reaction to grant an ally resistance to damage from one attack, taking the same amount of damage yourself.",
+        "source": "Critical Role: Call of the Netherdeep"
+    }
+]

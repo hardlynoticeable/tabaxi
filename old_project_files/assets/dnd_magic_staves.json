@@ -1,0 +1,128 @@
+[
+    {
+        "name": "Staff of Adornment",
+        "rarity": "Common",
+        "attunement": false,
+        "stat_impact": "No permanent stat changes. Can hold up to 3 objects weighing 1 lb or less to float around the tip.",
+        "source": "XGE"
+    },
+    {
+        "name": "Staff of Birdcalls",
+        "rarity": "Common",
+        "attunement": false,
+        "stat_impact": "No permanent stat changes. Can create bird calls within 60 feet.",
+        "source": "XGE"
+    },
+    {
+        "name": "Staff of Flowers",
+        "rarity": "Common",
+        "attunement": false,
+        "stat_impact": "No permanent stat changes. Can cause a flower to sprout from the staff.",
+        "source": "XGE"
+    },
+    {
+        "name": "Staff of the Adder",
+        "rarity": "Uncommon",
+        "attunement": true,
+        "stat_impact": "Permanent: Functions as a magical quarterstaff. Can animate the head into a snake for 1d12 poison damage.",
+        "source": "DMG"
+    },
+    {
+        "name": "Staff of the Python",
+        "rarity": "Uncommon",
+        "attunement": true,
+        "stat_impact": "No permanent stat changes. Can transform into a Giant Constrictor Snake.",
+        "source": "DMG"
+    },
+    {
+        "name": "Staff of Charming",
+        "rarity": "Rare",
+        "attunement": true,
+        "stat_impact": "Permanent: Grants Advantage on saving throws against being charmed while held. Can expend charges to cast spells.",
+        "source": "DMG"
+    },
+    {
+        "name": "Staff of Healing",
+        "rarity": "Rare",
+        "attunement": true,
+        "stat_impact": "No permanent stat changes. Can expend charges to cast Cure Wounds, Lesser Restoration, or Mass Cure Wounds.",
+        "source": "DMG"
+    },
+    {
+        "name": "Staff of Swarming Insects",
+        "rarity": "Rare",
+        "attunement": true,
+        "stat_impact": "No permanent stat changes. Can expend charges to create clouds of insects or insect swarms.",
+        "source": "DMG"
+    },
+    {
+        "name": "Staff of the Woodlands",
+        "rarity": "Rare",
+        "attunement": true,
+        "stat_impact": "Permanent: +2 bonus to spell attack rolls and to attack/damage rolls with the staff. Can cast various druidic spells.",
+        "source": "DMG"
+    },
+    {
+        "name": "Staff of Withering",
+        "rarity": "Rare",
+        "attunement": true,
+        "stat_impact": "Permanent: Functions as a magical quarterstaff. Can expend charges to deal necrotic damage and disadvantage on Con/Str saves.",
+        "source": "DMG"
+    },
+    {
+        "name": "Staff of Fire",
+        "rarity": "Very Rare",
+        "attunement": true,
+        "stat_impact": "Permanent: Grants Resistance to Fire damage while held. Can expend charges to cast fire-based spells.",
+        "source": "DMG"
+    },
+    {
+        "name": "Staff of Frost",
+        "rarity": "Very Rare",
+        "attunement": true,
+        "stat_impact": "Permanent: Grants Resistance to Cold damage while held. Can expend charges to cast cold-based spells.",
+        "source": "DMG"
+    },
+    {
+        "name": "Staff of Power",
+        "rarity": "Very Rare",
+        "attunement": true,
+        "stat_impact": "Permanent: +2 bonus to AC, Saving Throws, and spell attack rolls. Functions as a +2 magical quarterstaff.",
+        "source": "DMG"
+    },
+    {
+        "name": "Staff of Striking",
+        "rarity": "Very Rare",
+        "attunement": true,
+        "stat_impact": "Permanent: +3 bonus to attack and damage rolls with the staff. Can expend charges to deal extra force damage.",
+        "source": "DMG"
+    },
+    {
+        "name": "Staff of Thunder and Lightning",
+        "rarity": "Very Rare",
+        "attunement": true,
+        "stat_impact": "Permanent: +2 bonus to attack and damage rolls with the staff. Can use specific lightning and thunder actions.",
+        "source": "DMG"
+    },
+    {
+        "name": "Staff of the Magi",
+        "rarity": "Legendary",
+        "attunement": true,
+        "stat_impact": "Permanent: +2 bonus to spell attack rolls. Advantage on saving throws against spells. Can absorb spells. Can cast many spells.",
+        "source": "DMG"
+    },
+    {
+        "name": "Staff of Dunamancy",
+        "rarity": "Very Rare",
+        "attunement": true,
+        "stat_impact": "Permanent: +2 bonus to spell attack rolls and spell save DC. Can cast specific dunamancy spells.",
+        "source": "EGtW"
+    },
+    {
+        "name": "Staff of Defense",
+        "rarity": "Rare",
+        "attunement": true,
+        "stat_impact": "Permanent: +1 bonus to AC while held. Can cast Mage Armor or Shield using charges.",
+        "source": "LMoP"
+    }
+]

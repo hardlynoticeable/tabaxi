@@ -1,0 +1,282 @@
+
+								HomeDungeons and Dragons 5th EditionDnD Characters: Guides for DnD 5e – RPGBOTDnD Races and Species Guides for DnD 5e									
+										Tabaxi: DnD 5e Race/Species Guide
+								 T.E. "RPGBOT" Kamstra
+								 October 29, 2025
+Introduction
+Mechanically, the Tabaxi is very strong with a set of racial traits well
+	suited to stealth and infiltration. They tend to excel in classes which
+	already have good skills like the Bard and the Rogue, so their two racial
+	skill proficiencies can expand those class’s already good skills.ezstandalone.cmd.push(function () { ezstandalone.showAds(167); });
+With Darkvision and a climb speed, Tabaxi can go a lot of places that other
+	races might have trouble reaching. Be sure to use your unusual movement
+	capabilities to surprise enemies or avoid situations which might be
+	dangerous.
+With the custom origin rules, the Tabaxi’s ability score increases and skills
+	becomes flexible, allowing the Tabaxi to expand beyond rogues and similar
+	classes, but at the same time the Tabaxi also loses much of what makes them
+	special. Claws were already a “ribbon” (a feature that is neat but doesn’t
+	have noteworthy mechanical impact), so it’s basically just the climb speed and
+	Feline Agility which distinguish the Tabaxi.ezstandalone.cmd.push(function () { ezstandalone.showAds(175); });
+The updated version of the Tabaxi published in Monsters of the Multiverse does return them at least partially to their previous niche of rogues and rogue-adjacent builds. Unless you intend to ignore the Tabaxi’s bonus proficiencies (in which case, play basically any other race), you’re likely going to opt for rogues, rogue-adjacent characters, or at least characters that will benefit from one or both skills.
+Disclaimer
+RPGBOT uses the color coding scheme which has become common among Pathfinder build handbooks, which is simple to understand and easy to read at a glance.ezstandalone.cmd.push(function () { ezstandalone.showAds(176); });
+	Red: Bad, useless options, or options which
+		are extremely situational. Nearly never useful.
+Orange: OK options, or useful options
+		that only apply in rare circumstances. Useful sometimes.
+Green: Good options. Useful often.
+Blue: Fantastic options, often essential
+		to the function of your character. Useful very frequently.
+We will not include 3rd-party content, including content from DMs Guild, in handbooks for official content because we can’t assume that your game will allow 3rd-party content or homebrew. We also won’t cover Unearthed Arcana content because it’s not finalized, and we can’t guarantee that it will be available to you in your games.ezstandalone.cmd.push(function () { ezstandalone.showAds(177); });
+The advice offered below is based on the current State of the 2014 DnD 5e Character Optimization Meta as of when the article was last updated. Keep in mind that the state of the meta periodically changes as new source materials are released, and the article will be updated accordingly as time allows.
+Table of Contents
+Introduction
+Disclaimer
+Tabaxi Versions
+Tabaxi in the 2024 DnD Rules
+Tabaxi Traits
+Tabaxi Classes (MotM)
+Tabaxi Classes (Customizable Origins)
+Tabaxi Classes (Classic Rules)
+Tabaxi Versions
+The Tabaxi effectively has three versions. The original version was published in Volo’s Guide to Monsters, then republished without changes in Explorer’s Guide to Wildemount.ezstandalone.cmd.push(function () { ezstandalone.showAds(178); });
+The introduction of the custom origin rules gave us the second version of the Tabaxi, allowing players to rearrange both the Tabaxi’s ability score increases and their skill proficiencies.
+Most recently, Monsters of the Multiverse updated the Tabaxi to return them to their original proficiencies in Perception and Stealth and raise their claw damage die to a d6, but they now use the new standard for ability score increases (+2/+1 or three +1’s).
+Tabaxi in the 2024 DnD Rules
+Tabaxi were most recently updated in Monsters of the Multiverse, and have not yet been updated for the 2024 DnD rules. To play a Tabaxi in the 2024 DnD rules, ignore the Ability Score Increases described in Monsters of the Multiverse. Instead, use the Ability Score Increases provided by your Background in the 2024 rules.ezstandalone.cmd.push(function () { ezstandalone.showAds(179); });
+Tabaxi Traits
+	Ability Score Increases: +2/+1 is
+		standard. The default ability score increases make the Tiefling good bards, fighters, paladins, rangers, rogues, sorcerers, and warlocks.
+	Age: Rarely impactful.
+	Size: Medium is very slightly better than
+		Small because you can’t be grappled or swallowed whole by as many
+		enemies.
+	Speed: Standard, but you also get Feline Agility.
+	Darkvision: In a game with a lot of dark
+		dungeons, Darkvision is essential.
+	Feline Agility: The reality of combat in 5e is that you won’t move every turn, and when you do need to move you sometimes need to move a great distance all at once. Feline Agility makes that much easier.
+	Cat’s Claws: Essentially decorative. Manufactured weapons will always be more effective.
+	Cat’s Talent: Two skills are welcome on any character, but the pre-selected skills don’t appeal to every character.
+	Languages: Common+1 is standard.
+Tabaxi Classes (MotM)
+Artificer
+The Tabaxi makes a passable artificer, but the things that make the Tabaxi interesting stop mattering when you can infuse Winged Boots.
+Barbarian
+Barbarians don’t have built-in options for climbing or flight, and being out
+	of melee range is crippling, so a climb speed and Feline Agility are great
+	tools for the Barbarian. Two additional skills also help you to expand your
+	capabilities outside of combat, which is often where the Barbarian
+	struggles.ezstandalone.cmd.push(function () { ezstandalone.showAds(180); });
+Bard
+A climb speed and Feline Agility can get you out of melee, and two skills are a great complement to a class that can do a lot with skills. Bards almost always have enough Dexterity to make Stealth work, and while bards typically have poor Wisdom, Perception is still great and you can compensate for poor Wisdom with Expertise.
+Cleric
+Perception is a great skill for the Cleric, but few clerics can use Stealth effectively. Clerics also notably can’t cast Darkvision, so getting it for free is always nice. The Tabaxi makes an excellent trickery cleric, giving you as many skills as most rogues (though no Expertise).
+Druid
+Druids need more dexterity than clerics to compensate for their poor armor, and they need Wisdom to back up their spells, making the Tabaxi’s skill proficiencies very helpful. Unfortunately, the Tabaxi’s additional movement options aren’t particularly useful for the Druid since you can typically solve the same problems using Wild Shape.ezstandalone.cmd.push(function () { ezstandalone.showAds(181); });
+Fighter
+The Tabaxi makes an excellent Dexterity-based fighter. With no way to make themselves fly or teleport, a climb speed and Feline Agility are great mobility options. Stealth works great for lightly-armored fighters, and while few fighters have great Wisdom, proficiency in Perception is always useful.
+ezstandalone.cmd.push(function () {
+    ezstandalone.showAds(107);
+});
+Monk
+Monks can’t make themselves fly (ascendant dragon can, but only briefly), so a climb speed is great. Feline Agility doubles the Monk’s already incredible speed, making tabaxi monks the fastest characters in races that only last for one round. Two skills helps close the skill gap between the Monk and the Rogue, making it easier to serve as your party’s Scout, especially since they line up so perfectly with the Monk’s ability scores.
+ezstandalone.cmd.push(function () {
+    ezstandalone.showAds(111);
+});
+Paladin
+The Tabaxi makes a good Dexterity-based paladin, but Perception is a hard skill for paladins because they’re already very MAD and typically need to dump Wisdom.ezstandalone.cmd.push(function () { ezstandalone.showAds(182); });
+ezstandalone.cmd.push(function () {
+    ezstandalone.showAds(112);
+});
+Ranger
+Climb speed, Darkvision, two of the Ranger’s favorite skills. The extra skills help close the skill gap between the Ranger and the Rogue, making it even easier to serve as your party’s Scout.
+ezstandalone.cmd.push(function () {
+    ezstandalone.showAds(113);
+});
+Rogue
+Climb speed, Darkvision, two of the Rogue’s favorite skills. The extra skills make it easy to expand beyond the Rogue’s basic roll as a Scout. Feline Agility works with Cunning Action so you can run up to six times your speed by taking the Dash action as both your Action and your Bonus Action and using Feline Agility in the same turn. I think it’s a terrible tragedy that you can’t deliver a Sneak Attack with the Tabaxi’s claws.
+ezstandalone.cmd.push(function () {
+    ezstandalone.showAds(114);
+});
+Sorcerer
+Climb speeds and feline agility are less appealing when you can cast spells that allow you to fly and teleport, but they might save you a spell known, which is a huge benefit for the Sorcerer since they learn so few spells. The two skills are fine, but they’re not great options for the Sorcerer.ezstandalone.cmd.push(function () { ezstandalone.showAds(183); });
+ezstandalone.cmd.push(function () {
+    ezstandalone.showAds(115);
+});
+Warlock
+Because warlocks get so few spell slots, the ability to solve problems without resorting to magic is very powerful. A climb speed can often suffice in place of flight, and Feline Agility makes it easier to escape and evade foes. The two skills are nice, too, but they’re not fantastic options for the Warlock.
+ezstandalone.cmd.push(function () {
+    ezstandalone.showAds(116);
+});
+Wizard
+The skills don’t work well for the Wizard, and beyond low levels you can make the Tabaxi’s traits redundant with low-level spells like Expeditious Retreat.
+Tabaxi Classes (Customizable Origins)
+This section assumes that you’re using the option “Customizing Your Origin” rules presented in Tasha’s Cauldron of Everything. If you’re not using those rules, scroll down to the next section.ezstandalone.cmd.push(function () { ezstandalone.showAds(184); });
+Artificer
+The Tabaxi makes a passable artificer, but the things that make the Tabaxi interesting stop mattering when you can infuse Winged Boots.
+Barbarian
+Barbarians don’t have built-in options for climbing or flight, and being out
+	of melee range is crippling, so a climb speed and Feline Agility are great
+	tools for the Barbarian. Two additional skills also help you to expand your
+	capabilities outside of combat, which is often where the Barbarian
+	struggles.
+Bard
+Two skills are great on a class that’s already built to use skills heavily, and your climb speed and Feline Agility keep you safely away from foes without cutting into your limited number of spells known.ezstandalone.cmd.push(function () { ezstandalone.showAds(185); });
+Cleric
+Two extra skills allow you to expand beyond the Cleric’s handful of
+	interesting skills, which is great if you want to play a trickery cleric and
+	pretend to be a rogue. Feline Agility is helpful if you need to rush into
+	range to help your allies.
+Druid
+Need speed? Be a horse. Need to climb? Be a monkey. The Tabaxi’s skills are
+	really the only thing that the Tabaxi adds to the druid. I don’t know if
+	Feline Agility works while using Wild Shape, but as a DM I would rule that it
+	doesn’t.
+ezstandalone.cmd.push(function () {
+    ezstandalone.showAds(145);
+});
+Fighter
+Much like other front-line martial classes, Feline Agility is a helpful
+	option for melee builds to close the distance to melee. Two additional skills
+	will help you make yourself useful outside of combat, and a climb speed is a
+	great way to traverse obstacles that frequently require magic to handle
+	quickly.ezstandalone.cmd.push(function () { ezstandalone.showAds(186); });
+ezstandalone.cmd.push(function () {
+    ezstandalone.showAds(107);
+});
+Monk
+Monks are already exceptionally fast, so by adding Feline Agility a tabaxi
+	monk can shatter single-round land speed records. The two additional skills
+	help to close the skill gap with rogues, allowing you to more easily serve as
+	your party’s scout, and a climb speed is frequently helpful for bypassing
+	obstacles.
+ezstandalone.cmd.push(function () {
+    ezstandalone.showAds(111);
+});
+Paladin
+Much like other front-line martial classes, Feline Agility is a helpful
+	option for melee builds to close the distance to melee. The Paladin usually
+	invests their skills into being a Face, which can frequently pigeon-hole the
+	paladin into one set of skills. Two additional skill proficiencies can help
+	you diversify, allowing you to explore skills that aren’t Charisma-based.
+ezstandalone.cmd.push(function () {
+    ezstandalone.showAds(112);
+});
+Ranger
+Two skills helps with the skill gap between the Ranger and the Rogue, and a
+	climb speed is great for a class without easy access to flight. Feline Agility
+	doesn’t have a ton of synergy here, but it’s really fun when combined with
+	Zephyr Strike.ezstandalone.cmd.push(function () { ezstandalone.showAds(187); });
+ezstandalone.cmd.push(function () {
+    ezstandalone.showAds(113);
+});
+Rogue
+Two extra skills, climb speed so that you can climb into people’s windows,
+	and Feline Agility works with Cunning Action so you can run up to six times
+	your speed by taking the Dash action as both your Action and your Bonus Action
+	and using Feline Agility in the same turn. I think it’s a terrible tragedy
+	that you can’t deliver a Sneak Attack with the Tabaxi’s claws.
+ezstandalone.cmd.push(function () {
+    ezstandalone.showAds(114);
+});
+Sorcerer
+Climb speeds and feline agility are less appealing when you can cast spells that allow you to fly and teleport, but they might save you a spell known, which is a huge benefit for the Sorcerer since they learn so few spells. The two skills are nice, allowing you to expand beyond Face skills, but the Tabaxi’s unique traits stop being interesting after low levels.
+ezstandalone.cmd.push(function () {
+    ezstandalone.showAds(115);
+});
+Warlock
+Because warlocks get so few spell slots, the ability to solve problems
+	without resorting to magic is very powerful. A climb speed can often suffice
+	in place of flight, and Feline Agility makes it easier to escape and evade
+	foes. The two skills are nice, too, allowing you to expand beyond Face skills,
+	but the Tabaxi’s unique traits stop being interesting after low levels.ezstandalone.cmd.push(function () { ezstandalone.showAds(188); });
+ezstandalone.cmd.push(function () {
+    ezstandalone.showAds(116);
+});
+Wizard
+Climb speeds and feline agility are less appealing when you can cast spells
+	that allow you to fly and teleport. Wizards don’t have a lot of good skill
+	options, unfortunately, so even the additional 2 skills aren’t especially
+	useful.
+Tabaxi Classes (Classic Rules)
+This section assumes that you’re not using the option “Customizing Your Origin” rules presented in Tasha’s Cauldron of Everything or the updated version of the race published in Mordenkainen’s Monsters of the Multiverse. If you are using those rules, scroll up to the previous section.
+ezstandalone.cmd.push(function () {
+    ezstandalone.showAds(106);
+});
+Artificer
+Bad ability spread.
+ezstandalone.cmd.push(function () {
+    ezstandalone.showAds(117);
+});
+Barbarian
+Barbarians could make great use of Feline Agility and a climb speed, but
+	they’re too dependent on a racial Strength increase for Tabaxi to be a good
+	option.ezstandalone.cmd.push(function () { ezstandalone.showAds(189); });
+ezstandalone.cmd.push(function () {
+    ezstandalone.showAds(146);
+});
+Bard
+The Tabaxi’s ability score increases are perfect for a Bard, regardless of
+	your choice of College. The Tabaxi’s free skills help to further pad the
+	Bard’s already excellent skills. Even the flavor lines up well: Tabaxi are
+	described as curious wanderers, trading in stories and trinkets.
+ezstandalone.cmd.push(function () {
+    ezstandalone.showAds(119);
+});
+Cleric
+With no Wisdom increase, Cleric is a really hard class for the Tabaxi. You
+	might be able to do something with the Trickery domain, but mechanically the
+	Tabaxi offers little that couldn’t be done better by the Kenku.
+ezstandalone.cmd.push(function () {
+    ezstandalone.showAds(120);
+});
+Druid
+All the same issues as cleric. Feline Agility appears to work while you use
+	Wild Shape, but that’s not enough to make the race/class combination
+	worthwhile.ezstandalone.cmd.push(function () { ezstandalone.showAds(190); });
+ezstandalone.cmd.push(function () {
+    ezstandalone.showAds(136);
+});
+Fighter
+Dexterity is a perfect basis for a fighter, whether you choose to use a
+	rapier or a ranged weapon. The Tabaxi’s free skills can help you fill roles
+	typically filled by a rogue, but you may need to pick up proficiency in
+	Thieves’ Tools from your background to round out the skillset.
+Monk
+Dexterity is a good basis for a Monk, and the Monk’s speed increase applies
+	to the Tabaxi’s climb speed, making you an excellent climber. Numerically, the
+	Kenku and Wood Elf are probably better options due to their Wisdom increases,
+	and the Tabaxi’s claws do not allow you to deal slashing damage with the
+	Monk’s increased unarmed strike damage.
+Paladin
+Dexterity and Charisma work great for a Dexterity-based paladin, and with decent Dexterity you can put Stealth proficiency to good use.ezstandalone.cmd.push(function () { ezstandalone.showAds(191); });
+If you don’t care about Stealth, grab a suit of full plate (yes, you’re going to ignore the strength requirement), and you’re good to go. Feline Agility will help get you into melee even with the 10 ft. speed penalty from wearing heavy armor with poor Strength, and your climb speed will help with obstacles most paladins can’t easily overcome without assistance.
+Ranger
+Kenku is a better option for the Ranger due to the Kenku’s Wisdom increase,
+	but the Tabaxi is still a good option. The Dexterity increase is always
+	welcome, and the Tabaxi’s free skill proficiencies will close the skill gap
+	between the Ranger and other class like Bard and Rogue which get more skills
+	while filling a similar role in the party.
+Rogue
+Tabaxi’s ability score increases work perfectly for the Rogue, and the free
+	skill proficiencies are skills which every Rogue should have anyway. Pick up
+	skills like Deception and Persuasion to capitalize on the Tabaxi’s Charisma
+	increase, and you’ve got a highly-skilled, charming rogue.ezstandalone.cmd.push(function () { ezstandalone.showAds(192); });
+Sorcerer
+A Charisma increase is a good start for the Sorcerer, and Dexterity will help
+	with your AC, but the Tabaxi doesn’t offer anything else specifically useful
+	for the Sorcerer. If you want to be a spellcaster, Warlock may be a better
+	option.
+Warlock
+Dexterity and Charisma are great for a warlock. Your Dexterity will pad your
+	AC, and Charisma will fuel your spells. The Tabaxi racial skills don’t
+	directly cater to the Warlock, but there’s nothing stopping you from building
+	a sneaky warlock. Grab a background with proficiency in Thieves’ Tools and you
+	can do a convincing impression of an Arcane Trickster Rogue.
+Wizard
+None of the Tabaxi’s traits work well for the Wizard.ezstandalone.cmd.push(function () { ezstandalone.showAds(193); });
+					About The Author
+										T.E. "RPGBOT" Kamstra
+					Tyler "RPGBOT" Kamstra has been the author of RPGBOT.net since 2013. Tyler began playing tabletop RPGs with 3rd edition Dungeons and Dragons over 20 years ago. Tyler has a long-standing love for building characters and for game mechanics, and brings that enthusiasm to everything he creates.
+				

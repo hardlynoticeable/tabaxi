@@ -1,0 +1,21 @@
+Item,Type,Cost,Damage,Properties
+Club,Simple Melee,1 sp,1d4 bludg.,Light
+Dagger,Simple Melee,2 gp,1d4 pierc.,"Finesse, Light, Thrown (20/60)"
+Greatclub,Simple Melee,2 sp,1d8 bludg.,Two-handed
+Handaxe,Simple Melee,5 gp,1d6 slash.,"Light, Thrown (20/60)"
+Javelin,Simple Melee,5 sp,1d6 pierc.,Thrown (30/120)
+Mace,Simple Melee,5 gp,1d6 bludg.,—
+Quarterstaff,Simple Melee,2 sp,1d6 bludg.,Versatile (1d8)
+Spear,Simple Melee,1 gp,1d6 pierc.,"Thrown (20/60), Versatile (1d8)"
+Light Crossbow,Simple Ranged,25 gp,1d8 pierc.,"Range 80/320, Loading, 2H"
+Shortbow,Simple Ranged,25 gp,1d6 pierc.,"Range 80/320, Two-handed"
+Battleaxe,Martial Melee,10 gp,1d8 slash.,Versatile (1d10)
+Greataxe,Martial Melee,30 gp,1d12 slash.,"Heavy, Two-handed"
+Greatsword,Martial Melee,50 gp,2d6 slash.,"Heavy, Two-handed"
+Longsword,Martial Melee,15 gp,1d8 slash.,Versatile (1d10)
+Maul,Martial Melee,10 gp,2d6 bludg.,"Heavy, Two-handed"
+Rapier,Martial Melee,25 gp,1d8 pierc.,Finesse
+Scimitar,Martial Melee,10 gp,1d6 slash.,"Finesse, Light"
+Shortsword,Martial Melee,10 gp,1d6 pierc.,"Finesse, Light"
+Warhammer,Martial Melee,15 gp,1d8 bludg.,Versatile (1d10)
+Longbow,Martial Ranged,50 gp,1d8 pierc.,"Range 150/600, Heavy, 2H"

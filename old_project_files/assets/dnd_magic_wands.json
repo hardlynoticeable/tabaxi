@@ -1,0 +1,149 @@
+[
+    {
+        "name": "Wand of Conducting",
+        "rarity": "Common",
+        "attunement": false,
+        "stat_impact": "No permanent stat changes. Can create orchestral music within 60 feet.",
+        "source": "XGE"
+    },
+    {
+        "name": "Wand of Pyrotechnics",
+        "rarity": "Common",
+        "attunement": false,
+        "stat_impact": "No permanent stat changes. Can create a burst of colored light or smoke.",
+        "source": "XGE"
+    },
+    {
+        "name": "Wand of Scowls",
+        "rarity": "Common",
+        "attunement": false,
+        "stat_impact": "No permanent stat changes. Can force a creature to scowl (DC 10 Cha save).",
+        "source": "XGE"
+    },
+    {
+        "name": "Wand of Smiles",
+        "rarity": "Common",
+        "attunement": false,
+        "stat_impact": "No permanent stat changes. Can force a creature to smile (DC 10 Cha save).",
+        "source": "XGE"
+    },
+    {
+        "name": "Wand of Magic Detection",
+        "rarity": "Uncommon",
+        "attunement": false,
+        "stat_impact": "No permanent stat changes. Can cast Detect Magic using charges.",
+        "source": "DMG"
+    },
+    {
+        "name": "Wand of Magic Missiles",
+        "rarity": "Uncommon",
+        "attunement": false,
+        "stat_impact": "No permanent stat changes. Can cast Magic Missile using charges.",
+        "source": "DMG"
+    },
+    {
+        "name": "Wand of Secrets",
+        "rarity": "Uncommon",
+        "attunement": false,
+        "stat_impact": "No permanent stat changes. Locates the nearest secret door or trap within 30 feet.",
+        "source": "DMG"
+    },
+    {
+        "name": "Wand of the War Mage, +1",
+        "rarity": "Uncommon",
+        "attunement": true,
+        "stat_impact": "Permanent: +1 bonus to spell attack rolls. Ignore half cover when making spell attacks.",
+        "source": "DMG"
+    },
+    {
+        "name": "Wand of Web",
+        "rarity": "Uncommon",
+        "attunement": true,
+        "stat_impact": "No permanent stat changes. Can cast Web (DC 15) using charges.",
+        "source": "DMG"
+    },
+    {
+        "name": "Wand of Binding",
+        "rarity": "Rare",
+        "attunement": true,
+        "stat_impact": "No permanent stat changes. Can cast Hold Person (DC 17) or Hold Monster (DC 17) using charges.",
+        "source": "DMG"
+    },
+    {
+        "name": "Wand of Enemy Detection",
+        "rarity": "Rare",
+        "attunement": true,
+        "stat_impact": "No permanent stat changes. Detects hostile creatures within 60 feet.",
+        "source": "DMG"
+    },
+    {
+        "name": "Wand of Fear",
+        "rarity": "Rare",
+        "attunement": true,
+        "stat_impact": "No permanent stat changes. Can cast Fear (DC 15) or create a cone of fear.",
+        "source": "DMG"
+    },
+    {
+        "name": "Wand of Fireballs",
+        "rarity": "Rare",
+        "attunement": true,
+        "stat_impact": "No permanent stat changes. Can cast Fireball (DC 15) using charges.",
+        "source": "DMG"
+    },
+    {
+        "name": "Wand of Lightning Bolts",
+        "rarity": "Rare",
+        "attunement": true,
+        "stat_impact": "No permanent stat changes. Can cast Lightning Bolt (DC 15) using charges.",
+        "source": "DMG"
+    },
+    {
+        "name": "Wand of Paralysis",
+        "rarity": "Rare",
+        "attunement": true,
+        "stat_impact": "No permanent stat changes. Forces a creature to make a DC 15 Con save or be paralyzed.",
+        "source": "DMG"
+    },
+    {
+        "name": "Wand of the War Mage, +2",
+        "rarity": "Rare",
+        "attunement": true,
+        "stat_impact": "Permanent: +2 bonus to spell attack rolls. Ignore half cover when making spell attacks.",
+        "source": "DMG"
+    },
+    {
+        "name": "Wand of Wonder",
+        "rarity": "Rare",
+        "attunement": true,
+        "stat_impact": "No permanent stat changes. Creates a random magical effect from a table of 100 possibilities.",
+        "source": "DMG"
+    },
+    {
+        "name": "Wand of the War Mage, +3",
+        "rarity": "Very Rare",
+        "attunement": true,
+        "stat_impact": "Permanent: +3 bonus to spell attack rolls. Ignore half cover when making spell attacks.",
+        "source": "DMG"
+    },
+    {
+        "name": "Wand of Polymorph",
+        "rarity": "Very Rare",
+        "attunement": true,
+        "stat_impact": "No permanent stat changes. Can cast Polymorph (DC 15) using charges.",
+        "source": "DMG"
+    },
+    {
+        "name": "Wand of Viscid Globs",
+        "rarity": "Rare",
+        "attunement": true,
+        "stat_impact": "No permanent stat changes. Makes a ranged attack to restrain a creature in sticky slime.",
+        "source": "Out of the Abyss"
+    },
+    {
+        "name": "Wand of Orcus",
+        "rarity": "Artifact",
+        "attunement": true,
+        "stat_impact": "Permanent: +3 bonus to AC. While held, functions as a +3 magical mace. Grants various high-level spells and necromantic powers.",
+        "source": "DMG"
+    }
+]

@@ -1,0 +1,229 @@
+[
+    {
+        "name": "Armor, +1",
+        "type": "Any",
+        "rarity": "Uncommon",
+        "stat_impact": "+1 bonus to AC",
+        "source": "DMG",
+        "category": "Armor and Shields"
+    },
+    {
+        "name": "Shield, +1",
+        "type": "Shield",
+        "rarity": "Uncommon",
+        "stat_impact": "+1 bonus to AC (Total +3)",
+        "source": "DMG",
+        "category": "Armor and Shields",
+        "base_item": "Shield"
+    },
+    {
+        "name": "Adamantine Armor",
+        "type": "Medium or Heavy",
+        "rarity": "Uncommon",
+        "stat_impact": "Crit Immunity: Any critical hit against you becomes a normal hit.",
+        "source": "DMG",
+        "category": "Armor and Shields"
+    },
+    {
+        "name": "Mithral Armor",
+        "type": "Medium or Heavy",
+        "rarity": "Uncommon",
+        "stat_impact": "Removes Stealth Disadvantage and Strength requirements.",
+        "source": "DMG",
+        "category": "Armor and Shields"
+    },
+    {
+        "name": "Armor of Resistance",
+        "type": "Any",
+        "rarity": "Rare",
+        "stat_impact": "Grants Resistance to one specific damage type.",
+        "source": "DMG",
+        "category": "Armor and Shields"
+    },
+    {
+        "name": "Armor of Invulnerability",
+        "type": "Plate",
+        "rarity": "Legendary",
+        "stat_impact": "Resistance to all Non-Magical Damage; can grant 10 mins of Immunity.",
+        "source": "DMG",
+        "category": "Armor and Shields",
+        "base_item": "Plate"
+    },
+    {
+        "name": "Weapon, +1",
+        "type": "Any",
+        "rarity": "Uncommon",
+        "stat_impact": "+1 bonus to attack and damage rolls.",
+        "source": "DMG",
+        "category": "Weapons"
+    },
+    {
+        "name": "Flame Tongue",
+        "type": "Any sword",
+        "rarity": "Rare",
+        "stat_impact": "Bonus Action: Ignite for +2d6 fire damage on hits.",
+        "source": "DMG",
+        "category": "Weapons",
+        "base_item": "Longsword"
+    },
+    {
+        "name": "Sun Blade",
+        "type": "Longsword",
+        "rarity": "Rare",
+        "stat_impact": "+2 bonus to attack/damage; deals radiant damage; +1d8 vs Undead.",
+        "source": "DMG",
+        "category": "Weapons",
+        "base_item": "Longsword"
+    },
+    {
+        "name": "Holy Avenger",
+        "type": "Any sword",
+        "rarity": "Legendary",
+        "stat_impact": "+3 bonus to attack/damage; +2d10 radiant vs Fiends/Undead; Aura of Adv on saves vs spells.",
+        "source": "DMG",
+        "category": "Weapons",
+        "base_item": "Longsword"
+    },
+    {
+        "name": "Vorpal Sword",
+        "type": "Any sword",
+        "rarity": "Legendary",
+        "stat_impact": "+3 bonus to attack/damage; ignore resistance to slashing; decapitate on Nat 20.",
+        "source": "DMG",
+        "category": "Weapons",
+        "base_item": "Longsword"
+    },
+    {
+        "name": "Rod of the Pact Keeper, +1",
+        "rarity": "Uncommon",
+        "stat_impact": "Permanent: +1 bonus to Warlock spell attack rolls and spell save DC while held.",
+        "source": "DMG",
+        "category": "Rods"
+    },
+    {
+        "name": "Immovable Rod",
+        "rarity": "Uncommon",
+        "stat_impact": "No permanent stat changes. Defies gravity when button is pressed.",
+        "source": "DMG",
+        "category": "Rods"
+    },
+    {
+        "name": "Rod of Lordly Might",
+        "rarity": "Legendary",
+        "stat_impact": "Permanent: While held, functions as a +3 magical weapon (form varies).",
+        "source": "DMG",
+        "category": "Rods"
+    },
+    {
+        "name": "Staff of Power",
+        "rarity": "Very Rare",
+        "stat_impact": "Permanent: +2 bonus to AC, Saving Throws, and spell attack rolls. Functions as a +2 magical quarterstaff.",
+        "source": "DMG",
+        "category": "Staves"
+    },
+    {
+        "name": "Staff of the Magi",
+        "rarity": "Legendary",
+        "stat_impact": "Permanent: +2 bonus to spell attack rolls. Advantage on saving throws against spells.",
+        "source": "DMG",
+        "category": "Staves"
+    },
+    {
+        "name": "Staff of Defense",
+        "rarity": "Rare",
+        "stat_impact": "Permanent: +1 bonus to AC while held.",
+        "source": "LMoP",
+        "category": "Staves"
+    },
+    {
+        "name": "Ring of Protection",
+        "rarity": "Rare",
+        "stat_impact": "Permanent: +1 bonus to AC and Saving Throws.",
+        "source": "DMG",
+        "category": "Rings"
+    },
+    {
+        "name": "Ring of Resistance",
+        "rarity": "Rare",
+        "stat_impact": "Permanent: Resistance to one specific damage type.",
+        "source": "DMG",
+        "category": "Rings"
+    },
+    {
+        "name": "Ring of Evasion",
+        "rarity": "Rare",
+        "stat_impact": "No permanent stat changes. Expend charges to succeed on failed Dexterity saving throws.",
+        "source": "DMG",
+        "category": "Rings"
+    },
+    {
+        "name": "Wand of the War Mage, +1",
+        "rarity": "Uncommon",
+        "stat_impact": "Permanent: +1 bonus to spell attack rolls. Ignore half cover when making spell attacks.",
+        "source": "DMG",
+        "category": "Wands"
+    },
+    {
+        "name": "Wand of Fireballs",
+        "rarity": "Rare",
+        "stat_impact": "No permanent stat changes. Can cast Fireball (DC 15) using charges.",
+        "source": "DMG",
+        "category": "Wands"
+    },
+    {
+        "name": "Potion of Healing",
+        "rarity": "Common",
+        "stat_impact": "Consumable: Restore 2d4 + 2 hit points.",
+        "source": "DMG",
+        "category": "Potions"
+    },
+    {
+        "name": "Potion of Giant Strength (Hill)",
+        "rarity": "Uncommon",
+        "stat_impact": "Consumable: Permanent: Strength becomes 21 for 1 hour.",
+        "source": "DMG",
+        "category": "Potions"
+    },
+    {
+        "name": "Spell Scroll (3rd Level)",
+        "rarity": "Uncommon",
+        "stat_impact": "Consumable: Cast a 3rd-level spell once (Save DC 15, Attack +7).",
+        "source": "DMG",
+        "category": "Scrolls"
+    },
+    {
+        "name": "Nether Scroll of Azumar",
+        "rarity": "Legendary",
+        "stat_impact": "Permanent: Reading for 50 hours grants permanent +2 to Intelligence (max 22).",
+        "source": "Rime of the Frostmaiden",
+        "category": "Scrolls"
+    },
+    {
+        "name": "Amulet of Health",
+        "rarity": "Rare",
+        "stat_impact": "Permanent: Constitution score becomes 19.",
+        "source": "DMG",
+        "category": "Wondrous Items"
+    },
+    {
+        "name": "Bag of Holding",
+        "rarity": "Uncommon",
+        "stat_impact": "Utility: Can hold up to 500 lbs in a demiplane.",
+        "source": "DMG",
+        "category": "Wondrous Items"
+    },
+    {
+        "name": "Headband of Intellect",
+        "rarity": "Uncommon",
+        "stat_impact": "Permanent: Intelligence score becomes 19.",
+        "source": "DMG",
+        "category": "Wondrous Items"
+    },
+    {
+        "name": "Manual of Gainful Exercise",
+        "rarity": "Very Rare",
+        "stat_impact": "Permanent: Strength score and maximum increase by 2.",
+        "source": "DMG",
+        "category": "Wondrous Items"
+    }
+]

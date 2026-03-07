@@ -1,0 +1,233 @@
+[
+    {
+        "name": "Amulet of Health",
+        "rarity": "Rare",
+        "attunement": true,
+        "stat_impact": "Permanent: Constitution score becomes 19. No effect if Con is already 19 or higher.",
+        "source": "DMG"
+    },
+    {
+        "name": "Belt of Giant Strength (Hill)",
+        "rarity": "Rare",
+        "attunement": true,
+        "stat_impact": "Permanent: Strength score becomes 21.",
+        "source": "DMG"
+    },
+    {
+        "name": "Belt of Giant Strength (Frost/Stone)",
+        "rarity": "Very Rare",
+        "attunement": true,
+        "stat_impact": "Permanent: Strength score becomes 23.",
+        "source": "DMG"
+    },
+    {
+        "name": "Belt of Giant Strength (Fire)",
+        "rarity": "Very Rare",
+        "attunement": true,
+        "stat_impact": "Permanent: Strength score becomes 25.",
+        "source": "DMG"
+    },
+    {
+        "name": "Belt of Giant Strength (Cloud)",
+        "rarity": "Very Rare",
+        "attunement": true,
+        "stat_impact": "Permanent: Strength score becomes 27.",
+        "source": "DMG"
+    },
+    {
+        "name": "Belt of Giant Strength (Storm)",
+        "rarity": "Legendary",
+        "attunement": true,
+        "stat_impact": "Permanent: Strength score becomes 29.",
+        "source": "DMG"
+    },
+    {
+        "name": "Gauntlets of Ogre Power",
+        "rarity": "Uncommon",
+        "attunement": true,
+        "stat_impact": "Permanent: Strength score becomes 19.",
+        "source": "DMG"
+    },
+    {
+        "name": "Headband of Intellect",
+        "rarity": "Uncommon",
+        "attunement": true,
+        "stat_impact": "Permanent: Intelligence score becomes 19.",
+        "source": "DMG"
+    },
+    {
+        "name": "Bracers of Defense",
+        "rarity": "Rare",
+        "attunement": true,
+        "stat_impact": "Permanent: +2 bonus to AC while wearing no armor and using no shield.",
+        "source": "DMG"
+    },
+    {
+        "name": "Cloak of Protection",
+        "rarity": "Uncommon",
+        "attunement": true,
+        "stat_impact": "Permanent: +1 bonus to AC and Saving Throws.",
+        "source": "DMG"
+    },
+    {
+        "name": "Cloak of Displacement",
+        "rarity": "Rare",
+        "attunement": true,
+        "stat_impact": "Permanent: Creatures have Disadvantage on attack rolls against you.",
+        "source": "DMG"
+    },
+    {
+        "name": "Goggles of Night",
+        "rarity": "Uncommon",
+        "attunement": false,
+        "stat_impact": "Permanent: Grants Darkvision out to 60 feet.",
+        "source": "DMG"
+    },
+    {
+        "name": "Periapt of Wound Closure",
+        "rarity": "Uncommon",
+        "attunement": true,
+        "stat_impact": "Permanent: Automatically stabilize when dying; double HP regained from hit dice.",
+        "source": "DMG"
+    },
+    {
+        "name": "Winged Boots",
+        "rarity": "Uncommon",
+        "attunement": true,
+        "stat_impact": "Permanent: Flying speed equal to walking speed for up to 4 hours.",
+        "source": "DMG"
+    },
+    {
+        "name": "Cloak of Invisibility",
+        "rarity": "Legendary",
+        "attunement": true,
+        "stat_impact": "Utility: Turn invisible for up to 2 hours per day.",
+        "source": "DMG"
+    },
+    {
+        "name": "Efreeti Bottle",
+        "rarity": "Very Rare",
+        "attunement": false,
+        "stat_impact": "Utility: Can summon an Efreeti which may serve or attack.",
+        "source": "DMG"
+    },
+    {
+        "name": "Helm of Brilliance",
+        "rarity": "Very Rare",
+        "attunement": true,
+        "stat_impact": "Permanent: Resistance to Fire; weapon deals extra 1d6 fire; various spell gems.",
+        "source": "DMG"
+    },
+    {
+        "name": "Talisman of Pure Good",
+        "rarity": "Legendary",
+        "attunement": true,
+        "stat_impact": "Utility: Can potentially instant-kill an evil creature (DC 20 Dex).",
+        "source": "DMG"
+    },
+    {
+        "name": "Bag of Holding",
+        "rarity": "Uncommon",
+        "attunement": false,
+        "stat_impact": "Utility: Can hold up to 500 lbs in a demiplane.",
+        "source": "DMG"
+    },
+    {
+        "name": "Handy Haversack",
+        "rarity": "Rare",
+        "attunement": false,
+        "stat_impact": "Utility: Organized storage; item you need is always on top.",
+        "source": "DMG"
+    },
+    {
+        "name": "Portable Hole",
+        "rarity": "Rare",
+        "attunement": false,
+        "stat_impact": "Utility: 10ft deep extra-dimensional hole.",
+        "source": "DMG"
+    },
+    {
+        "name": "Alchemy Jug",
+        "rarity": "Uncommon",
+        "attunement": false,
+        "stat_impact": "Utility: Produces various liquids (2 gallons of mayo, etc.).",
+        "source": "DMG"
+    },
+    {
+        "name": "Eldritch Claw Tattoo",
+        "rarity": "Uncommon",
+        "attunement": true,
+        "stat_impact": "Permanent: +1 bonus to attack/damage for unarmed strikes. Reach becomes 15ft for 1 min.",
+        "source": "TCoE"
+    },
+    {
+        "name": "Barrier Tattoo (Large)",
+        "rarity": "Very Rare",
+        "attunement": true,
+        "stat_impact": "Permanent: AC becomes 18 while wearing no armor.",
+        "source": "TCoE"
+    },
+    {
+        "name": "Manual of Bodily Health",
+        "rarity": "Very Rare",
+        "attunement": false,
+        "stat_impact": "Permanent: Constitution score and maximum for that score increase by 2.",
+        "source": "DMG"
+    },
+    {
+        "name": "Manual of Gainful Exercise",
+        "rarity": "Very Rare",
+        "attunement": false,
+        "stat_impact": "Permanent: Strength score and maximum for that score increase by 2.",
+        "source": "DMG"
+    },
+    {
+        "name": "Manual of Quickness of Action",
+        "rarity": "Very Rare",
+        "attunement": false,
+        "stat_impact": "Permanent: Dexterity score and maximum for that score increase by 2.",
+        "source": "DMG"
+    },
+    {
+        "name": "Tome of Clear Thought",
+        "rarity": "Very Rare",
+        "attunement": false,
+        "stat_impact": "Permanent: Intelligence score and maximum for that score increase by 2.",
+        "source": "DMG"
+    },
+    {
+        "name": "Tome of Leadership and Influence",
+        "rarity": "Very Rare",
+        "attunement": false,
+        "stat_impact": "Permanent: Charisma score and maximum for that score increase by 2.",
+        "source": "DMG"
+    },
+    {
+        "name": "Tome of Understanding",
+        "rarity": "Very Rare",
+        "attunement": false,
+        "stat_impact": "Permanent: Wisdom score and maximum for that score increase by 2.",
+        "source": "DMG"
+    },
+    {
+        "name": "Orb of Dragonkind",
+        "rarity": "Artifact",
+        "attunement": true,
+        "stat_impact": "Utility: Control or call dragons. Various minor/major properties.",
+        "source": "DMG"
+    },
+    {
+        "name": "Luxon Beacon",
+        "rarity": "Artifact",
+        "attunement": false,
+        "stat_impact": "Utility: Grants a fragment of possibility (reroll). Lore-heavy.",
+        "source": "EGTW"
+    },
+    {
+        "name": "Mirror of Life Trapping",
+        "rarity": "Very Rare",
+        "attunement": false,
+        "stat_impact": "Utility: Can trap creatures inside mirror cells.",
+        "source": "DMG"
+    }
+]

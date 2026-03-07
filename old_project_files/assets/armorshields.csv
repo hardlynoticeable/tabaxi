@@ -1,0 +1,14 @@
+Item,Type,Cost,AC,Properties,Weight
+Padded,Light,5 gp,11 + Dex,Stealth Disadv.,8 lb.
+Leather,Light,10 gp,11 + Dex,—,10 lb.
+Studded Leather,Light,45 gp,12 + Dex,—,13 lb.
+Hide,Medium,10 gp,12 + Dex (max 2),—,12 lb.
+Chain Shirt,Medium,50 gp,13 + Dex (max 2),—,20 lb.
+Scale Mail,Medium,50 gp,14 + Dex (max 2),Stealth Disadv.,45 lb.
+Breastplate,Medium,400 gp,14 + Dex (max 2),—,20 lb.
+Half Plate,Medium,750 gp,15 + Dex (max 2),Stealth Disadv.,40 lb.
+Ring Mail,Heavy,30 gp,14,Stealth Disadv.,40 lb.
+Chain Mail,Heavy,75 gp,16,"Str 13, Stealth Disadv.",55 lb.
+Splint,Heavy,200 gp,17,"Str 15, Stealth Disadv.",60 lb.
+Plate,Heavy,"1,500 gp",18,"Str 15, Stealth Disadv.",65 lb.
+Shield,Shield,10 gp,+2,—,6 lb.

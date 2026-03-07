@@ -1,0 +1,116 @@
+[
+    {
+        "name": "Spell Scroll (Cantrip)",
+        "rarity": "Common",
+        "stat_impact": "Consumable: Cast a cantrip once (Save DC 13, Attack +5).",
+        "source": "DMG"
+    },
+    {
+        "name": "Spell Scroll (1st Level)",
+        "rarity": "Common",
+        "stat_impact": "Consumable: Cast a 1st-level spell once (Save DC 13, Attack +5).",
+        "source": "DMG"
+    },
+    {
+        "name": "Spell Scroll (2nd Level)",
+        "rarity": "Uncommon",
+        "stat_impact": "Consumable: Cast a 2nd-level spell once (Save DC 13, Attack +5).",
+        "source": "DMG"
+    },
+    {
+        "name": "Spell Scroll (3rd Level)",
+        "rarity": "Uncommon",
+        "stat_impact": "Consumable: Cast a 3rd-level spell once (Save DC 15, Attack +7).",
+        "source": "DMG"
+    },
+    {
+        "name": "Spell Scroll (4th Level)",
+        "rarity": "Rare",
+        "stat_impact": "Consumable: Cast a 4th-level spell once (Save DC 15, Attack +7).",
+        "source": "DMG"
+    },
+    {
+        "name": "Spell Scroll (5th Level)",
+        "rarity": "Rare",
+        "stat_impact": "Consumable: Cast a 5th-level spell once (Save DC 17, Attack +9).",
+        "source": "DMG"
+    },
+    {
+        "name": "Spell Scroll (6th Level)",
+        "rarity": "Very Rare",
+        "stat_impact": "Consumable: Cast a 6th-level spell once (Save DC 17, Attack +9).",
+        "source": "DMG"
+    },
+    {
+        "name": "Spell Scroll (7th Level)",
+        "rarity": "Very Rare",
+        "stat_impact": "Consumable: Cast a 7th-level spell once (Save DC 18, Attack +10).",
+        "source": "DMG"
+    },
+    {
+        "name": "Spell Scroll (8th Level)",
+        "rarity": "Very Rare",
+        "stat_impact": "Consumable: Cast an 8th-level spell once (Save DC 18, Attack +10).",
+        "source": "DMG"
+    },
+    {
+        "name": "Spell Scroll (9th Level)",
+        "rarity": "Legendary",
+        "stat_impact": "Consumable: Cast a 9th-level spell once (Save DC 19, Attack +11).",
+        "source": "DMG"
+    },
+    {
+        "name": "Scroll of Protection (Aberrations)",
+        "rarity": "Rare",
+        "stat_impact": "Consumable: Create a 5-ft radius circle that blocks Aberrations for 5 mins.",
+        "source": "DMG"
+    },
+    {
+        "name": "Scroll of Protection (Beasts)",
+        "rarity": "Rare",
+        "stat_impact": "Consumable: Create a 5-ft radius circle that blocks Beasts for 5 mins.",
+        "source": "DMG"
+    },
+    {
+        "name": "Scroll of Protection (Celestials)",
+        "rarity": "Rare",
+        "stat_impact": "Consumable: Create a 5-ft radius circle that blocks Celestials for 5 mins.",
+        "source": "DMG"
+    },
+    {
+        "name": "Scroll of Protection (Elementals)",
+        "rarity": "Rare",
+        "stat_impact": "Consumable: Create a 5-ft radius circle that blocks Elementals for 5 mins.",
+        "source": "DMG"
+    },
+    {
+        "name": "Scroll of Protection (Fey)",
+        "rarity": "Rare",
+        "stat_impact": "Consumable: Create a 5-ft radius circle that blocks Fey for 5 mins.",
+        "source": "DMG"
+    },
+    {
+        "name": "Scroll of Protection (Fiends)",
+        "rarity": "Rare",
+        "stat_impact": "Consumable: Create a 5-ft radius circle that blocks Fiends for 5 mins.",
+        "source": "DMG"
+    },
+    {
+        "name": "Scroll of Protection (Plants)",
+        "rarity": "Rare",
+        "stat_impact": "Consumable: Create a 5-ft radius circle that blocks Plants for 5 mins.",
+        "source": "DMG"
+    },
+    {
+        "name": "Scroll of Protection (Undead)",
+        "rarity": "Rare",
+        "stat_impact": "Consumable: Create a 5-ft radius circle that blocks Undead for 5 mins.",
+        "source": "DMG"
+    },
+    {
+        "name": "Nether Scroll of Azumar",
+        "rarity": "Legendary",
+        "stat_impact": "Permanent: Reading for 50 hours grants permanent +2 to Intelligence (max 22) and saving throw advantage vs spells.",
+        "source": "Rime of the Frostmaiden"
+    }
+]

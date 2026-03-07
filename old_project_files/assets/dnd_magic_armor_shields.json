@@ -1,0 +1,223 @@
+[
+    {
+        "name": "Armor, +1",
+        "type": "Any",
+        "rarity": "Uncommon",
+        "stat_impact": "+1 bonus to AC",
+        "source": "DMG"
+    },
+    {
+        "name": "Shield, +1",
+        "type": "Shield",
+        "rarity": "Uncommon",
+        "stat_impact": "+1 bonus to AC (Total +3)",
+        "source": "DMG",
+        "base_item": "Shield"
+    },
+    {
+        "name": "Adamantine Armor",
+        "type": "Medium or Heavy",
+        "rarity": "Uncommon",
+        "stat_impact": "Crit Immunity: Any critical hit against you becomes a normal hit.",
+        "source": "DMG"
+    },
+    {
+        "name": "Mariner’s Armor",
+        "type": "Any",
+        "rarity": "Uncommon",
+        "stat_impact": "Grants a Swimming Speed equal to your walking speed.",
+        "source": "DMG"
+    },
+    {
+        "name": "Mithral Armor",
+        "type": "Medium or Heavy",
+        "rarity": "Uncommon",
+        "stat_impact": "Removes Stealth Disadvantage and Strength requirements.",
+        "source": "DMG"
+    },
+    {
+        "name": "Sentinel Shield",
+        "type": "Shield",
+        "rarity": "Uncommon",
+        "stat_impact": "Advantage on Initiative and Wisdom (Perception) checks.",
+        "source": "DMG",
+        "base_item": "Shield"
+    },
+    {
+        "name": "Armor, +2",
+        "type": "Any",
+        "rarity": "Rare",
+        "stat_impact": "+2 bonus to AC",
+        "source": "DMG"
+    },
+    {
+        "name": "Shield, +2",
+        "type": "Shield",
+        "rarity": "Rare",
+        "stat_impact": "+2 bonus to AC (Total +4)",
+        "source": "DMG",
+        "base_item": "Shield"
+    },
+    {
+        "name": "Armor of Resistance",
+        "type": "Any",
+        "rarity": "Rare",
+        "stat_impact": "Grants Resistance to one specific damage type.",
+        "source": "DMG"
+    },
+    {
+        "name": "Armor of Vulnerability",
+        "type": "Heavy",
+        "rarity": "Rare",
+        "stat_impact": "Resistance to one physical type; Vulnerability to the other two.",
+        "source": "DMG"
+    },
+    {
+        "name": "Arrow-Catching Shield",
+        "type": "Shield",
+        "rarity": "Rare",
+        "stat_impact": "+2 AC vs Ranged Attacks; can intercept attacks for allies within 5ft.",
+        "source": "DMG",
+        "base_item": "Shield"
+    },
+    {
+        "name": "Dragon Scale Mail",
+        "type": "Scale Mail",
+        "rarity": "Rare",
+        "stat_impact": "+1 bonus to AC; Resistance to dragon's element; Advantage vs Frightful Presence.",
+        "source": "DMG",
+        "base_item": "Scale Mail"
+    },
+    {
+        "name": "Elven Chain",
+        "type": "Chain Shirt",
+        "rarity": "Rare",
+        "stat_impact": "+1 bonus to AC; proficiency is granted while wearing.",
+        "source": "DMG",
+        "base_item": "Chain Shirt"
+    },
+    {
+        "name": "Glamoured Studded Leather",
+        "type": "Studded Leather",
+        "rarity": "Rare",
+        "stat_impact": "+1 bonus to AC; can magically disguise armor as clothing.",
+        "source": "DMG",
+        "base_item": "Leather"
+    },
+    {
+        "name": "Mizzium Armor",
+        "type": "Medium or Heavy",
+        "rarity": "Rare",
+        "stat_impact": "Crit Immunity; reduces damage from failed Strength/Constitution saves to 0.",
+        "source": "GGR"
+    },
+    {
+        "name": "Molten Bronze Skin",
+        "type": "Any",
+        "rarity": "Rare",
+        "stat_impact": "Resistance to Fire; armor cannot be removed against your will.",
+        "source": "MOT"
+    },
+    {
+        "name": "Shield of Missile Attraction",
+        "type": "Shield",
+        "rarity": "Rare",
+        "stat_impact": "Resistance to Ranged Damage; forces all ranged attacks within 10ft to target you.",
+        "source": "DMG",
+        "base_item": "Shield"
+    },
+    {
+        "name": "Armor, +3",
+        "type": "Any",
+        "rarity": "Very Rare",
+        "stat_impact": "+3 bonus to AC",
+        "source": "DMG"
+    },
+    {
+        "name": "Shield, +3",
+        "type": "Shield",
+        "rarity": "Very Rare",
+        "stat_impact": "+3 bonus to AC (Total +5)",
+        "source": "DMG",
+        "base_item": "Shield"
+    },
+    {
+        "name": "Animated Shield",
+        "type": "Shield",
+        "rarity": "Very Rare",
+        "stat_impact": "Protects you while leaving hands free (Bonus Action to activate).",
+        "source": "DMG",
+        "base_item": "Shield"
+    },
+    {
+        "name": "Demon Armor",
+        "type": "Plate",
+        "rarity": "Very Rare",
+        "stat_impact": "+1 bonus to AC; Unarmed strikes deal 1d8 magical; Disadvantage vs Demons.",
+        "source": "DMG",
+        "base_item": "Plate"
+    },
+    {
+        "name": "Dwarven Plate",
+        "type": "Plate",
+        "rarity": "Very Rare",
+        "stat_impact": "+2 bonus to AC; can reduce forced movement by 10 feet as a reaction.",
+        "source": "DMG",
+        "base_item": "Plate"
+    },
+    {
+        "name": "Spellguard Shield",
+        "type": "Shield",
+        "rarity": "Very Rare",
+        "stat_impact": "Advantage on Saves vs Spells; Spell attacks have Disadvantage against you.",
+        "source": "DMG",
+        "base_item": "Shield"
+    },
+    {
+        "name": "Crystal Armor",
+        "type": "Any",
+        "rarity": "Very Rare",
+        "stat_impact": "Resistance to Radiant/Necrotic; sheds light; can blind attackers.",
+        "source": "FTD"
+    },
+    {
+        "name": "Armor of Invulnerability",
+        "type": "Plate",
+        "rarity": "Legendary",
+        "stat_impact": "Resistance to all Non-Magical Damage; can grant 10 mins of Immunity.",
+        "source": "DMG",
+        "base_item": "Plate"
+    },
+    {
+        "name": "Plate of Etherealness",
+        "type": "Plate",
+        "rarity": "Legendary",
+        "stat_impact": "Allows casting of Etherealness to move through walls/planes.",
+        "source": "DMG",
+        "base_item": "Plate"
+    },
+    {
+        "name": "Armor of the Valiant Soul",
+        "type": "Plate",
+        "rarity": "Legendary/Artifact",
+        "stat_impact": "+1 to +3 AC (scaling); Resistance to Psychic; Immunity to Frightened.",
+        "source": "CRCotN",
+        "base_item": "Plate"
+    },
+    {
+        "name": "Scorpion Armor",
+        "type": "Plate",
+        "rarity": "Legendary",
+        "stat_impact": "+5 to Initiative; Immunity to Poison; deals damage to wearer if removed.",
+        "source": "ToA",
+        "base_item": "Plate"
+    },
+    {
+        "name": "Obsidian Flint Plate",
+        "type": "Plate",
+        "rarity": "Legendary",
+        "stat_impact": "Resistance to Fire; attackers within 10ft take fire damage when hitting you.",
+        "source": "PotA",
+        "base_item": "Plate"
+    }
+]
