@@ -40,7 +40,8 @@ export default function AbilityScores({ data, updateData }) {
         // Set the base scores and reset bonuses
         updateData({
             abilityScores: newScores,
-            abilityBonuses: { str: 0, dex: 0, con: 0, int: 0, wis: 0, cha: 0 }
+            abilityBonuses: { str: 0, dex: 0, con: 0, int: 0, wis: 0, cha: 0 },
+            abilityTokens: { t1: '', t2: '', t3: '' }
         });
 
         // Cooldown
@@ -67,70 +68,29 @@ export default function AbilityScores({ data, updateData }) {
         });
     };
 
-    const toggleBonus = (key, amt) => {
-        const bonuses = data.abilityBonuses ? { ...data.abilityBonuses } : { str: 0, dex: 0, con: 0, int: 0, wis: 0, cha: 0 };
+    const toggleToken = (key, tokenIdx) => {
+        const tokens = { ...(data.abilityTokens || { t1: '', t2: '', t3: '' }) };
+        const tokenKey = `t${tokenIdx}`;
 
-        // If clicking the currently active bonus, turn it off
-        if (bonuses[key] === amt) {
-            bonuses[key] = 0;
-            updateData({ abilityBonuses: bonuses });
-            return;
+        if (tokens[tokenKey] === key) {
+            // Unassign if already here
+            tokens[tokenKey] = '';
+        } else {
+            // Check if this stat already has 2 tokens
+            const count = Object.values(tokens).filter(v => v === key).length;
+            if (count >= 2) return;
+
+            // Assign token (steals it from elsewhere if it was assigned)
+            tokens[tokenKey] = key;
         }
 
-        // We can only have one +2 globally, and up to three +1s globally (or one +1 if using the +2/+1 rule).
-        // Let's implement strict checking based on MotM:
-        // Either: (+2) and (+1)
-        // Or: (+1), (+1), (+1)
+        const bonuses = { str: 0, dex: 0, con: 0, int: 0, wis: 0, cha: 0 };
+        Object.values(tokens).forEach(k => { if (k) bonuses[k]++; });
 
-        // Count existing bonuses
-        let hasPlusTwo = false;
-        let plusOneCount = 0;
-
-        for (const k in bonuses) {
-            if (bonuses[k] === 2) hasPlusTwo = true;
-            if (bonuses[k] === 1) plusOneCount++;
-        }
-
-        if (amt === 2) {
-            // Remove +2 from everywhere else
-            for (const k in bonuses) if (bonuses[k] === 2) bonuses[k] = 0;
-            // A +2 stat cannot also be the +1 stat
-            bonuses[key] = 2;
-        } else if (amt === 1) {
-            // If we already have a +2, we can only have one +1 total.
-            // If we don't have a +2, we can have up to three +1s.
-
-            // Unset this stat's +2 if it had it
-            hasPlusTwo = false;
-            for (const k in bonuses) {
-                if (k === key && bonuses[k] === 2) bonuses[k] = 0;
-                if (bonuses[k] === 2) hasPlusTwo = true;
-            }
-
-            if (hasPlusTwo) {
-                // Remove all other +1s, there can be only one if we have a +2
-                for (const k in bonuses) if (bonuses[k] === 1) bonuses[k] = 0;
-                bonuses[key] = 1;
-            } else {
-                // No +2 active. We can have up to three +1s.
-                // Re-count +1s since we might have just removed a +2 on ourselves
-                plusOneCount = 0;
-                for (const k in bonuses) if (bonuses[k] === 1 && k !== key) plusOneCount++;
-
-                if (plusOneCount >= 3) {
-                    // Too many +1s! Let's clear the "first" +1 we find just so they can click it.
-                    for (const k in bonuses) {
-                        if (bonuses[k] === 1 && k !== key) {
-                            bonuses[k] = 0;
-                            break;
-                        }
-                    }
-                }
-                bonuses[key] = 1;
-            }
-        }
-
-        updateData({ abilityBonuses: bonuses });
+        updateData({
+            abilityTokens: tokens,
+            abilityBonuses: bonuses
+        });
     };
 
     const getSortedScoresArray = () => {
@@ -233,9 +193,8 @@ export default function AbilityScores({ data, updateData }) {
                     Monsters of the Multiverse Rules
                 </h3>
                 <p className="text-sm opacity-90 leading-relaxed">
-                    Tabaxi Ability Score Increases are flexible! Use the <span className="font-bold text-brand-400">+1</span> and <span className="font-bold text-brand-400">+2</span> buttons to assign them. You can choose: <br />
-                    <span className="font-semibold text-emerald-300">• +2 to one score and +1 to a different score</span>, OR <br />
-                    <span className="font-semibold text-emerald-300">• +1 to three different scores</span>.<br />
+                    Tabaxi Ability Score Increases are flexible! Assign your <span className="font-bold text-brand-400">three +1 tokens</span> to any scores you wish. <br />
+                    <span className="font-semibold text-emerald-300">• You can assign up to two +1 tokens to a single score (for a +2 total), but not three.</span><br />
                 </p>
             </div>
 
@@ -276,20 +235,33 @@ export default function AbilityScores({ data, updateData }) {
                                 {label}
                             </label>
 
-                            {/* Left Side: Bonus Buttons */}
+                            {/* Left Side: Three +1 Token Buttons */}
                             <div className="flex flex-col gap-1 z-10 mt-2">
-                                <button
-                                    onClick={() => toggleBonus(key, 2)}
-                                    className={`w-8 h-8 rounded text-sm font-bold border transition-colors ${bonus === 2 ? 'bg-brand-500 border-brand-400 text-black shadow-[0_0_8px_rgba(16,185,129,0.5)]' : 'bg-gray-800 border-gray-600 text-gray-400 hover:border-brand-500 hover:text-brand-400'}`}
-                                >
-                                    +2
-                                </button>
-                                <button
-                                    onClick={() => toggleBonus(key, 1)}
-                                    className={`w-8 h-8 rounded text-sm font-bold border transition-colors ${bonus === 1 ? 'bg-brand-500 border-brand-400 text-black shadow-[0_0_8px_rgba(16,185,129,0.5)]' : 'bg-gray-800 border-gray-600 text-gray-400 hover:border-brand-500 hover:text-brand-400'}`}
-                                >
-                                    +1
-                                </button>
+                                {[1, 2, 3].map(tokenIdx => {
+                                    const tokenKey = `t${tokenIdx}`;
+                                    const isAssignedHere = data.abilityTokens?.[tokenKey] === key;
+                                    const isAssignedElsewhere = data.abilityTokens?.[tokenKey] && data.abilityTokens[tokenKey] !== key;
+
+                                    // Check if this stat already has 2 tokens and this specific token ISN'T one of them
+                                    const countOnThisStat = Object.values(data.abilityTokens || {}).filter(v => v === key).length;
+                                    const isBlockedByCount = countOnThisStat >= 2 && !isAssignedHere;
+
+                                    return (
+                                        <button
+                                            key={tokenIdx}
+                                            onClick={() => toggleToken(key, tokenIdx)}
+                                            disabled={isBlockedByCount}
+                                            className={`w-8 h-8 rounded text-[10px] font-black border transition-all flex items-center justify-center
+                                                ${isAssignedHere ? 'bg-brand-500 border-brand-400 text-black shadow-[0_0_8px_rgba(16,185,129,0.5)] scale-110 z-20' :
+                                                    isAssignedElsewhere ? 'bg-gray-800/20 border-gray-800 text-gray-700 cursor-not-allowed' :
+                                                        isBlockedByCount ? 'bg-gray-900 border-gray-800 text-gray-800 opacity-20 cursor-not-allowed' :
+                                                            'bg-gray-800 border-gray-600 text-gray-500 hover:border-brand-500 hover:text-brand-400'}`}
+                                            title={isAssignedHere ? `Token ${tokenIdx} assigned to ${label}` : isAssignedElsewhere ? `Token ${tokenIdx} assigned elsewhere` : `Assign Token ${tokenIdx} to ${label}`}
+                                        >
+                                            +1
+                                        </button>
+                                    );
+                                })}
                             </div>
 
                             {/* Center: The Score Input */}
