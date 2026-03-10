@@ -270,59 +270,42 @@ export default function Equipment({ data, updateData }) {
                                         <div>
                                             <h4 className="font-bold text-lg text-white leading-tight">{item.name}</h4>
                                             <div className="flex flex-col">
-                                                <p className="text-[10px] text-gray-500 uppercase font-black flex items-center gap-2">
-                                                    {item.equipped_slot || inferEquippedSlot(item)} • {item.rarity || (item.Cost ? item.Cost : 'Standard')}
-                                                </p>
-                                                {/* Proactive Stats Preview */}
-                                                {!item.isEquipped && (() => {
+                                                {(() => {
                                                     const slot = item.equipped_slot || inferEquippedSlot(item);
-                                                    if (slot === 'Weapon' && (item.Damage || item.damage)) {
-                                                        const isProf = weaponProfs.some(p => item.type?.includes(p)) || item.type === 'Any' || item.name === "Cat's Claws";
-                                                        const isFinesse = (item.Properties || item.properties || '').toLowerCase().includes('finesse');
-                                                        const mod = (isFinesse && stats.mods.dex > stats.mods.str) ? stats.mods.dex : stats.mods.str;
-                                                        const atk = mod + (isProf ? stats.profBonus : 0) + (Number(item.attack_bonus) || 0);
-                                                        const dmg = mod + (Number(item.damage_bonus) || 0);
-                                                        return (
-                                                            <div className="mt-3 py-1.5 px-3 bg-emerald-500/10 border border-emerald-500/30 rounded flex items-center gap-2 shadow-sm shadow-emerald-500/5">
-                                                                <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></div>
-                                                                <p className="text-[10px] text-emerald-400 font-black uppercase tracking-widest leading-none">
-                                                                    {atk >= 0 ? '+' : ''}{atk} to hit | {item.Damage || item.damage}{dmg >= 0 ? '+' : ''}{dmg} dmg
-                                                                </p>
-                                                            </div>
-                                                        );
-                                                    }
-                                                    if (slot === 'Armor') {
-                                                        const baseAcMatch = (item.AC || '').match(/^(\d+)/);
-                                                        const baseAc = baseAcMatch ? parseInt(baseAcMatch[1], 10) : 10;
-                                                        const type = (item.Type || item.type || '').toLowerCase();
-                                                        let previewAc = baseAc;
-                                                        if (type.includes('light')) previewAc += stats.mods.dex;
-                                                        else if (type.includes('medium')) previewAc += Math.min(stats.mods.dex, 2);
-                                                        // Heavy AC is just baseAc
+                                                    let detailText = item.rarity || (item.Cost ? item.Cost : 'Standard');
+                                                    let isPreview = false;
 
-                                                        const shieldEquipped = inventory.some(i => i.isEquipped && (i.equipped_slot === 'Shield' || inferEquippedSlot(i) === 'Shield'));
-                                                        const previewText = `AC IF EQUIPPED: ${previewAc}${shieldEquipped ? ` / ${previewAc + 2}` : ''}`;
-                                                        return (
-                                                            <div className="mt-3 py-1.5 px-3 bg-emerald-500/10 border border-emerald-500/30 rounded flex items-center gap-2 shadow-sm shadow-emerald-500/5">
-                                                                <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></div>
-                                                                <p className="text-[10px] text-emerald-400 font-black uppercase tracking-widest leading-none">
-                                                                    {previewText}
-                                                                </p>
-                                                            </div>
-                                                        );
+                                                    if (!item.isEquipped) {
+                                                        if (slot === 'Weapon' && (item.Damage || item.damage)) {
+                                                            const isProf = weaponProfs.some(p => item.type?.includes(p)) || item.type === 'Any' || item.name === "Cat's Claws";
+                                                            const isFinesse = (item.Properties || item.properties || '').toLowerCase().includes('finesse');
+                                                            const mod = (isFinesse && stats.mods.dex > stats.mods.str) ? stats.mods.dex : stats.mods.str;
+                                                            const atk = mod + (isProf ? stats.profBonus : 0) + (Number(item.attack_bonus) || 0);
+                                                            const dmg = mod + (Number(item.damage_bonus) || 0);
+                                                            detailText = `${atk >= 0 ? '+' : ''}${atk} to hit | ${item.Damage || item.damage}${dmg >= 0 ? '+' : ''}${dmg} dmg`;
+                                                            isPreview = true;
+                                                        } else if (slot === 'Armor') {
+                                                            const baseAcMatch = (item.AC || '').match(/^(\d+)/);
+                                                            const baseAc = baseAcMatch ? parseInt(baseAcMatch[1], 10) : 10;
+                                                            const type = (item.Type || item.type || '').toLowerCase();
+                                                            let previewAc = baseAc;
+                                                            if (type.includes('light')) previewAc += stats.mods.dex;
+                                                            else if (type.includes('medium')) previewAc += Math.min(stats.mods.dex, 2);
+                                                            const shieldEquipped = inventory.some(i => i.isEquipped && (i.equipped_slot === 'Shield' || inferEquippedSlot(i) === 'Shield'));
+                                                            detailText = `${previewAc}${shieldEquipped ? ` / ${previewAc + 2}` : ''} AC`;
+                                                            isPreview = true;
+                                                        } else if (slot === 'Shield') {
+                                                            const currentAc = stats.hasShield ? stats.ac - 2 : stats.ac;
+                                                            detailText = `${currentAc} / ${currentAc + 2} AC`;
+                                                            isPreview = true;
+                                                        }
                                                     }
-                                                    if (slot === 'Shield' && !item.isEquipped) {
-                                                        const currentAc = stats.hasShield ? stats.ac - 2 : stats.ac;
-                                                        return (
-                                                            <div className="mt-3 py-1.5 px-3 bg-emerald-500/10 border border-emerald-500/30 rounded flex items-center gap-2 shadow-sm shadow-emerald-500/5">
-                                                                <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></div>
-                                                                <p className="text-[10px] text-emerald-400 font-black uppercase tracking-widest leading-none">
-                                                                    AC IF EQUIPPED: {currentAc} / {currentAc + 2}
-                                                                </p>
-                                                            </div>
-                                                        );
-                                                    }
-                                                    return null;
+
+                                                    return (
+                                                        <p className={`text-[10px] uppercase font-black flex items-center gap-2 ${isPreview ? 'text-emerald-400' : 'text-gray-500'}`}>
+                                                            {slot} • {detailText}
+                                                        </p>
+                                                    );
                                                 })()}
                                             </div>
                                         </div>
