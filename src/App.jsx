@@ -21,7 +21,14 @@ function App() {
       </main>
 
       <footer className="fixed bottom-0 w-full z-50 bg-black/50 backdrop-blur-md border-t border-dark-border py-4 text-center text-sm text-gray-500">
-        Created for D&D 5e Character Generation
+        <a
+          href="https://github.com/hardlynoticeable/tabaxi"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-emerald-400 transition-colors"
+        >
+          Created for D&D 5e Character Generation
+        </a>
       </footer>
     </div>
   );
