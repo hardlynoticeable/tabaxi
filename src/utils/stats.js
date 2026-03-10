@@ -139,10 +139,29 @@ export function calculateStats(characterData) {
         if (characterData.infusionDefense) ac += (level >= 10 ? 2 : 1);
     }
 
+    // Speed Calculation
+    let speed = 30;
+    let climbSpeed = 30;
+
+    if (characterData.class === 'Monk' && level >= 2) {
+        // Unarmored Movement: +10 at L2, +15 at L6, +20 at L10, +25 at L14, +30 at L18
+        if (level >= 18) speed += 30;
+        else if (level >= 14) speed += 25;
+        else if (level >= 10) speed += 20;
+        else if (level >= 6) speed += 15;
+        else speed += 10;
+        climbSpeed = speed; // Monk speed applies to all movement types
+    } else if (characterData.class === 'Barbarian' && level >= 5) {
+        speed += 10;
+        climbSpeed += 10;
+    }
+
     ac += acBonus;
 
     return {
         ac,
+        speed,
+        climbSpeed,
         saveBonus,
         profBonus,
         mods: { str: strMod, dex: dexMod, con: conMod, int: intMod, wis: wisMod, cha: chaMod },

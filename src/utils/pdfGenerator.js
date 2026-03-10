@@ -35,7 +35,7 @@ export async function generateCharacterPDF(characterData) {
         setField('ProfBonus', `+${profBonus}`, 10);
         setField('Initiative', mods.dex >= 0 ? `+${mods.dex}` : mods.dex, 10);
         setField('AC', ac.toString(), 12);
-        setField('Speed', "30' / 30' (Climb)", 10);
+        setField('Speed', `${stats.speed}' / ${stats.climbSpeed}' (Climb)`, 10);
         setField('Size', characterData.size || 'Medium', 10);
 
         // Character Lore & Personality
