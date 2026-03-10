@@ -73,7 +73,7 @@ export default function AbilityScoreImpact({ data }) {
 
                     {/* HP Breakdown */}
                     <div className="flex justify-between items-center border-b border-gray-800/50 pb-2">
-                        <span className="text-xs font-bold text-gray-400 uppercase">Health Points</span>
+                        <span className="text-xs font-bold text-gray-400 uppercase">Hit Points</span>
                         <div className="text-right">
                             <p className="text-xs font-mono text-white">
                                 {stats.breakdown.hp.base} (L1)
