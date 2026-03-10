@@ -2,6 +2,7 @@ import { PDFDocument } from 'pdf-lib';
 import { CLASSES, SKILLS, SUBCLASSES } from '../data/rules5e';
 import { SPELLCASTING_PROGRESSIONS, ATTACK_CANTRIPS } from '../data/spells5e';
 import { EQUIPMENT_DB } from '../data/equipment';
+import { STARTING_PACKS } from '../data/startingPacks';
 import { calculateStats } from './stats';
 
 export async function generateCharacterPDF(characterData) {
@@ -36,6 +37,21 @@ export async function generateCharacterPDF(characterData) {
         setField('AC', ac.toString(), 12);
         setField('Speed', "30'", 10); // Penalty logic can be re-added if needed
         setField('Size', characterData.size || 'Medium', 10);
+
+        // Character Lore & Personality
+        setField('PersonalityTraits', characterData.personalityTraits, 9);
+        setField('Ideals', characterData.ideals, 9);
+        setField('Bonds', characterData.bonds, 9);
+        setField('Flaws', characterData.flaws, 9);
+        setField('Backstory', characterData.backstory, 9);
+
+        // Physical Characteristics
+        setField('Age', characterData.age, 10);
+        setField('Height', characterData.height, 10);
+        setField('Weight', characterData.weight, 10);
+        setField('Eyes', characterData.eyes, 10);
+        setField('Skin', characterData.skin, 10);
+        setField('Hair', characterData.hair, 10);
 
         // Ability Scores & Mods
         const abilities = ['STR', 'DEX', 'CON', 'INT', 'WIS', 'CHA'];
@@ -130,7 +146,11 @@ export async function generateCharacterPDF(characterData) {
 
         // Weapons and Attacks
         const inventory = characterData.inventory || [];
-        const equippedWeapons = inventory.filter(i => i.isEquipped && i.body_slot === 'Weapon').slice(0, 3);
+        const equippedWeapons = inventory.filter(i =>
+            i.isEquipped &&
+            i.equipped_slot === 'Weapon' &&
+            i.Damage && i.Damage.trim() !== ""
+        ).slice(0, 3);
         const attackCantrips = (characterData.selectedCantrips || []).filter(c => ATTACK_CANTRIPS[c]);
 
         const weaponSlots = [
@@ -166,7 +186,15 @@ export async function generateCharacterPDF(characterData) {
         });
 
         // Inventory Mapping (Treasure field)
-        const inventoryText = inventory.map(i => `• ${i.name}${i.isEquipped ? ' (E)' : ''}${i.isAttuned ? ' (A)' : ''}`).join('\n');
+        let inventoryList = inventory.map(i => `• ${i.name}${i.isEquipped ? ' (E)' : ''}${i.isAttuned ? ' (A)' : ''}`);
+
+        if (characterData.startingPack && STARTING_PACKS[characterData.startingPack]) {
+            const packName = characterData.startingPack;
+            const packContents = STARTING_PACKS[packName].map(item => item.Item).join(', ');
+            inventoryList = [`[${packName}]: ${packContents}`, "", ...inventoryList];
+        }
+
+        const inventoryText = inventoryList.join('\n');
         setField('Treasure', inventoryText, 8);
 
         // Features and Traits

@@ -99,6 +99,36 @@ export default function CoreStats({ data, updateData }) {
 
     const currentClass = data.class ? CLASSES[data.class] : null;
 
+    const randomizeAppearance = () => {
+        const eyeColors = ['Amber', 'Copper', 'Yellow', 'Emerald', 'Sapphire', 'Golden', 'Pale Green'];
+        const skinPatterns = [
+            'Leopard-spotted gold', 'Tiger-striped orange', 'Charcoal grey with silver highlights',
+            'Snowy white with grey spots', 'Solid sleek black', 'Tortoiseshell calico',
+            'Sandy beige with brown stripes', 'Smoky grey lynx-pattern'
+        ];
+        const hairLengths = ['Short-haired', 'Medium-haired', 'Long-haired', 'Tufted'];
+
+        // Height: 5'0" to 6'10" (Tabaxi are tall/lanky)
+        const totalInches = 60 + Math.floor(Math.random() * 22);
+        const feet = Math.floor(totalInches / 12);
+        const inches = totalInches % 12;
+
+        // Weight: 100 to 220 lb
+        const weight = 100 + Math.floor(Math.random() * 120);
+
+        // Age: 18 to 60
+        const age = 18 + Math.floor(Math.random() * 42);
+
+        updateData({
+            eyes: eyeColors[Math.floor(Math.random() * eyeColors.length)],
+            skin: skinPatterns[Math.floor(Math.random() * skinPatterns.length)],
+            hair: hairLengths[Math.floor(Math.random() * hairLengths.length)],
+            height: `${feet}'${inches}"`,
+            weight: `${weight} lb`,
+            age: age.toString()
+        });
+    };
+
     return (
         <div className="space-y-6 animate-fade-in text-[var(--color-brand-100)] h-full overflow-y-auto pr-2 pb-6 custom-scrollbar">
             <h2 className="text-3xl mb-6 font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">
@@ -197,50 +227,131 @@ export default function CoreStats({ data, updateData }) {
                     )}
                 </div>
 
-                {/* Background & Alignment */}
-                <div className="space-y-6 bg-[var(--color-dark-card)] p-6 rounded-lg border border-gray-700 h-fit">
-                    <div>
-                        <label className="block text-sm font-bold text-emerald-400 tracking-wide uppercase mb-2">Background</label>
-                        <select
-                            value={data.background}
-                            onChange={(e) => updateData({ background: e.target.value })}
-                            className="w-full bg-gray-900 border border-gray-600 rounded px-4 py-3 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 text-white mb-3"
-                        >
-                            <option value="" disabled>Select a Background</option>
-                            {backgrounds.map(b => <option key={b} value={b}>{b}</option>)}
-                        </select>
-                        {data.background && BACKGROUNDS[data.background] && (
-                            <div className="text-sm p-3 bg-gray-800 border border-gray-600 rounded">
-                                <span className="text-emerald-400 font-bold block mb-1">Provided Skills:</span>
-                                <span className="text-gray-300">{BACKGROUNDS[data.background].join(', ')}</span>
+                {/* Background & Alignment + Physical Characteristics */}
+                <div className="space-y-8">
+                    <div className="space-y-6 bg-[var(--color-dark-card)] p-6 rounded-lg border border-gray-700 h-fit">
+                        <div>
+                            <label className="block text-sm font-bold text-emerald-400 tracking-wide uppercase mb-2">Background</label>
+                            <select
+                                value={data.background}
+                                onChange={(e) => updateData({ background: e.target.value })}
+                                className="w-full bg-gray-900 border border-gray-600 rounded px-4 py-3 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 text-white mb-3"
+                            >
+                                <option value="" disabled>Select a Background</option>
+                                {backgrounds.map(b => <option key={b} value={b}>{b}</option>)}
+                            </select>
+                            {data.background && BACKGROUNDS[data.background] && (
+                                <div className="text-sm p-3 bg-gray-800 border border-gray-600 rounded">
+                                    <span className="text-emerald-400 font-bold block mb-1">Provided Skills:</span>
+                                    <span className="text-gray-300">{BACKGROUNDS[data.background].join(', ')}</span>
+                                </div>
+                            )}
+                        </div>
+
+                        <div>
+                            <label className="block text-sm font-bold text-emerald-400 tracking-wide uppercase mb-2">Alignment</label>
+                            <select
+                                value={data.alignment}
+                                onChange={(e) => updateData({ alignment: e.target.value })}
+                                className="w-full bg-gray-900 border border-gray-600 rounded px-4 py-3 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 text-white"
+                            >
+                                <option value="" disabled>Select Alignment</option>
+                                {alignments.map(a => <option key={a} value={a}>{a}</option>)}
+                            </select>
+                        </div>
+
+                        <div>
+                            <label className="block text-sm font-bold text-emerald-400 tracking-wide uppercase mb-2">Bonus Language</label>
+                            <select
+                                value={data.language}
+                                onChange={(e) => updateData({ language: e.target.value })}
+                                className="w-full bg-gray-900 border border-gray-600 rounded px-4 py-3 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 text-white"
+                            >
+                                <option value="">Select Bonus Language</option>
+                                {LANGUAGES.map(l => <option key={l} value={l}>{l}</option>)}
+                            </select>
+                            <div className="text-xs text-brand-300 italic mt-2">
+                                Tabaxi know Common plus one other language.
                             </div>
-                        )}
+                        </div>
                     </div>
 
-                    <div>
-                        <label className="block text-sm font-bold text-emerald-400 tracking-wide uppercase mb-2">Alignment</label>
-                        <select
-                            value={data.alignment}
-                            onChange={(e) => updateData({ alignment: e.target.value })}
-                            className="w-full bg-gray-900 border border-gray-600 rounded px-4 py-3 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 text-white"
-                        >
-                            <option value="" disabled>Select Alignment</option>
-                            {alignments.map(a => <option key={a} value={a}>{a}</option>)}
-                        </select>
-                    </div>
+                    {/* Physical Characteristics */}
+                    <div className="space-y-6 bg-[var(--color-dark-card)] p-6 rounded-lg border border-gray-700 h-fit">
+                        <div className="flex justify-between items-center mb-2">
+                            <label className="block text-sm font-bold text-emerald-400 tracking-wide uppercase">Physical Traits</label>
+                            <button
+                                onClick={randomizeAppearance}
+                                className="text-[10px] bg-emerald-600/20 hover:bg-emerald-600/40 text-emerald-400 border border-emerald-500/30 px-2 py-1 rounded transition-colors uppercase font-black"
+                            >
+                                🎲 Randomize Appearance
+                            </button>
+                        </div>
 
-                    <div>
-                        <label className="block text-sm font-bold text-emerald-400 tracking-wide uppercase mb-2">Bonus Language</label>
-                        <select
-                            value={data.language}
-                            onChange={(e) => updateData({ language: e.target.value })}
-                            className="w-full bg-gray-900 border border-gray-600 rounded px-4 py-3 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 text-white"
-                        >
-                            <option value="">Select Bonus Language</option>
-                            {LANGUAGES.map(l => <option key={l} value={l}>{l}</option>)}
-                        </select>
-                        <div className="text-xs text-brand-300 italic mt-2">
-                            Tabaxi know Common plus one other language.
+                        <div className="grid grid-cols-2 gap-4">
+                            <div className="space-y-2">
+                                <label className="block text-xs font-medium text-gray-500 uppercase">Age</label>
+                                <input
+                                    type="text"
+                                    value={data.age || ''}
+                                    onChange={(e) => updateData({ age: e.target.value })}
+                                    className="w-full bg-gray-900 border border-gray-600 rounded px-3 py-2 text-white text-sm focus:border-emerald-500 outline-none"
+                                    placeholder="Years"
+                                />
+                            </div>
+                            <div className="space-y-2">
+                                <label className="block text-xs font-medium text-gray-500 uppercase">Weight</label>
+                                <input
+                                    type="text"
+                                    value={data.weight || ''}
+                                    onChange={(e) => updateData({ weight: e.target.value })}
+                                    className="w-full bg-gray-900 border border-gray-600 rounded px-3 py-2 text-white text-sm focus:border-emerald-500 outline-none"
+                                    placeholder="150 lb"
+                                />
+                            </div>
+                            <div className="space-y-2">
+                                <label className="block text-xs font-medium text-gray-500 uppercase">Height</label>
+                                <input
+                                    type="text"
+                                    value={data.height || ''}
+                                    onChange={(e) => updateData({ height: e.target.value })}
+                                    className="w-full bg-gray-900 border border-gray-600 rounded px-3 py-2 text-white text-sm focus:border-emerald-500 outline-none"
+                                    placeholder='6&apos;0"'
+                                />
+                            </div>
+                            <div className="space-y-2">
+                                <label className="block text-xs font-medium text-gray-500 uppercase">Eyes</label>
+                                <input
+                                    type="text"
+                                    value={data.eyes || ''}
+                                    onChange={(e) => updateData({ eyes: e.target.value })}
+                                    className="w-full bg-gray-900 border border-gray-600 rounded px-3 py-2 text-white text-sm focus:border-emerald-500 outline-none"
+                                    placeholder="Color"
+                                />
+                            </div>
+                        </div>
+
+                        <div className="space-y-4 pt-2">
+                            <div className="space-y-2">
+                                <label className="block text-xs font-medium text-gray-500 uppercase">Skin (Coloring/Pattern)</label>
+                                <input
+                                    type="text"
+                                    value={data.skin || ''}
+                                    onChange={(e) => updateData({ skin: e.target.value })}
+                                    className="w-full bg-gray-900 border border-gray-600 rounded px-3 py-2 text-white text-sm focus:border-emerald-500 outline-none"
+                                    placeholder="e.g. Leopard spots"
+                                />
+                            </div>
+                            <div className="space-y-2">
+                                <label className="block text-xs font-medium text-gray-500 uppercase">Hair (Length)</label>
+                                <input
+                                    type="text"
+                                    value={data.hair || ''}
+                                    onChange={(e) => updateData({ hair: e.target.value })}
+                                    className="w-full bg-gray-900 border border-gray-600 rounded px-3 py-2 text-white text-sm focus:border-emerald-500 outline-none"
+                                    placeholder="e.g. Short-haired"
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>

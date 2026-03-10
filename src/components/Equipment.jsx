@@ -1,8 +1,9 @@
 import React, { useState, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import { EQUIPMENT_DB } from '../data/equipment';
+import { STARTING_PACKS } from '../data/startingPacks';
 import { CLASSES, SUBCLASSES } from '../data/rules5e';
-import { calculateStats, getAttunementLimit, inferBodySlot } from '../utils/stats';
+import { calculateStats, getAttunementLimit, inferEquippedSlot } from '../utils/stats';
 import { Shield, Sword, Eye, Footprints, Hand, User, Star, Trash2, Info, CheckCircle2, AlertCircle, X } from 'lucide-react';
 
 export default function Equipment({ data, updateData }) {
@@ -18,7 +19,7 @@ export default function Equipment({ data, updateData }) {
 
     const charClass = data.class ? CLASSES[data.class] : null;
 
-    const bodySlots = [
+    const equipmentSlots = [
         { id: 'Armor', label: 'Armor', icon: User },
         { id: 'Shield', label: 'Shield', icon: Shield },
         { id: 'Head', label: 'Head', icon: Eye },
@@ -40,9 +41,9 @@ export default function Equipment({ data, updateData }) {
 
         if (isEquipping) {
             // 1. Slot enforcement logic
-            const slot = item.body_slot || inferBodySlot(item);
+            const slot = item.equipped_slot || inferEquippedSlot(item);
             if (slot === 'Weapon') {
-                const equippedWeapons = inventory.filter(i => i.isEquipped && (i.body_slot === 'Weapon' || inferBodySlot(i) === 'Weapon'));
+                const equippedWeapons = inventory.filter(i => i.isEquipped && (i.equipped_slot === 'Weapon' || inferEquippedSlot(i) === 'Weapon'));
                 if (equippedWeapons.length >= 3) {
                     const weaponToUnequip = equippedWeapons[0];
                     newInventory = newInventory.map(i => i.id === weaponToUnequip.id ? { ...i, isEquipped: false, isAttuned: false } : i);
@@ -51,7 +52,7 @@ export default function Equipment({ data, updateData }) {
                 // Standard single slots (Head, Neck, Back, Armor, etc)
                 // Rings are excluded from the single-slot replacement rule here, 
                 // as they are limited primarily by attunement.
-                newInventory = newInventory.map(i => (i.isEquipped && (i.body_slot === slot || inferBodySlot(i) === slot)) ? { ...i, isEquipped: false, isAttuned: false } : i);
+                newInventory = newInventory.map(i => (i.isEquipped && (i.equipped_slot === slot || inferEquippedSlot(i) === slot)) ? { ...i, isEquipped: false, isAttuned: false } : i);
             }
 
             // 2. Auto-attunement logic
@@ -99,7 +100,7 @@ export default function Equipment({ data, updateData }) {
     }, [selectedCategory, searchTerm]);
 
     const getEquippedInSlot = (slotId) => {
-        return inventory.filter(i => i.isEquipped && (i.body_slot === slotId || inferBodySlot(i) === slotId));
+        return inventory.filter(i => i.isEquipped && (i.equipped_slot === slotId || inferEquippedSlot(i) === slotId));
     };
 
     const armorProfs = Array.from(new Set([...(charClass?.armorProficiencies || []), ...(SUBCLASSES[data.class]?.[data.subclass]?.armorProficiencies || [])])).sort();
@@ -112,7 +113,7 @@ export default function Equipment({ data, updateData }) {
                     <h2 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200 uppercase tracking-tighter">
                         Inventory & Arsenal
                     </h2>
-                    <p className="text-gray-500 text-sm mt-1">Manage your gear, attunement, and body slots.</p>
+                    <p className="text-gray-500 text-sm mt-1">Manage your gear, attunement, and equipped items.</p>
                 </div>
                 <div className="flex gap-4 items-center w-full md:w-auto">
                     <div className="bg-gray-900 border border-emerald-500/30 rounded-lg px-4 py-2 flex items-center gap-4 w-full md:w-auto justify-around md:justify-start">
@@ -136,10 +137,10 @@ export default function Equipment({ data, updateData }) {
                 <aside className="xl:col-span-4 space-y-6">
                     <div className="glass-card p-5 border-emerald-500/20">
                         <h3 className="text-xs font-black text-emerald-500 uppercase tracking-widest mb-4 flex items-center gap-2">
-                            <User size={14} /> Body Slots
+                            <User size={14} /> Equipped Items
                         </h3>
                         <div className="space-y-3">
-                            {bodySlots
+                            {equipmentSlots
                                 .map(slot => ({ ...slot, items: getEquippedInSlot(slot.id) }))
                                 .filter(slot => slot.items.length > 0)
                                 .map(slot => {
@@ -161,11 +162,11 @@ export default function Equipment({ data, updateData }) {
                                         </div>
                                     );
                                 })}
-                            {inventory.filter(i => i.isEquipped && (i.body_slot === 'Wondrous' || inferBodySlot(i) === 'Wondrous')).length > 0 && (
+                            {inventory.filter(i => i.isEquipped && (i.equipped_slot === 'Wondrous' || inferEquippedSlot(i) === 'Wondrous')).length > 0 && (
                                 <div className="pt-2 border-t border-gray-800/50">
                                     <p className="text-[10px] text-gray-500 uppercase font-bold mb-2">Other Accessories</p>
                                     <div className="space-y-2">
-                                        {inventory.filter(i => i.isEquipped && (i.body_slot === 'Wondrous' || inferBodySlot(i) === 'Wondrous')).map(item => (
+                                        {inventory.filter(i => i.isEquipped && (i.equipped_slot === 'Wondrous' || inferEquippedSlot(i) === 'Wondrous')).map(item => (
                                             <div key={item.id} className="text-sm font-bold text-white leading-tight flex items-center gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-emerald-500/50"></div>
                                                 {item.name} {item.isAttuned && <span className="text-teal-400">★</span>}
@@ -200,7 +201,48 @@ export default function Equipment({ data, updateData }) {
                 </aside>
 
                 {/* Right: Backpack & Database */}
-                <main className="xl:col-span-8 space-y-4">
+                <main className="xl:col-span-8 space-y-6">
+                    {/* Starting Equipment Packs */}
+                    <div className="glass-card p-5 border-emerald-500/20">
+                        <h3 className="text-xs font-black text-emerald-500 uppercase tracking-widest mb-4">Starting Equipment Pack</h3>
+                        <div className="flex flex-wrap gap-2 mb-4">
+                            <button
+                                onClick={() => updateData({ startingPack: null })}
+                                className={`px-4 py-2 rounded-lg text-xs font-bold transition-all border ${!data.startingPack ? 'bg-emerald-600 text-white border-emerald-500' : 'bg-gray-800 text-gray-400 border-gray-700 hover:border-emerald-500/30'}`}
+                            >
+                                None
+                            </button>
+                            {Object.keys(STARTING_PACKS).map(packName => (
+                                <button
+                                    key={packName}
+                                    onClick={() => updateData({ startingPack: packName })}
+                                    className={`px-4 py-2 rounded-lg text-xs font-bold transition-all border ${data.startingPack === packName ? 'bg-emerald-600 text-white border-emerald-500' : 'bg-gray-800 text-gray-400 border-gray-700 hover:border-emerald-500/30'}`}
+                                >
+                                    {packName}
+                                </button>
+                            ))}
+                        </div>
+
+                        {data.startingPack && (
+                            <div className="bg-black/40 rounded-xl p-4 border border-gray-800">
+                                <h4 className="text-sm font-bold text-emerald-400 mb-2 flex items-center gap-2">
+                                    <Info size={14} /> Contents of {data.startingPack}
+                                </h4>
+                                <div className="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-1">
+                                    {STARTING_PACKS[data.startingPack].map((item, idx) => (
+                                        <div key={idx} className="text-[11px] text-gray-400 flex items-center gap-2">
+                                            <div className="w-1 h-1 rounded-full bg-emerald-500/30"></div>
+                                            {item.Item}
+                                        </div>
+                                    ))}
+                                </div>
+                                <p className="text-[10px] text-gray-500 mt-3 italic">
+                                    Note: Pack items are tracked separately and will appear in the Equipment section of your PDF.
+                                </p>
+                            </div>
+                        )}
+                    </div>
+
                     <div className="flex justify-between items-center">
                         <h3 className="text-lg font-bold text-white">
                             Backpack <span className="text-gray-500 text-sm">({inventory.length} items)</span>
@@ -225,7 +267,7 @@ export default function Equipment({ data, updateData }) {
                                         <div>
                                             <h4 className="font-bold text-lg text-white leading-tight">{item.name}</h4>
                                             <p className="text-[10px] text-gray-500 uppercase font-black flex items-center gap-2">
-                                                {item.body_slot || inferBodySlot(item)} • {item.rarity || (item.Cost ? item.Cost : 'Standard')}
+                                                {item.equipped_slot || inferEquippedSlot(item)} • {item.rarity || (item.Cost ? item.Cost : 'Standard')}
                                             </p>
                                         </div>
                                         <button
@@ -256,8 +298,8 @@ export default function Equipment({ data, updateData }) {
                                     )}
 
                                     <div className="flex gap-2 mt-4">
-                                        {((item.body_slot && item.body_slot !== 'Wondrous') ||
-                                            (inferBodySlot(item) !== 'Wondrous') ||
+                                        {((item.equipped_slot && item.equipped_slot !== 'Wondrous') ||
+                                            (inferEquippedSlot(item) !== 'Wondrous') ||
                                             (item.attunement === true || item.attunement === 'true')) ? (
                                             <button
                                                 disabled={!item.isEquipped && (item.attunement === true || item.attunement === 'true') && attunedCount >= attunementLimit}

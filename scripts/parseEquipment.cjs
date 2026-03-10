@@ -67,28 +67,34 @@ function extractNumericBonuses(statImpact) {
     return { ac_bonus, attack_bonus, damage_bonus, save_bonus };
 }
 
-function inferBodySlot(item) {
+function inferEquippedSlot(item) {
     const lowerName = (item.name || item.Item || '').toLowerCase();
     const lowerType = (item.Type || item.type || '').toLowerCase();
     const category = (item.category || '').toLowerCase();
 
+    // 1. High-priority keyword detection
     if (category === 'rings' || lowerType.includes('ring')) return 'Ring';
 
+    // Head: Priority detection for wearables
+    if (lowerName.includes('crown') || lowerName.includes('circlet') || lowerName.includes('helmet') ||
+        lowerName.includes('helm') || lowerName.includes('hat') || lowerName.includes('cap') ||
+        lowerName.includes('goggles') || lowerName.includes('diadem') || lowerName.includes('spectacles') ||
+        lowerName.includes('eyes')) return 'Head';
+
+    if (lowerName.includes('cloak') || lowerName.includes('cape') || lowerName.includes('robe') || lowerName.includes('mantle')) return 'Back';
+    if (lowerName.includes('amulet') || lowerName.includes('necklace') || lowerName.includes('periapt') || lowerName.includes('pendant') || lowerName.includes('talisman')) return 'Neck';
+    if (lowerName.includes('boots') || lowerName.includes('slippers') || lowerName.includes('shoes')) return 'Feet';
+    if (lowerName.includes('gloves') || lowerName.includes('gauntlets') || lowerName.includes('bracers')) return 'Hands';
+    if (lowerName.includes('belt') || lowerName.includes('girdle')) return 'Waist';
+
+    // 2. Structural classification (Armor/Shields)
     if (category === 'armor and shields' || lowerType.includes('armor') || lowerType.includes('shield')) {
         if (lowerName.includes('shield') || lowerType.includes('shield')) return 'Shield';
         return 'Armor';
     }
 
-    // Weapons
+    // 3. Low-priority category fallback (Weapons)
     if (category === 'weapons' || lowerType.includes('weapon')) return 'Weapon';
-
-    // Wondrous items slot inference
-    if (lowerName.includes('boots') || lowerName.includes('slippers') || lowerName.includes('shoes')) return 'Feet';
-    if (lowerName.includes('gloves') || lowerName.includes('gauntlets') || lowerName.includes('bracers')) return 'Hands';
-    if (lowerName.includes('helm') || lowerName.includes('hat') || lowerName.includes('cap') || lowerName.includes('circlet') || lowerName.includes('goggles') || lowerName.includes('diadem')) return 'Head';
-    if (lowerName.includes('cloak') || lowerName.includes('cape') || lowerName.includes('robe') || lowerName.includes('mantle')) return 'Back';
-    if (lowerName.includes('amulet') || lowerName.includes('necklace') || lowerName.includes('periapt') || lowerName.includes('pendant') || lowerName.includes('talisman')) return 'Neck';
-    if (lowerName.includes('belt') || lowerName.includes('girdle')) return 'Waist';
 
     return 'Wondrous';
 }
@@ -225,15 +231,19 @@ try {
                 const processedItems = items.map(item => {
                     const bonuses = extractNumericBonuses(item.stat_impact);
                     const { inferredType, inferredProperties, inferredDamage, inferredAC } = inferItemType(item, equipment);
-                    const body_slot = inferBodySlot({ ...item, category: item.category || defaultCategory, type: inferredType });
+                    const equipped_slot = inferEquippedSlot({ ...item, category: item.category || defaultCategory, type: inferredType });
+
+                    // Remove body_slot if it exists in the source item
+                    const { body_slot, ...cleanItem } = item;
+
                     return {
                         category: item.category || defaultCategory,
-                        ...item,
+                        ...cleanItem,
                         type: inferredType,
                         Properties: inferredProperties,
                         Damage: inferredDamage,
                         AC: inferredAC,
-                        body_slot,
+                        equipped_slot,
                         ...bonuses
                     };
                 });
@@ -244,14 +254,14 @@ try {
         }
     });
 
-    // Assign body_slots to base items
+    // Assign equipped_slots to base items
     equipment.armor = equipment.armor.map(item => ({
         ...item,
-        body_slot: inferBodySlot({ ...item, category: 'Armor and Shields' })
+        equipped_slot: inferEquippedSlot({ ...item, category: 'Armor and Shields' })
     }));
     equipment.weapons = equipment.weapons.map(item => ({
         ...item,
-        body_slot: 'Weapon'
+        equipped_slot: 'Weapon'
     }));
 
     // De-duplicate magic items by name (keep first occurrence)

@@ -22,39 +22,94 @@ export default function TabaxiLore({ data, updateData }) {
 
             <div className="bg-[var(--color-dark-bg)] p-6 rounded-lg border border-gray-700/50 relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-1 h-full bg-brand-500"></div>
-                <h3 className="text-xl font-bold mb-4 text-emerald-300">Basic Info</h3>
+                <h3 className="text-xl font-bold mb-6 text-emerald-300">Basic Info & Nature</h3>
 
-                <div className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-4">
+                        <div>
+                            <label className="block text-sm font-bold text-gray-400 mb-2 uppercase tracking-wide">Character Name</label>
+                            <input
+                                type="text"
+                                value={data.name}
+                                onChange={(e) => updateData({ name: e.target.value })}
+                                placeholder="e.g. Cloud on the Mountaintop"
+                                className="w-full bg-gray-800/50 border border-gray-600 rounded px-4 py-3 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all text-white"
+                            />
+                        </div>
+
+                        <div>
+                            <label className="block text-sm font-bold text-gray-400 mb-2 uppercase tracking-wide">Tabaxi Size</label>
+                            <div className="flex gap-4">
+                                {['Medium', 'Small'].map((size) => (
+                                    <label key={size} className="flex flex-1 items-center gap-2 cursor-pointer p-3 rounded border border-gray-600 hover:border-emerald-500/50 transition-colors bg-gray-800/20">
+                                        <input
+                                            type="radio"
+                                            name="size"
+                                            value={size}
+                                            checked={data.size === size}
+                                            onChange={(e) => updateData({ size: e.target.value })}
+                                            className="text-brand-500 bg-gray-900 border-gray-600 focus:ring-brand-500"
+                                        />
+                                        <span className="font-bold text-sm">{size}</span>
+                                    </label>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="space-y-4">
+                        <div>
+                            <label className="block text-sm font-bold text-gray-400 mb-2 uppercase tracking-wide">Personality Traits</label>
+                            <textarea
+                                value={data.personalityTraits}
+                                onChange={(e) => updateData({ personalityTraits: e.target.value })}
+                                rows="3"
+                                className="w-full bg-gray-800/50 border border-gray-600 rounded px-4 py-2 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all text-white text-sm resize-none"
+                                placeholder="What defines your character's mannerisms?"
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
                     <div>
-                        <label className="block text-sm font-medium text-gray-400 mb-1">Character Name</label>
-                        <input
-                            type="text"
-                            value={data.name}
-                            onChange={(e) => updateData({ name: e.target.value })}
-                            placeholder="e.g. Cloud on the Mountaintop (Cloud)"
-                            className="w-full bg-gray-800/50 border border-gray-600 rounded px-4 py-3 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all text-white"
+                        <label className="block text-sm font-bold text-gray-400 mb-2 uppercase tracking-wide">Ideals</label>
+                        <textarea
+                            value={data.ideals}
+                            onChange={(e) => updateData({ ideals: e.target.value })}
+                            rows="2"
+                            className="w-full bg-gray-800/50 border border-gray-600 rounded px-4 py-2 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all text-white text-sm resize-none"
                         />
                     </div>
-
                     <div>
-                        <label className="block text-sm font-medium text-gray-400 mb-1">Tabaxi Size (MotM Variant)</label>
-                        <div className="flex gap-4">
-                            {['Medium', 'Small'].map((size) => (
-                                <label key={size} className="flex flex-1 items-center gap-2 cursor-pointer p-3 rounded border border-gray-600 hover:border-gray-500 transition-colors bg-gray-800/20">
-                                    <input
-                                        type="radio"
-                                        name="size"
-                                        value={size}
-                                        checked={data.size === size}
-                                        onChange={(e) => updateData({ size: e.target.value })}
-                                        className="text-brand-500 bg-gray-900 border-gray-600 focus:ring-brand-500"
-                                    />
-                                    <span>{size}</span>
-                                </label>
-                            ))}
-                        </div>
-                        <p className="text-xs text-gray-500 mt-2 italic">*Medium is generally preferred to avoid being grappled by smaller creatures.</p>
+                        <label className="block text-sm font-bold text-gray-400 mb-2 uppercase tracking-wide">Bonds</label>
+                        <textarea
+                            value={data.bonds}
+                            onChange={(e) => updateData({ bonds: e.target.value })}
+                            rows="2"
+                            className="w-full bg-gray-800/50 border border-gray-600 rounded px-4 py-2 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all text-white text-sm resize-none"
+                        />
                     </div>
+                    <div>
+                        <label className="block text-sm font-bold text-gray-400 mb-2 uppercase tracking-wide">Flaws</label>
+                        <textarea
+                            value={data.flaws}
+                            onChange={(e) => updateData({ flaws: e.target.value })}
+                            rows="2"
+                            className="w-full bg-gray-800/50 border border-gray-600 rounded px-4 py-2 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all text-white text-sm resize-none"
+                        />
+                    </div>
+                </div>
+
+                <div className="mt-6">
+                    <label className="block text-sm font-bold text-gray-400 mb-2 uppercase tracking-wide">Character Backstory</label>
+                    <textarea
+                        value={data.backstory}
+                        onChange={(e) => updateData({ backstory: e.target.value })}
+                        rows="5"
+                        className="w-full bg-gray-800/50 border border-gray-600 rounded px-4 py-3 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all text-white text-sm"
+                        placeholder="Tell the story of how your tabaxi came to wander the world..."
+                    />
                 </div>
             </div>
 

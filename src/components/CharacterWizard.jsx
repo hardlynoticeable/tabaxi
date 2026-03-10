@@ -26,7 +26,18 @@ export default function CharacterWizard() {
         backgroundSkills: [],
         selectedCantrips: [],
         selectedSpells: { 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 8: [], 9: [] },
-        inventory: []
+        inventory: [],
+        personalityTraits: '',
+        ideals: '',
+        bonds: '',
+        flaws: '',
+        backstory: '',
+        age: '',
+        height: '',
+        weight: '',
+        eyes: '',
+        skin: '',
+        hair: ''
     });
 
     useEffect(() => {

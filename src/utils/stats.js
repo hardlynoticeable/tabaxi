@@ -4,31 +4,37 @@ import { CLASSES, SUBCLASSES } from '../data/rules5e';
  * Infers the body slot for an item based on its properties.
  * Used as a fallback for items that lack the property due to data persistence.
  */
-export function inferBodySlot(item) {
+export function inferEquippedSlot(item) {
     if (!item) return 'Wondrous';
-    if (item.body_slot) return item.body_slot;
+    if (item.equipped_slot) return item.equipped_slot;
 
     const lowerName = (item.name || item.Item || '').toLowerCase();
     const lowerType = (item.Type || item.type || '').toLowerCase();
     const category = (item.category || '').toLowerCase();
 
-    if (category === 'rings' || lowerType.includes('ring')) return 'Ring';
+    // 1. High-priority keyword detection
+    if (category === 'rings' || lowerName.includes('ring')) return 'Ring';
 
+    // Head: Priority detection for wearables
+    if (lowerName.includes('crown') || lowerName.includes('circlet') || lowerName.includes('helmet') ||
+        lowerName.includes('helm') || lowerName.includes('hat') || lowerName.includes('cap') ||
+        lowerName.includes('goggles') || lowerName.includes('diadem') || lowerName.includes('spectacles') ||
+        lowerName.includes('eyes')) return 'Head';
+
+    if (lowerName.includes('cloak') || lowerName.includes('cape') || lowerName.includes('robe') || lowerName.includes('mantle')) return 'Back';
+    if (lowerName.includes('amulet') || lowerName.includes('necklace') || lowerName.includes('periapt') || lowerName.includes('pendant') || lowerName.includes('talisman')) return 'Neck';
+    if (lowerName.includes('boots') || lowerName.includes('slippers') || lowerName.includes('shoes')) return 'Feet';
+    if (lowerName.includes('gloves') || lowerName.includes('gauntlets') || lowerName.includes('bracers')) return 'Hands';
+    if (lowerName.includes('belt') || lowerName.includes('girdle')) return 'Waist';
+
+    // 2. Structural classification (Armor/Shields)
     if (category.includes('armor') || lowerType.includes('armor') || lowerType.includes('shield')) {
         if (lowerName.includes('shield') || lowerType.includes('shield')) return 'Shield';
         return 'Armor';
     }
 
-    // Weapons
+    // 3. Low-priority category fallback (Weapons)
     if (category.includes('weapon') || lowerType.includes('weapon') || lowerType.includes('melee') || lowerType.includes('ranged')) return 'Weapon';
-
-    // Wondrous items slot inference
-    if (lowerName.includes('boots') || lowerName.includes('slippers') || lowerName.includes('shoes')) return 'Feet';
-    if (lowerName.includes('gloves') || lowerName.includes('gauntlets') || lowerName.includes('bracers')) return 'Hands';
-    if (lowerName.includes('helm') || lowerName.includes('hat') || lowerName.includes('cap') || lowerName.includes('circlet') || lowerName.includes('goggles') || lowerName.includes('diadem')) return 'Head';
-    if (lowerName.includes('cloak') || lowerName.includes('cape') || lowerName.includes('robe') || lowerName.includes('mantle')) return 'Back';
-    if (lowerName.includes('amulet') || lowerName.includes('necklace') || lowerName.includes('periapt') || lowerName.includes('pendant') || lowerName.includes('talisman')) return 'Neck';
-    if (lowerName.includes('belt') || lowerName.includes('girdle')) return 'Waist';
 
     return 'Wondrous';
 }
@@ -72,7 +78,7 @@ export function calculateStats(characterData) {
     // - Utility items (Wondrous, no attunement) give benefits if in inventory
     // - Everything else (Armor, Shields, etc) gives benefits if equipped
     const activeItems = inventory.filter(item => {
-        const slot = item.body_slot || inferBodySlot(item);
+        const slot = item.equipped_slot || inferEquippedSlot(item);
         const requiresAttunement = item.attunement === true || item.attunement === 'true';
 
         if (requiresAttunement) return item.isAttuned;
@@ -87,7 +93,7 @@ export function calculateStats(characterData) {
     const nonProficientItems = [];
 
     activeItems.forEach(item => {
-        const slot = item.body_slot || inferBodySlot(item);
+        const slot = item.equipped_slot || inferEquippedSlot(item);
         acBonus += (Number(item.ac_bonus) || 0);
         saveBonus += (Number(item.save_bonus) || 0);
 
