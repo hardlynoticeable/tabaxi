@@ -106,6 +106,28 @@ export default function Equipment({ data, updateData }) {
     const armorProfs = Array.from(new Set([...(charClass?.armorProficiencies || []), ...(SUBCLASSES[data.class]?.[data.subclass]?.armorProficiencies || [])])).sort();
     const weaponProfs = Array.from(new Set([...(charClass?.weaponProficiencies || []), ...(SUBCLASSES[data.class]?.[data.subclass]?.weaponProficiencies || [])])).sort();
 
+    const checkProficiency = (item) => {
+        const type = (item.Type || item.type || '').toLowerCase();
+        const name = (item.Item || item.name || '').toLowerCase();
+        const slot = item.equipped_slot || inferEquippedSlot(item);
+
+        if (slot === 'Weapon' || type.includes('simple') || type.includes('martial')) {
+            return weaponProfs.some(p => {
+                const prof = p.toLowerCase();
+                return type.includes(prof) || name.includes(prof);
+            }) || name === "cat's claws";
+        }
+
+        if (slot === 'Armor' || slot === 'Shield' || type.includes('armor') || type.includes('shield')) {
+            return armorProfs.some(p => {
+                const prof = p.toLowerCase();
+                return type.includes(prof);
+            });
+        }
+
+        return null;
+    };
+
     return (
         <div className="space-y-6 animate-fade-in text-brand-100 h-full overflow-y-auto pr-2 pb-6 custom-scrollbar">
             <header className="flex flex-col md:flex-row justify-between items-start md:items-end border-b border-gray-800 pb-4 gap-4">
@@ -461,9 +483,17 @@ export default function Equipment({ data, updateData }) {
                                     <div key={i} className="bg-gray-900/60 border border-gray-800 rounded-xl p-4 flex flex-col gap-2 justify-between group hover:border-emerald-500/40 hover:bg-black/40 transition-all h-full">
                                         <div>
                                             <h4 className="font-bold text-white group-hover:text-emerald-400 transition-colors uppercase tracking-tight">{item.name || item.Item}</h4>
-                                            <p className="text-[10px] text-gray-500 font-bold uppercase mb-2">
-                                                {item.type || item.Type || 'Item'} • {item.rarity || item.Cost || 'Standard'}
-                                            </p>
+                                            <div className="flex justify-between items-start">
+                                                <p className="text-[10px] text-gray-500 font-bold uppercase mb-2">
+                                                    {item.type || item.Type || 'Item'} • {item.rarity || item.Cost || 'Standard'}
+                                                </p>
+                                                {(() => {
+                                                    const isProf = checkProficiency(item);
+                                                    if (isProf === true) return <span className="text-[9px] font-black bg-emerald-500/20 text-emerald-400 px-1.5 py-0.5 rounded border border-emerald-500/20 uppercase">Proficient</span>;
+                                                    if (isProf === false) return <span className="text-[9px] font-black bg-amber-500/20 text-amber-400 px-1.5 py-0.5 rounded border border-amber-500/20 uppercase flex items-center gap-1"><AlertCircle size={8} /> Non-Proficient</span>;
+                                                    return null;
+                                                })()}
+                                            </div>
                                         </div>
                                         <button
                                             onClick={() => {
