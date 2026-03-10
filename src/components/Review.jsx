@@ -219,6 +219,8 @@ export default function Review({ data }) {
                 </div>
             </div>
 
+            <AbilityScoreImpact data={data} />
+
             {/* Bottom Section: Gear & Inventory */}
             <div className="bg-black/20 border border-emerald-900/30 rounded-lg p-6 relative overflow-hidden">
                 <h3 className="text-xl font-bold text-emerald-400 mb-6 flex items-center gap-2">
@@ -276,8 +278,6 @@ export default function Review({ data }) {
                     </div>
                 </div>
             </div>
-
-            <AbilityScoreImpact data={data} />
         </div>
     );
 }
