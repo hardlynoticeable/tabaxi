@@ -26,7 +26,9 @@ export default function CharacterWizard() {
         backgroundSkills: [],
         selectedCantrips: [],
         selectedSpells: { 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 8: [], 9: [] },
-        inventory: [],
+        inventory: [
+            { id: 'cats-claws', name: "Cat's Claws", Damage: '1d6', equipped_slot: 'Weapon', isEquipped: true }
+        ],
         money: { cp: 0, sp: 0, ep: 0, gp: 0, pp: 0 },
         treasure: '',
         personalityTraits: '',

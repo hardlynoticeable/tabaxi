@@ -113,14 +113,18 @@ export default function TabaxiLore({ data, updateData }) {
                 </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
-                <div className="p-4 border border-emerald-900/50 rounded bg-emerald-900/10">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4">
+                <div className="p-4 border border-emerald-900/50 rounded bg-emerald-900/10 hover:bg-emerald-900/20 transition-colors">
                     <h4 className="font-bold text-emerald-400 mb-2">Feline Agility</h4>
-                    <p className="text-sm opacity-80">When you move on your turn in combat, you can double your speed until the end of that turn. Recharges when you move 0 feet on a turn.</p>
+                    <p className="text-sm opacity-80">Double your speed for a turn in combat. Recharges when you move 0 ft on a turn.</p>
                 </div>
-                <div className="p-4 border border-emerald-900/50 rounded bg-emerald-900/10">
+                <div className="p-4 border border-emerald-900/50 rounded bg-emerald-900/10 hover:bg-emerald-900/20 transition-colors">
                     <h4 className="font-bold text-emerald-400 mb-2">Cat's Claws</h4>
-                    <p className="text-sm opacity-80">You have a climbing speed of 30 ft. Your claws deal 1d6 + STR slashing damage on an unarmed strike.</p>
+                    <p className="text-sm opacity-80">Climb speed of 30 ft. Unarmed strikes deal 1d6 + STR slashing damage.</p>
+                </div>
+                <div className="p-4 border border-emerald-900/50 rounded bg-emerald-900/10 hover:bg-emerald-900/20 transition-colors">
+                    <h4 className="font-bold text-emerald-400 mb-2">Cat's Talent</h4>
+                    <p className="text-sm opacity-80">You have innate proficiency in the <span className="text-brand-400 font-semibold">Perception</span> and <span className="text-brand-400 font-semibold">Stealth</span> skills.</p>
                 </div>
             </div>
         </div>
