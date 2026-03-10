@@ -1,47 +1,47 @@
 # Tabaxi Character Generator
 
-A comprehensive, automated character construction tool for Dungeons & Dragons 5th Edition. This application streamlines the journey from concept to a polished, ready-to-play character sheet.
+A comprehensive, high-fidelity character construction tool for Dungeons & Dragons 5th Edition, meticulously tailored for the Tabaxi race. This application streamlines the journey from concept to a professional, table-ready PDF character sheet.
 
 **Try it out:** [tabaxi.vonipo.com](https://tabaxi.vonipo.com)
 
-## Core Technical Achievements
+## Key Features
 
-### Dynamic Stat Calculation Engine
-The application features a robust backend logic system that automates the complex mechanics of D&D 5e:
-- **Automated Modifiers**: Real-time calculation of all ability modifiers, proficiency bonuses, and secondary statistics.
-- **Dynamic Defense (AC)**: Sophisticated Armor Class calculation that accounts for equipped armor, shields, and class-specific bonuses (like Draconic Resilience).
-- **Automated Scaling**: Scaling features for HP, Hit Dice, and Save DCs based on character level and core stats.
-- **Skill & Save Tracking**: Automatically applies proficiency and ability bonuses to all 18 skills and 6 saving throws.
+### 🛠️ Mechanical Breakdown & Transparency
+No more "black box" numbers. The generator features a dedicated **Calculation Breakdown** UI that provides full visibility into character mechanics:
+- **AC Math**: Visual step-by-step breakdown of Base Armor + DEX + Shield + Special Bonuses (Unarmored Defense, Draconic Resilience, etc.).
+- **HP Scaling**: Transparent tracking of Base HP + Level Up Scaling + Constitution bonuses.
+- **Stat Derivation**: Detailed components for Initiative and Passive Perception (Base + Mod + Proficiency).
 
-### Comprehensive Class & Subclass Architecture
-Designed to handle the mechanical diversity of the 5e system:
-- **Broad Support**: Full implementation of various classes including Cleric Domains, Paladin Oaths, Druid Circles, and Sorcerous Origins.
-- **Automatic Feature Unlocking**: Dynamically reveals and applies class and subclass features as the character levels up.
-- **Integrated Backgrounds**: Seamlessly merges background-specific skills and equipment into the character's profile.
+### 📖 Centralized Logic Architecture
+Built on a "Single Source of Truth" philosophy. All mechanical calculations are handled by a centralized `stats.js` engine, ensuring perfect data parity between:
+- The Interactive UI
+- The Review Summary
+- The Final Form-Filled PDF
 
-### Massive Spellcasting System
-A power-user interface for magic-inclined characters:
-- **1,000+ Spell Database**: A comprehensive library of spells including full descriptions for both SRD and expanded content.
-- **Level-Indexed Slot Management**: Automatically calculates available spell slots per level based on class progression.
-- **Automated Combat Stats**: Instantly computes Spell Save DC and Spell Attack Bonus based on the character's primary casting ability.
+### ⚔️ High-Utility Inventory Management
+- **Modal-Driven Database**: Access 5,000+ items (Weapons, Armor, Gear) through a streamlined, searchable modal interface.
+- **Starting Pack Support**: One-click selection of official class starter packs (Explorer's, Dungeoneer's, etc.) with automated inventory population.
+- **Live Previews**: Dynamic previews of Attack/Damage and AC potential directly within the backpack, before you even equip the item.
+- **Attunement Tracking**: Intelligent slot enforcement with built-in attunement limits and slots (Head, Neck, Rings, etc.).
 
-### Advanced Inventory & Equipment
-- **5,000+ Item Library**: An extensive database of weapons, armor, and adventuring gear.
-- **Smart Slot Enforcement**: Intelligent equipment system that manages slots (Head, Neck, Rings, etc.) and enforces attunement limits (with dynamic support for Artificer bonuses).
-- **Weapon Arsenal**: Tracks up to 3 active weapons with pre-calculated attack and damage rolls.
+### 🪄 Advanced Spellcasting System
+- **1,000+ Spell Library**: Comprehensive database including full descriptions for SRD and expanded content via interactive modals.
+- **Subclass Integration**: Automatically detects and adds subclass-granted spells (e.g., Sorcerous Bloodline or Cleric Domain spells).
+- **Automated Calculations**: Instant computation of Spell Save DC, Spell Attack Bonus, and level-indexed slot availability.
 
-### Pro-Grade WOTC PDF Generation
-The final output is not just a summary, but a expertly form-filled Standard D&D 5e Character Sheet (WOTC):
-- **Perfect Mapping**: Physical traits, equipment lists, trait summaries, and currency are all automatically mapped to their official locations.
-- **Optimized Layout**: Long text fields (like Backstory and Traits) use dynamic font-sizing to ensure maximum readability within the standard PDF boxes.
+### 📜 Pro-Grade PDF Generation
+Generates an expertly form-filled **Standard WOTC D&D 5e Character Sheet**:
+- **Smart Typography**: Dynamic font-scaling for complex fields like Backstory and Features to ensure maximum readability.
+- **Automated Mapping**: All identity traits, equipment lists, and currency are mapped to their official sheet locations.
+- **Inventory Sync**: Includes starting pack contents and equipped status directly on the sheet.
 
 ## Technology Stack
 
-- **Frontend**: React.js with Vite
-- **Styling**: Vanilla CSS (Premium Dark Theme)
+- **Core**: React.js with Vite
+- **Styling**: Vanilla CSS (Premium Dark/Glassmorphism Theme)
 - **Icons**: Lucide React
-- **PDF Logic**: pdf-lib
-- **State Management**: React Hooks (useState, useEffect, useMemo)
+- **PDF Engine**: pdf-lib
+- **Logic**: Centralized JS Computation Engine (`stats.js`)
 
 ## Getting Started
 
@@ -56,4 +56,4 @@ The final output is not just a summary, but a expertly form-filled Standard D&D 
 4. Access the generator at `http://localhost:5173`.
 
 ## License
-This project is intended for personal use and is compatible with the D&D 5e System Reference Document (SRD).
+This project is intended for personal use and is compatible with the D&D 5th Edition System Reference Document (SRD).
