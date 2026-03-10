@@ -45,6 +45,7 @@ export default function AbilityScoreImpact({ data }) {
                     <p className="text-3xl font-bold text-white">
                         {hasShield ? `${ac - 2}/${ac}` : ac}
                     </p>
+                    {hasShield && <p className="text-[9px] text-gray-500 uppercase leading-none mt-1">(No Shield / With Shield)</p>}
                     <p className="text-[10px] text-gray-400 mt-1">{acNote}</p>
                 </div>
                 <div className="bg-gray-900 border border-gray-700 rounded p-4 text-center">

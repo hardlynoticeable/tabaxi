@@ -214,7 +214,7 @@ export async function generateCharacterPDF(characterData) {
         });
 
         // Inventory Mapping (Treasure field)
-        let inventoryList = inventory.map(i => `• ${i.name}${i.isEquipped ? ' (E)' : ''}${i.isAttuned ? ' (A)' : ''}`);
+        let inventoryList = inventory.map(i => `- ${i.name}${i.isEquipped ? ' (E)' : ''}${i.isAttuned ? ' (A)' : ''}`);
 
         if (characterData.startingPack && STARTING_PACKS[characterData.startingPack]) {
             const packName = characterData.startingPack;
@@ -229,15 +229,15 @@ export async function generateCharacterPDF(characterData) {
         // Features and Traits
         const traitList = [
             "Tabaxi Traits:",
-            "• Darkvision (60 ft)",
-            "• Feline Agility (Double speed for a turn; recharge on 0 ft move)",
-            "• Cat's Claws (Climb 30 ft; Claws deal 1d6 + STR slashing)",
-            "• Cat's Talent (Proficiency: Perception, Stealth)"
+            "- Darkvision (60 ft)",
+            "- Feline Agility (Double speed for a turn; recharge on 0 ft move)",
+            "- Cat's Claws (Climb 30 ft; Claws deal 1d6 + STR slashing)",
+            "- Cat's Talent (Proficiency: Perception, Stealth)"
         ];
 
         if (nonProficientItems?.length > 0) {
             traitList.push("");
-            traitList.push("⚠️ ARMOR PENALTY:");
+            traitList.push("WARNING ARMOR PENALTY:");
             traitList.push(`Non-proficient: ${nonProficientItems.join(', ')}`);
             traitList.push("Penalty: Disadvantage on Str/Dex rolls (saves/checks/attacks). Cannot cast spells.");
         }

@@ -122,6 +122,7 @@ export default function Equipment({ data, updateData }) {
                             <p className="text-2xl font-black text-white">
                                 {stats.hasShield ? `${stats.ac - 2}/${stats.ac}` : stats.ac}
                             </p>
+                            {stats.hasShield && <p className="text-[9px] text-gray-500 uppercase leading-none mt-0.5">(No Shield / With Shield)</p>}
                         </div>
                         <div className="w-px h-8 bg-gray-800"></div>
                         <div className="text-center">
@@ -282,9 +283,12 @@ export default function Equipment({ data, updateData }) {
                                                         const atk = mod + (isProf ? stats.profBonus : 0) + (Number(item.attack_bonus) || 0);
                                                         const dmg = mod + (Number(item.damage_bonus) || 0);
                                                         return (
-                                                            <p className="text-[10px] text-emerald-400 font-bold mt-1">
-                                                                Preview: {atk >= 0 ? '+' : ''}{atk} to hit, {item.Damage || item.damage}{dmg >= 0 ? '+' : ''}{dmg} dmg
-                                                            </p>
+                                                            <div className="mt-3 py-1.5 px-3 bg-emerald-500/10 border border-emerald-500/30 rounded flex items-center gap-2 shadow-sm shadow-emerald-500/5">
+                                                                <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></div>
+                                                                <p className="text-[10px] text-emerald-400 font-black uppercase tracking-widest leading-none">
+                                                                    {atk >= 0 ? '+' : ''}{atk} to hit | {item.Damage || item.damage}{dmg >= 0 ? '+' : ''}{dmg} dmg
+                                                                </p>
+                                                            </div>
                                                         );
                                                     }
                                                     if (slot === 'Armor') {
@@ -297,17 +301,25 @@ export default function Equipment({ data, updateData }) {
                                                         // Heavy AC is just baseAc
 
                                                         const shieldEquipped = inventory.some(i => i.isEquipped && (i.equipped_slot === 'Shield' || inferEquippedSlot(i) === 'Shield'));
+                                                        const previewText = `AC IF EQUIPPED: ${previewAc}${shieldEquipped ? ` / ${previewAc + 2}` : ''}`;
                                                         return (
-                                                            <p className="text-[10px] text-emerald-400 font-bold mt-1">
-                                                                Preview AC: {previewAc}{shieldEquipped ? ` / ${previewAc + 2}` : ''}
-                                                            </p>
+                                                            <div className="mt-3 py-1.5 px-3 bg-emerald-500/10 border border-emerald-500/30 rounded flex items-center gap-2 shadow-sm shadow-emerald-500/5">
+                                                                <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></div>
+                                                                <p className="text-[10px] text-emerald-400 font-black uppercase tracking-widest leading-none">
+                                                                    {previewText}
+                                                                </p>
+                                                            </div>
                                                         );
                                                     }
                                                     if (slot === 'Shield' && !item.isEquipped) {
+                                                        const currentAc = stats.hasShield ? stats.ac - 2 : stats.ac;
                                                         return (
-                                                            <p className="text-[10px] text-emerald-400 font-bold mt-1">
-                                                                Preview AC: {stats.ac} / {stats.ac + 2}
-                                                            </p>
+                                                            <div className="mt-3 py-1.5 px-3 bg-emerald-500/10 border border-emerald-500/30 rounded flex items-center gap-2 shadow-sm shadow-emerald-500/5">
+                                                                <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></div>
+                                                                <p className="text-[10px] text-emerald-400 font-black uppercase tracking-widest leading-none">
+                                                                    AC IF EQUIPPED: {currentAc} / {currentAc + 2}
+                                                                </p>
+                                                            </div>
                                                         );
                                                     }
                                                     return null;
