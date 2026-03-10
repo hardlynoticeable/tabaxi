@@ -1,33 +1,37 @@
 # Tabaxi Character Generator
 
-A premium, interactive web application designed for generating and managing **Tabaxi** characters for Dungeons & Dragons 5th Edition. This tool streamlines the character creation process from initial concept to a ready-to-play PDF character sheet.
+A comprehensive, automated character construction tool for Dungeons & Dragons 5th Edition. This application streamlines the journey from concept to a professional, ready-to-play character sheet.
 
-## 🌟 Key Features
+## 🌟 Core Technical Achievements
 
-### 🐱 Tabaxi Specialization
-- Automatically handles race-specific traits like **Darkvision**, **Feline Agility**, and **Cat's Claws**.
-- Dynamic sizing (Small or Medium) as per updated Mordenkainen's rules.
-- Race-appropriate randomization for height, weight, and feline appearances.
+### 🧮 Dynamic Stat Calculation Engine
+The application features a robust backend logic system that automates the complex mechanics of D&D 5e:
+- **Automated Modifiers**: Real-time calculation of all ability modifiers, proficiency bonuses, and secondary statistics.
+- **Dynamic Defense (AC)**: Sophisticated Armor Class calculation that accounts for equipped armor, shields, and class-specific bonuses (like Draconic Resilience).
+- **Automated Scaling**: Scaling features for HP, Hit Dice, and Save DCs based on character level and core stats.
+- **Skill & Save Tracking**: Automatically applies proficiency and ability bonuses to all 18 skills and 6 saving throws.
 
-### 🎒 Advanced Inventory Management
-- **Extensive Database**: Access a library of over 5,000 D&D items.
-- **Slot System**: Smart enforcement for equipped gear (Head, Neck, Ring, etc.).
-- **Weapon Tracking**: Manage up to 3 active weapons with automatic attack/damage calculation.
-- **Attunement Tracking**: Real-time enforcement of attunement limits (including Artificer bonuses).
-- **Starting Packs**: Quick-select standard equipment packs (Explorer's, Burglar's, etc.).
+### ⚔️ Comprehensive Class & Subclass Architecture
+Designed to handle the mechanical diversity of the 5e system:
+- **Broad Support**: Full implementation of various classes including **Cleric Domains**, **Paladin Oaths**, **Druid Circles**, and **Sorcerous Origins**.
+- **Automatic Feature Unlocking**: Dynamically reveals and applies class and subclass features as the character levels up.
+- **Integrated Backgrounds**: Seamlessly merges background-specific skills and equipment into the character's profile.
 
-### 💰 Wealth & Treasure
-- Dedicated tracking for **CP, SP, EP, GP, and PP**.
-- Manual Treasure recording for non-standard loot (gems, art objects, artifacts).
+### 🔮 Massive Spellcasting System
+A power-user interface for magic-inclined characters:
+- **1,000+ Spell Database**: A comprehensive library of spells including full descriptions for both SRD and expanded content.
+- **Level-Indexed Slot Management**: Automatically calculates available spell slots per level based on class progression.
+- **Automated Combat Stats**: Instantly computes Spell Save DC and Spell Attack Bonus based on the character's primary casting ability.
 
-### 📝 Lore & Personality
-- Integrated editors for **Traits, Ideals, Bonds, and Flaws**.
-- Multi-line backstory support for deep character development.
+### 🎒 Advanced Inventory & Equipment
+- **5,000+ Item Library**: An extensive database of weapons, armor, and adventuring gear.
+- **Smart Slot Enforcement**: Intelligent equipment system that manages slots (Head, Neck, Rings, etc.) and enforces attunement limits (with dynamic support for Artificer bonuses).
+- **Weapon Arsenal**: Tracks up to 3 active weapons with pre-calculated attack and damage rolls.
 
-### 📄 Professional PDF Export
-- Generates a complete, form-filled D&D 5e character sheet.
-- Intelligent mapping logic ensures physical traits, lore, and inventory are perfectly placed.
-- Optimized font sizes for readability in long text fields.
+### 📄 Pro-Grade WOTC PDF Generation
+The final output is not just a summary, but a professionally form-filled **Standard D&D 5e Character Sheet (WOTC)**:
+- **Perfect Mapping**: Physical traits, equipment lists, trait summaries, and currency are all automatically mapped to their official locations.
+- **Optimized Layout**: Long text fields (like Backstory and Traits) use dynamic font-sizing to ensure maximum readability within the standard PDF boxes.
 
 ## 🛠️ Technology Stack
 
@@ -40,38 +44,14 @@ A premium, interactive web application designed for generating and managing **Ta
 ## 🚀 Getting Started
 
 ### Prerequisites
-
 - [Node.js](https://nodejs.org/) (v18 or higher recommended)
 - [npm](https://www.npmjs.com/)
 
 ### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/hardlynoticeable/tabaxi.git
-   cd tabaxi
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Run the development server:
-   ```bash
-   npm run dev
-   ```
-
-4. Open your browser and navigate to `http://localhost:5173`.
-
-### PDF Template
-
-The generator requires a base PDF template located at `public/assets/CharacterSheet.pdf`. Ensure this file is present for the export functionality to work.
-
-## 🤝 Contributing
-
-Contributions are welcome! Whether it's adding new features, fixing bugs, or improving the UI, feel free to submit a pull request.
+1. Clone the repository: `git clone https://github.com/hardlynoticeable/tabaxi.git`
+2. Install dependencies: `npm install`
+3. Run the development server: `npm run dev`
+4. Access the generator at `http://localhost:5173`.
 
 ## 📜 License
-
 This project is intended for personal use and is compatible with the D&D 5e System Reference Document (SRD).
