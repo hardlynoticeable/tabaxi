@@ -196,27 +196,37 @@ export default function Review({ data }) {
                     )}
 
                     {/* Spells */}
-                    {(data.cantrips?.length > 0 || data.spells?.length > 0) && (
-                        <div className="pt-4 border-t border-gray-700/50">
-                            <p className="text-sm font-bold text-emerald-500 uppercase tracking-wider mb-2">
-                                Spells
-                            </p>
-                            <div className="space-y-3">
-                                {data.cantrips?.length > 0 && (
-                                    <div>
-                                        <p className="text-[10px] text-emerald-300/60 uppercase font-black mb-1">Cantrips</p>
-                                        <p className="text-xs text-gray-300 italic">{data.cantrips.join(', ')}</p>
-                                    </div>
-                                )}
-                                {data.spells?.length > 0 && (
-                                    <div>
-                                        <p className="text-[10px] text-emerald-300/60 uppercase font-black mb-1">Leveled Spells</p>
-                                        <p className="text-xs text-gray-300 italic">{data.spells.join(', ')}</p>
-                                    </div>
-                                )}
+                    {(() => {
+                        const cantrips = data.selectedCantrips || [];
+                        const subclassSpells = data.class && data.subclass && SUBCLASSES[data.class]?.[data.subclass]?.spells ?
+                            Object.values(SUBCLASSES[data.class][data.subclass].spells).flat() : [];
+                        const selectedLeveledSpells = Object.values(data.selectedSpells || {}).flat();
+                        const allLeveledSpells = [...new Set([...subclassSpells, ...selectedLeveledSpells])];
+
+                        if (cantrips.length === 0 && allLeveledSpells.length === 0) return null;
+
+                        return (
+                            <div className="pt-4 border-t border-gray-700/50">
+                                <p className="text-sm font-bold text-emerald-500 uppercase tracking-wider mb-2">
+                                    Spells
+                                </p>
+                                <div className="space-y-3">
+                                    {cantrips.length > 0 && (
+                                        <div>
+                                            <p className="text-[10px] text-emerald-300/60 uppercase font-black mb-1">Cantrips</p>
+                                            <p className="text-xs text-gray-300 italic">{cantrips.join(', ')}</p>
+                                        </div>
+                                    )}
+                                    {allLeveledSpells.length > 0 && (
+                                        <div>
+                                            <p className="text-[10px] text-emerald-300/60 uppercase font-black mb-1">Leveled Spells</p>
+                                            <p className="text-xs text-gray-300 italic">{allLeveledSpells.join(', ')}</p>
+                                        </div>
+                                    )}
+                                </div>
                             </div>
-                        </div>
-                    )}
+                        );
+                    })()}
                 </div>
             </div>
 
