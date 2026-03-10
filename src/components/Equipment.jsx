@@ -251,9 +251,17 @@ export default function Equipment({ data, updateData }) {
                                                     }
 
                                                     return (
-                                                        <p className="text-[10px] uppercase font-black flex items-center gap-2 text-gray-500">
-                                                            {slot} • {detailText}
-                                                        </p>
+                                                        <div className="flex items-center justify-between gap-2">
+                                                            <p className="text-[10px] uppercase font-black flex items-center gap-2 text-gray-500">
+                                                                {slot} • {detailText}
+                                                            </p>
+                                                            {(() => {
+                                                                const isProf = checkProficiency(item);
+                                                                if (isProf === true) return <span className="text-[9px] font-black text-emerald-500/60 uppercase">Proficient</span>;
+                                                                if (isProf === false) return <span className="text-[9px] font-black text-amber-500 uppercase flex items-center gap-1"><AlertCircle size={8} /> Non-Proficient</span>;
+                                                                return null;
+                                                            })()}
+                                                        </div>
                                                     );
                                                 })()}
                                             </div>
@@ -360,9 +368,16 @@ export default function Equipment({ data, updateData }) {
                                             {hasItems ? (
                                                 <div className="space-y-1">
                                                     {slot.items.map(item => (
-                                                        <p key={item.id} className="text-xs font-bold text-white leading-tight truncate">
-                                                            {item.name} {item.isAttuned && <span className="text-teal-400 text-[10px]">★</span>}
-                                                        </p>
+                                                        <div key={item.id} className="space-y-1">
+                                                            <p className="text-xs font-bold text-white leading-tight truncate">
+                                                                {item.name} {item.isAttuned && <span className="text-teal-400 text-[10px]">★</span>}
+                                                            </p>
+                                                            {checkProficiency(item) === false && (
+                                                                <p className="text-[8px] font-black text-amber-500 uppercase flex items-center gap-0.5">
+                                                                    <AlertCircle size={7} /> Non-Proficient
+                                                                </p>
+                                                            )}
+                                                        </div>
                                                     ))}
                                                 </div>
                                             ) : (
