@@ -75,11 +75,8 @@ export default function Review({ data }) {
                             <p className="text-lg text-white">{data.alignment || 'Neutral'}</p>
                         </div>
                     </div>
-                </div>
 
-                {/* Right Column: Stats & Traits */}
-                <div className="space-y-4 relative z-10 pl-0 md:pl-6 md:border-l border-gray-700">
-                    <div>
+                    <div className="pt-4 border-t border-gray-700/50">
                         <p className="text-sm font-bold text-emerald-500 uppercase tracking-wider mb-2">Ability Scores</p>
                         <div className="flex gap-3 flex-wrap">
                             {Object.entries(data.abilityScores).map(([key, val]) => {
@@ -95,6 +92,10 @@ export default function Review({ data }) {
                             })}
                         </div>
                     </div>
+                </div>
+
+                {/* Right Column: Stats & Traits */}
+                <div className="space-y-4 relative z-10 pl-0 md:pl-6 md:border-l border-gray-700">
 
                     <div>
                         <p className="text-sm font-bold text-emerald-500 uppercase tracking-wider mt-4 mb-2">Tabaxi Traits</p>
