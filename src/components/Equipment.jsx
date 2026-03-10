@@ -304,9 +304,14 @@ export default function Equipment({ data, updateData }) {
                     {/* Equipped Items Summary (User Requested Position: Below Backpack, Above Currency) */}
                     <div className="glass-card p-5 border-emerald-500/20 overflow-hidden">
                         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-4 border-b border-gray-800/50">
-                            <h3 className="text-sm font-black text-emerald-500 uppercase tracking-widest flex items-center gap-2">
-                                <User size={14} /> Active Arsenal Overview
-                            </h3>
+                            <div>
+                                <h3 className="text-sm font-black text-emerald-500 uppercase tracking-widest flex items-center gap-2">
+                                    <User size={14} /> Equipped and Attuned
+                                </h3>
+                                <p className="text-[10px] text-gray-500 mt-1 uppercase font-bold tracking-tight">
+                                    Note: Your character can only be attuned to a maximum of {attunementLimit} items.
+                                </p>
+                            </div>
                             <div className="flex gap-4">
                                 <div className="flex items-center gap-2">
                                     <div className="w-2 h-2 rounded-full bg-emerald-500"></div>
