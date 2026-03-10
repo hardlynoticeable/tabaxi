@@ -76,7 +76,7 @@ export default function CharacterWizard() {
     const gearStepId = currentId++;
     const reviewStepId = currentId;
 
-    stepsConfig.push({ id: gearStepId, label: 'Inventory', canEnter: !!characterData.class });
+    stepsConfig.push({ id: gearStepId, label: 'Gear', canEnter: !!characterData.class });
     stepsConfig.push({ id: reviewStepId, label: 'Review', canEnter: !!characterData.class });
 
     const maxSteps = stepsConfig.length;
