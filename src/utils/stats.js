@@ -176,6 +176,7 @@ export function calculateStats(characterData) {
     return {
         ac,
         acNote,
+        hasShield: !!shieldItem,
         speed,
         climbSpeed,
         saveBonus,

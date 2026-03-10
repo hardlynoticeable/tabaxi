@@ -12,7 +12,7 @@ export default function AbilityScoreImpact({ data }) {
         ...(data.backgroundSkills || [])
     ]);
 
-    const { hp, ac, acNote, passivePerception, mods, profBonus } = {
+    const { hp, ac, acNote, hasShield, passivePerception, mods, profBonus } = {
         ...stats,
         // Calculate HP here as it is highly level/con dependent and we want immediate feedback
         hp: (CLASSES[data.class].hitDie + (Math.floor(CLASSES[data.class].hitDie / 2) + 1) * (Number(data.level) - 1) + (stats.mods.con * Number(data.level))),
@@ -42,8 +42,10 @@ export default function AbilityScoreImpact({ data }) {
                 </div>
                 <div className="bg-gray-900 border border-gray-700 rounded p-4 text-center">
                     <p className="text-xs font-bold text-gray-400 uppercase tracking-wide mb-1">Armor Class</p>
-                    <p className="text-3xl font-bold text-white">{ac}</p>
-                    <p className="text-[10px] text-gray-500 mt-1">{acNote}</p>
+                    <p className="text-3xl font-bold text-white">
+                        {hasShield ? `${ac - 2}/${ac}` : ac}
+                    </p>
+                    <p className="text-[10px] text-gray-400 mt-1">{acNote}</p>
                 </div>
                 <div className="bg-gray-900 border border-gray-700 rounded p-4 text-center">
                     <p className="text-xs font-bold text-gray-400 uppercase tracking-wide mb-1">Initiative</p>

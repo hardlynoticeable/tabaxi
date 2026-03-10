@@ -119,7 +119,9 @@ export default function Equipment({ data, updateData }) {
                     <div className="bg-gray-900 border border-emerald-500/30 rounded-lg px-4 py-2 flex items-center gap-4 w-full md:w-auto justify-around md:justify-start">
                         <div className="text-center">
                             <p className="text-[10px] text-emerald-500 uppercase font-black">Armor Class</p>
-                            <p className="text-2xl font-black text-white">{stats.ac}</p>
+                            <p className="text-2xl font-black text-white">
+                                {stats.hasShield ? `${stats.ac - 2}/${stats.ac}` : stats.ac}
+                            </p>
                         </div>
                         <div className="w-px h-8 bg-gray-800"></div>
                         <div className="text-center">
@@ -266,9 +268,51 @@ export default function Equipment({ data, updateData }) {
                                     <div className="flex justify-between items-start mb-2">
                                         <div>
                                             <h4 className="font-bold text-lg text-white leading-tight">{item.name}</h4>
-                                            <p className="text-[10px] text-gray-500 uppercase font-black flex items-center gap-2">
-                                                {item.equipped_slot || inferEquippedSlot(item)} • {item.rarity || (item.Cost ? item.Cost : 'Standard')}
-                                            </p>
+                                            <div className="flex flex-col">
+                                                <p className="text-[10px] text-gray-500 uppercase font-black flex items-center gap-2">
+                                                    {item.equipped_slot || inferEquippedSlot(item)} • {item.rarity || (item.Cost ? item.Cost : 'Standard')}
+                                                </p>
+                                                {/* Proactive Stats Preview */}
+                                                {!item.isEquipped && (() => {
+                                                    const slot = item.equipped_slot || inferEquippedSlot(item);
+                                                    if (slot === 'Weapon' && (item.Damage || item.damage)) {
+                                                        const isProf = weaponProfs.some(p => item.type?.includes(p)) || item.type === 'Any' || item.name === "Cat's Claws";
+                                                        const isFinesse = (item.Properties || item.properties || '').toLowerCase().includes('finesse');
+                                                        const mod = (isFinesse && stats.mods.dex > stats.mods.str) ? stats.mods.dex : stats.mods.str;
+                                                        const atk = mod + (isProf ? stats.profBonus : 0) + (Number(item.attack_bonus) || 0);
+                                                        const dmg = mod + (Number(item.damage_bonus) || 0);
+                                                        return (
+                                                            <p className="text-[10px] text-emerald-400 font-bold mt-1">
+                                                                Preview: {atk >= 0 ? '+' : ''}{atk} to hit, {item.Damage || item.damage}{dmg >= 0 ? '+' : ''}{dmg} dmg
+                                                            </p>
+                                                        );
+                                                    }
+                                                    if (slot === 'Armor') {
+                                                        const baseAcMatch = (item.AC || '').match(/^(\d+)/);
+                                                        const baseAc = baseAcMatch ? parseInt(baseAcMatch[1], 10) : 10;
+                                                        const type = (item.Type || item.type || '').toLowerCase();
+                                                        let previewAc = baseAc;
+                                                        if (type.includes('light')) previewAc += stats.mods.dex;
+                                                        else if (type.includes('medium')) previewAc += Math.min(stats.mods.dex, 2);
+                                                        // Heavy AC is just baseAc
+
+                                                        const shieldEquipped = inventory.some(i => i.isEquipped && (i.equipped_slot === 'Shield' || inferEquippedSlot(i) === 'Shield'));
+                                                        return (
+                                                            <p className="text-[10px] text-emerald-400 font-bold mt-1">
+                                                                Preview AC: {previewAc}{shieldEquipped ? ` / ${previewAc + 2}` : ''}
+                                                            </p>
+                                                        );
+                                                    }
+                                                    if (slot === 'Shield' && !item.isEquipped) {
+                                                        return (
+                                                            <p className="text-[10px] text-emerald-400 font-bold mt-1">
+                                                                Preview AC: {stats.ac} / {stats.ac + 2}
+                                                            </p>
+                                                        );
+                                                    }
+                                                    return null;
+                                                })()}
+                                            </div>
                                         </div>
                                         <button
                                             onClick={() => removeFromInventory(item.id)}
