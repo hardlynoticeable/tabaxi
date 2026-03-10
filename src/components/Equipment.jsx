@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom';
 import { EQUIPMENT_DB } from '../data/equipment';
 import { STARTING_PACKS } from '../data/startingPacks';
 import { CLASSES, SUBCLASSES } from '../data/rules5e';
-import { calculateStats, getAttunementLimit, inferEquippedSlot } from '../utils/stats';
+import { calculateStats, getAttunementLimit, inferEquippedSlot, checkProficiency } from '../utils/stats';
 import { Shield, Sword, Eye, Footprints, Hand, User, Star, Trash2, Info, CheckCircle2, AlertCircle, X } from 'lucide-react';
 
 export default function Equipment({ data, updateData }) {
@@ -106,27 +106,6 @@ export default function Equipment({ data, updateData }) {
     const armorProfs = Array.from(new Set([...(charClass?.armorProficiencies || []), ...(SUBCLASSES[data.class]?.[data.subclass]?.armorProficiencies || [])])).sort();
     const weaponProfs = Array.from(new Set([...(charClass?.weaponProficiencies || []), ...(SUBCLASSES[data.class]?.[data.subclass]?.weaponProficiencies || [])])).sort();
 
-    const checkProficiency = (item) => {
-        const type = (item.Type || item.type || '').toLowerCase();
-        const name = (item.Item || item.name || '').toLowerCase();
-        const slot = item.equipped_slot || inferEquippedSlot(item);
-
-        if (slot === 'Weapon' || type.includes('simple') || type.includes('martial')) {
-            return weaponProfs.some(p => {
-                const prof = p.toLowerCase();
-                return type.includes(prof) || name.includes(prof);
-            }) || name === "cat's claws";
-        }
-
-        if (slot === 'Armor' || slot === 'Shield' || type.includes('armor') || type.includes('shield')) {
-            return armorProfs.some(p => {
-                const prof = p.toLowerCase();
-                return type.includes(prof);
-            });
-        }
-
-        return null;
-    };
 
     return (
         <div className="space-y-6 animate-fade-in text-brand-100 h-full overflow-y-auto pr-2 pb-6 custom-scrollbar">
@@ -183,8 +162,8 @@ export default function Equipment({ data, updateData }) {
 
                         {data.startingPack && (
                             <div className="bg-black/40 rounded-xl p-4 border border-gray-800">
-                                <h4 className="text-sm font-bold text-emerald-400 mb-2 flex items-center gap-2">
-                                    <Info size={14} /> Contents of {data.startingPack}
+                                <h4 className="text-sm font-bold text-emerald-400 mb-2">
+                                    Contents of {data.startingPack}
                                 </h4>
                                 <div className="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-1">
                                     {STARTING_PACKS[data.startingPack].map((item, idx) => (
@@ -256,7 +235,7 @@ export default function Equipment({ data, updateData }) {
                                                                 {slot} • {detailText}
                                                             </p>
                                                             {(() => {
-                                                                const isProf = checkProficiency(item);
+                                                                const isProf = checkProficiency(data, item);
                                                                 if (isProf === true) return <span className="text-[9px] font-black text-emerald-500/60 uppercase">Proficient</span>;
                                                                 if (isProf === false) return <span className="text-[9px] font-black text-amber-500 uppercase flex items-center gap-1"><AlertCircle size={8} /> Non-Proficient</span>;
                                                                 return null;
@@ -335,8 +314,8 @@ export default function Equipment({ data, updateData }) {
                     <div className="glass-card p-5 border-emerald-500/20 overflow-hidden">
                         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-4 border-b border-gray-800/50">
                             <div>
-                                <h3 className="text-sm font-black text-emerald-500 uppercase tracking-widest flex items-center gap-2">
-                                    <User size={14} /> Equipped and Attuned
+                                <h3 className="text-sm font-black text-emerald-500 uppercase tracking-widest">
+                                    Equipped and Attuned
                                 </h3>
                                 <p className="text-[10px] text-gray-500 mt-1 uppercase font-bold tracking-tight">
                                     Note: Your character can only be attuned to a maximum of {attunementLimit} items.
@@ -372,7 +351,7 @@ export default function Equipment({ data, updateData }) {
                                                             <p className="text-xs font-bold text-white leading-tight truncate">
                                                                 {item.name} {item.isAttuned && <span className="text-teal-400 text-[10px]">★</span>}
                                                             </p>
-                                                            {checkProficiency(item) === false && (
+                                                            {checkProficiency(data, item) === false && (
                                                                 <p className="text-[8px] font-black text-amber-500 uppercase flex items-center gap-0.5">
                                                                     <AlertCircle size={7} /> Non-Proficient
                                                                 </p>
@@ -407,7 +386,7 @@ export default function Equipment({ data, updateData }) {
 
                     {/* Currency Section */}
                     <div className="glass-card p-5 border-amber-500/20">
-                        <h3 className="text-xs font-black text-amber-500 uppercase tracking-widest mb-4 flex items-center gap-2">
+                        <h3 className="text-xs font-black text-amber-500 uppercase tracking-widest mb-4">
                             Currency & Funds
                         </h3>
                         <div className="grid grid-cols-5 gap-3">
@@ -503,7 +482,7 @@ export default function Equipment({ data, updateData }) {
                                                     {item.type || item.Type || 'Item'} • {item.rarity || item.Cost || 'Standard'}
                                                 </p>
                                                 {(() => {
-                                                    const isProf = checkProficiency(item);
+                                                    const isProf = checkProficiency(data, item);
                                                     if (isProf === true) return <span className="text-[9px] font-black bg-emerald-500/20 text-emerald-400 px-1.5 py-0.5 rounded border border-emerald-500/20 uppercase">Proficient</span>;
                                                     if (isProf === false) return <span className="text-[9px] font-black bg-amber-500/20 text-amber-400 px-1.5 py-0.5 rounded border border-amber-500/20 uppercase flex items-center gap-1"><AlertCircle size={8} /> Non-Proficient</span>;
                                                     return null;

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { generateCharacterPDF } from '../utils/pdfGenerator';
 import AbilityScoreImpact from './AbilityScoreImpact';
 import { SUBCLASSES, CLASSES } from '../data/rules5e';
+import { checkProficiency } from '../utils/stats';
 import { STARTING_PACKS } from '../data/startingPacks';
 
 export default function Review({ data }) {
@@ -21,20 +22,20 @@ export default function Review({ data }) {
     return (
         <div className="space-y-6 animate-fade-in text-[var(--color-brand-100)]">
             <div className="flex justify-between items-center mb-6">
-                <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200 flex items-center gap-3">
+                <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">
                     Review Your Tabaxi
-                    {downloading && (
-                        <svg className="animate-spin h-6 w-6 text-brand-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                        </svg>
-                    )}
                 </h2>
                 <button
                     onClick={handleDownload}
                     disabled={downloading}
                     className="px-6 py-3 rounded-lg bg-emerald-500 text-black font-bold hover:bg-emerald-400 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-[0_0_15px_rgba(16,185,129,0.5)] flex items-center gap-2"
                 >
+                    {downloading && (
+                        <svg className="animate-spin h-4 w-4 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                    )}
                     {downloading ? 'Generating PDF...' : 'Generate Character & PDF!'}
                 </button>
             </div>
@@ -235,8 +236,7 @@ export default function Review({ data }) {
 
             {/* Bottom Section: Gear & Inventory */}
             <div className="mt-8 pt-8 border-t border-emerald-900/50">
-                <h3 className="text-xl font-bold text-emerald-400 mb-6 flex items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.91 8.84 8.56 2.23a1.93 1.93 0 0 0-1.81 0L3.1 4.13a2.12 2.12 0 0 0-.05 3.69l12.22 6.93a2 2 0 0 0 1.94 0L21 12.51a2.12 2.12 0 0 0-.09-3.67Z" /><path d="m3.1 8.44 8.27 4.69c.4.22.9.22 1.3 0l8.24-4.69" /><path d="M12 13v9" /><path d="M4.3 17a3 3 0 0 0 2.1 5.1h11.2A3 3 0 0 0 19.7 17l-7.7-4.3Z" /></svg>
+                <h3 className="text-xl font-bold text-emerald-400 mb-6">
                     Gear & Inventory
                 </h3>
 
@@ -294,12 +294,20 @@ export default function Review({ data }) {
                                 {data.inventory?.length > 0 ? (
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                                         {data.inventory.map((item, idx) => (
-                                            <div key={idx} className="bg-black/20 border border-white/5 p-2 rounded text-xs text-gray-300 flex items-center gap-2">
-                                                <span className="text-emerald-500/50">•</span>
-                                                <div className="flex flex-col">
-                                                    <span className="font-bold text-emerald-100">{item.name}</span>
-                                                    <span className="text-[10px] text-gray-500">{item.type}</span>
+                                            <div key={idx} className="bg-black/20 border border-white/5 p-2 rounded text-xs text-gray-300 flex items-center justify-between gap-2">
+                                                <div className="flex items-center gap-2">
+                                                    <span className="text-emerald-500/50">•</span>
+                                                    <div className="flex flex-col">
+                                                        <span className="font-bold text-emerald-100">{item.name}</span>
+                                                        <span className="text-[10px] text-gray-500">{item.type}</span>
+                                                    </div>
                                                 </div>
+                                                {(() => {
+                                                    const isProf = checkProficiency(data, item);
+                                                    if (isProf === true) return <span className="text-[9px] font-black text-emerald-500/60 uppercase">Proficient</span>;
+                                                    if (isProf === false) return <span className="text-[9px] font-black text-amber-500 uppercase">Non-Proficient</span>;
+                                                    return null;
+                                                })()}
                                             </div>
                                         ))}
                                     </div>

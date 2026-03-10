@@ -1,13 +1,12 @@
 import React from 'react';
 import CharacterWizard from './components/CharacterWizard';
-import { Cat, Sparkles } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 
 function App() {
   return (
     <div className="min-h-screen text-white relative">
       <header className="fixed top-0 w-full z-50 glass border-b border-dark-border py-4 px-8 flex justify-between items-center">
         <div className="flex items-center gap-3">
-          <Cat className="text-emerald-400 w-8 h-8" />
           <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-teal-200">
             Tabaxi Generator
           </h1>

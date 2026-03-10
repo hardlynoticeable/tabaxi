@@ -37,10 +37,7 @@ export default function SubclassSelector({ data, updateData }) {
             </h2>
 
             {isRestricted ? (
-                <div className="bg-amber-900/40 border border-amber-500/50 p-4 rounded-lg mb-6 flex items-start gap-3 animate-pulse">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-amber-500 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                    </svg>
+                <div className="bg-amber-900/40 border border-amber-500/50 p-4 rounded-lg mb-6 animate-pulse">
                     <div>
                         <h4 className="font-bold text-amber-500">Level Requirement Not Met</h4>
                         <p className="text-sm text-amber-200/80">
@@ -102,16 +99,9 @@ export default function SubclassSelector({ data, updateData }) {
             {/* Subclass Options Selection */}
             {data.subclass && subclasses[data.subclass]?.subclassOptions && !isRestricted && (
                 <div className="mt-8 p-6 bg-emerald-900/20 border border-emerald-500/30 rounded-xl animate-fade-in">
-                    <div className="flex items-center gap-3 mb-4">
-                        <div className="p-2 bg-emerald-500/20 rounded-lg">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-emerald-400" viewBox="0 0 20 20" fill="currentColor">
-                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clipRule="evenodd" />
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 className="text-xl font-bold text-emerald-400">{subclasses[data.subclass].subclassOptions.title}</h3>
-                            <p className="text-sm text-gray-400">{subclasses[data.subclass].subclassOptions.description}</p>
-                        </div>
+                    <div className="mb-4">
+                        <h3 className="text-xl font-bold text-emerald-400">{subclasses[data.subclass].subclassOptions.title}</h3>
+                        <p className="text-sm text-gray-400">{subclasses[data.subclass].subclassOptions.description}</p>
                     </div>
 
                     <div className="flex flex-col gap-3">

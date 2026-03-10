@@ -15,8 +15,7 @@ export default function AbilityScoreImpact({ data }) {
 
     return (
         <div className="mt-8 pt-8 border-t border-emerald-900/50 animate-fade-in">
-            <h3 className="text-xl font-bold text-emerald-400 mb-6 flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" /><polyline points="14 2 14 8 20 8" /><path d="M12 18v-6" /><path d="M8 15h8" /></svg>
+            <h3 className="text-xl font-bold text-emerald-400 mb-6">
                 Mechanical Impact (Level {level} {data.class})
             </h3>
 
@@ -49,8 +48,7 @@ export default function AbilityScoreImpact({ data }) {
 
             {/* NEW: Mechanical Breakdown Box */}
             <div className="bg-emerald-900/10 border border-emerald-500/20 rounded-lg p-5 mb-8">
-                <p className="text-[10px] text-emerald-500 uppercase font-black mb-4 tracking-widest flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                <p className="text-[10px] text-emerald-500 uppercase font-black mb-4 tracking-widest">
                     Calculation Breakdown
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">

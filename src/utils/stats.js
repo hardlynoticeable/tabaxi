@@ -263,3 +263,42 @@ export function getAttunementLimit(characterData) {
     }
     return limit;
 }
+
+/**
+ * Determines if a character is proficient with a given item.
+ * Returns true, false, or null if proficiency doesn't apply.
+ */
+export function checkProficiency(characterData, item) {
+    if (!item) return null;
+    const charClass = characterData.class ? CLASSES[characterData.class] : null;
+    const subclass = characterData.subclass && SUBCLASSES[characterData.class]?.[characterData.subclass];
+
+    const armorProfs = Array.from(new Set([
+        ...(charClass?.armorProficiencies || []),
+        ...(subclass?.armorProficiencies || [])
+    ]));
+    const weaponProfs = Array.from(new Set([
+        ...(charClass?.weaponProficiencies || []),
+        ...(subclass?.weaponProficiencies || [])
+    ]));
+
+    const type = (item.Type || item.type || '').toLowerCase();
+    const name = (item.Item || item.name || '').toLowerCase();
+    const slot = item.equipped_slot || inferEquippedSlot(item);
+
+    if (slot === 'Weapon' || type.includes('simple') || type.includes('martial')) {
+        return weaponProfs.some(p => {
+            const prof = p.toLowerCase();
+            return type.includes(prof) || name.includes(prof);
+        }) || name === "cat's claws";
+    }
+
+    if (slot === 'Armor' || slot === 'Shield' || type.includes('armor') || type.includes('shield')) {
+        return armorProfs.some(p => {
+            const prof = p.toLowerCase();
+            return type.includes(prof);
+        });
+    }
+
+    return null;
+}
