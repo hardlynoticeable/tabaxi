@@ -158,7 +158,7 @@ export function calculateStats(characterData) {
     let speed = 30;
     let climbSpeed = 30;
 
-    if (characterData.class === 'Monk' && level >= 2) {
+    if (charClass && characterData.class === 'Monk' && level >= 2) {
         // Unarmored Movement: +10 at L2, +15 at L6, +20 at L10, +25 at L14, +30 at L18
         if (level >= 18) speed += 30;
         else if (level >= 14) speed += 25;
@@ -171,6 +171,20 @@ export function calculateStats(characterData) {
         climbSpeed += 10;
     }
 
+    // HP Calculation
+    const hitDie = charClass?.hitDie || 8;
+    // HP: Max at L1, then average rounded up (hitDie/2 + 1) for subsequent levels
+    const maxHp = hitDie + (Math.floor(hitDie / 2) + 1) * (level - 1) + (conMod * level);
+
+    // Skills & Passive Perception
+    const knownSkills = new Set([
+        ...(characterData.tabaxiSkills || []),
+        ...(characterData.selectedClassSkills || []),
+        ...(characterData.backgroundSkills || [])
+    ]);
+    const passivePerception = 10 + wisMod + (knownSkills.has('Perception') ? profBonus : 0);
+    const initiative = dexMod;
+
     ac += acBonus;
 
     return {
@@ -179,6 +193,11 @@ export function calculateStats(characterData) {
         hasShield: !!shieldItem,
         speed,
         climbSpeed,
+        maxHp,
+        hitDie,
+        initiative,
+        passivePerception,
+        knownSkills,
         saveBonus,
         profBonus,
         mods: { str: strMod, dex: dexMod, con: conMod, int: intMod, wis: wisMod, cha: chaMod },

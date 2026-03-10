@@ -6,23 +6,10 @@ export default function AbilityScoreImpact({ data }) {
     if (!data.class) return null;
 
     const stats = calculateStats(data);
-    const allKnownSkills = new Set([
-        ...(data.tabaxiSkills || []),
-        ...(data.selectedClassSkills || []),
-        ...(data.backgroundSkills || [])
-    ]);
-
-    const { hp, ac, acNote, hasShield, passivePerception, mods, profBonus } = {
-        ...stats,
-        // Calculate HP here as it is highly level/con dependent and we want immediate feedback
-        hp: (CLASSES[data.class].hitDie + (Math.floor(CLASSES[data.class].hitDie / 2) + 1) * (Number(data.level) - 1) + (stats.mods.con * Number(data.level))),
-        passivePerception: 10 + stats.mods.wis + (allKnownSkills.has('Perception') ? stats.profBonus : 0)
-    };
+    const { maxHp, ac, acNote, hasShield, passivePerception, initiative, mods, profBonus, knownSkills } = stats;
 
     const level = Number(data.level) || 1;
     const charClass = CLASSES[data.class];
-    const initiative = mods.dex;
-
     const formatMod = (m) => (m >= 0 ? `+${m}` : `${m}`);
 
 
@@ -37,7 +24,7 @@ export default function AbilityScoreImpact({ data }) {
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
                 <div className="bg-gray-900 border border-gray-700 rounded p-4 text-center">
                     <p className="text-xs font-bold text-gray-400 uppercase tracking-wide mb-1">Max HP</p>
-                    <p className="text-3xl font-bold text-white">{hp}</p>
+                    <p className="text-3xl font-bold text-white">{maxHp}</p>
                     <p className="text-[10px] text-gray-500 mt-1">Uses {charClass.hitDie} Hit Die</p>
                 </div>
                 <div className="bg-gray-900 border border-gray-700 rounded p-4 text-center">
@@ -90,7 +77,7 @@ export default function AbilityScoreImpact({ data }) {
                     <h4 className="font-bold text-emerald-500 uppercase text-sm tracking-wider mb-4 border-b border-gray-800 pb-2">Skills Overview</h4>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-1">
                         {Object.entries(SKILLS).map(([skillName, governingStat]) => {
-                            const isProf = allKnownSkills.has(skillName);
+                            const isProf = knownSkills.has(skillName);
                             const totalSkill = mods[governingStat] + (isProf ? profBonus : 0);
 
                             return (

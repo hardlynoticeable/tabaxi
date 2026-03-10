@@ -96,25 +96,13 @@ export async function generateCharacterPDF(characterData) {
 
         // HP & Hit Dice
         if (charClass) {
-            const level = Number(characterData.level) || 1;
-            const avgHitDie = (charClass.hitDie / 2) + 1;
-            let hp = charClass.hitDie + (avgHitDie * (level - 1)) + (mods.con * level);
-            if (characterData.class === 'Sorcerer' && characterData.subclass === 'Draconic Bloodline') hp += level;
-
-            setField('HPMax', hp.toString());
-            setField('HPCurrent', hp.toString());
-            setField('HDTotal', `${level}d${charClass.hitDie}`);
-            setField('HD', `d${charClass.hitDie}`);
+            setField('HPMax', maxHp.toString());
+            setField('HPCurrent', maxHp.toString());
+            setField('HDTotal', `${level}d${hitDie}`);
+            setField('HD', `d${hitDie}`);
         }
 
-        // Skills & Saves
-        const allKnownSkills = new Set([
-            ...(characterData.tabaxiSkills || []),
-            ...(characterData.selectedClassSkills || []),
-            ...(characterData.backgroundSkills || [])
-        ]);
-
-        setField('Passive', (10 + mods.wis + (allKnownSkills.has('Perception') ? profBonus : 0)).toString());
+        setField('Passive', passivePerception.toString());
 
         // Saves
         const saveMap = { str: 'ST Strength', dex: 'ST Dexterity', con: 'ST Constitution', int: 'ST Intelligence', wis: 'ST Wisdom', cha: 'ST Charisma' };
@@ -132,7 +120,7 @@ export async function generateCharacterPDF(characterData) {
         const pdfSkillChecks = { Acrobatics: 'Check Box 23', 'Animal Handling': 'Check Box 24', Arcana: 'Check Box 25', Athletics: 'Check Box 26', Deception: 'Check Box 27', History: 'Check Box 28', Insight: 'Check Box 29', Intimidation: 'Check Box 30', Investigation: 'Check Box 31', Medicine: 'Check Box 32', Nature: 'Check Box 33', Perception: 'Check Box 34', Performance: 'Check Box 35', Persuasion: 'Check Box 36', Religion: 'Check Box 37', 'Sleight of Hand': 'Check Box 38', Stealth: 'Check Box 39', Survival: 'Check Box 40' };
 
         Object.entries(SKILLS).forEach(([skillName, stat]) => {
-            const isProf = allKnownSkills.has(skillName);
+            const isProf = knownSkills.has(skillName);
             const total = mods[stat] + (isProf ? profBonus : 0);
             setField(pdfSkillNames[skillName], total >= 0 ? `+${total}` : total);
             if (isProf) { try { form.getCheckBox(pdfSkillChecks[skillName]).check(); } catch (e) { } }
