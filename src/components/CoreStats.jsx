@@ -110,8 +110,8 @@ export default function CoreStats({ data, updateData }) {
         ];
         const hairLengths = ['Short-haired', 'Medium-haired', 'Long-haired', 'Tufted'];
 
-        // Age: 18 to 80
-        const age = 18 + Math.floor(Math.random() * 63);
+        // Age: 18 to 40 (half of max 80)
+        const age = 18 + Math.floor(Math.random() * 23);
 
         let heightStr, weightStr;
         if (data.size === 'Small') {
@@ -300,7 +300,7 @@ export default function CoreStats({ data, updateData }) {
                         <div className="grid grid-cols-2 gap-4">
                             <div className="space-y-2">
                                 <label className="block text-xs font-medium text-gray-400 uppercase">
-                                    Age <span className="text-[10px] text-gray-500 lowercase ml-1">(18 to 80 years)</span>
+                                    Age <span className="text-[10px] text-gray-500 lowercase ml-1">(18 to 40 years)</span>
                                 </label>
                                 <input
                                     type="text"
