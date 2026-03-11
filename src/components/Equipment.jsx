@@ -126,7 +126,10 @@ export default function Equipment({ data, updateData }) {
                             {stats.hasShield && <p className="text-[9px] text-gray-500 uppercase leading-none mt-0.5">(No Shield / With Shield)</p>}
                         </div>
                         <div className="w-px h-8 bg-gray-800"></div>
-                        <div className="text-center">
+                        <div
+                            className="text-center"
+                            title={data.class === 'Artificer' ? `Artificer Limit: ${data.level >= 18 ? 'Magic Item Master' : data.level >= 14 ? 'Magic Item Savant' : data.level >= 10 ? 'Magic Item Adept' : 'Standard'}` : 'Standard Attunement Limit: 3'}
+                        >
                             <p className="text-[10px] text-teal-500 uppercase font-black">Attunement</p>
                             <p className={`text-2xl font-black ${attunedCount >= attunementLimit ? 'text-amber-400' : 'text-white'}`}>
                                 {attunedCount}<span className="text-gray-600 text-sm">/{attunementLimit}</span>
