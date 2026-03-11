@@ -9,46 +9,58 @@ import Spells from './Spells';
 import Review from './Review';
 import { CLASSES, SUBCLASSES } from '../data/rules5e';
 
+export const DEFAULT_CHARACTER = {
+    name: '',
+    class: '',
+    subclass: '',
+    background: '',
+    alignment: '',
+    level: 1,
+    size: 'Medium', // MotM choice
+    abilityScores: { str: '', dex: '', con: '', int: '', wis: '', cha: '' },
+    abilityBonuses: { str: 0, dex: 0, con: 0, int: 0, wis: 0, cha: 0 },
+    tabaxiSkills: ['Perception', 'Stealth'],
+    selectedClassSkills: [],
+    backgroundSkills: [],
+    selectedCantrips: [],
+    selectedSpells: { 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 8: [], 9: [] },
+    inventory: [
+        { id: 'cats-claws', name: "Cat's Claws", Damage: '1d6', equipped_slot: 'Weapon', isEquipped: true }
+    ],
+    money: { cp: 0, sp: 0, ep: 0, gp: 0, pp: 0 },
+    treasure: '',
+    personalityTraits: '',
+    ideals: '',
+    bonds: '',
+    flaws: '',
+    backstory: '',
+    age: '',
+    height: '',
+    weight: '',
+    eyes: '',
+    skin: '',
+    hair: ''
+};
+
 export default function CharacterWizard() {
     const [step, setStep] = useState(1);
-    const [characterData, setCharacterData] = useState({
-        name: '',
-        class: '',
-        subclass: '',
-        background: '',
-        alignment: '',
-        level: 1,
-        size: 'Medium', // MotM choice
-        abilityScores: { str: '', dex: '', con: '', int: '', wis: '', cha: '' },
-        abilityBonuses: { str: 0, dex: 0, con: 0, int: 0, wis: 0, cha: 0 },
-        tabaxiSkills: ['Perception', 'Stealth'],
-        selectedClassSkills: [],
-        backgroundSkills: [],
-        selectedCantrips: [],
-        selectedSpells: { 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 8: [], 9: [] },
-        inventory: [
-            { id: 'cats-claws', name: "Cat's Claws", Damage: '1d6', equipped_slot: 'Weapon', isEquipped: true }
-        ],
-        money: { cp: 0, sp: 0, ep: 0, gp: 0, pp: 0 },
-        treasure: '',
-        personalityTraits: '',
-        ideals: '',
-        bonds: '',
-        flaws: '',
-        backstory: '',
-        age: '',
-        height: '',
-        weight: '',
-        eyes: '',
-        skin: '',
-        hair: ''
-    });
+    const [characterData, setCharacterData] = useState(DEFAULT_CHARACTER);
 
     useEffect(() => {
         const saved = loadCharacter();
         if (saved) {
             setCharacterData(saved);
         }
+    }, []);
+
+    useEffect(() => {
+        const handleReset = () => {
+            setCharacterData(DEFAULT_CHARACTER);
+            setStep(1);
+            saveCharacter(DEFAULT_CHARACTER);
+        };
+        window.addEventListener('reset-character', handleReset);
+        return () => window.removeEventListener('reset-character', handleReset);
     }, []);
 
     const hasSpells = Boolean(characterData.class && CLASSES[characterData.class]?.spellcasting);
